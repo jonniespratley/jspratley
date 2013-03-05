@@ -1,27 +1,11 @@
-<div id="main" ng-controller="MainCtrl" ng-init="App.init()">
-	<!-- @TODO: [
-
-
-
-
-
-
-
-
-	] -->
-
-
+<div id="main" ng-controller="MainCtrl" ng-init="App.init()" class="page">
 
 	     <div class="row">
 
 	       <div class="span8">
 	         <div class="hero-unit no-">
-	           <h1>Portfolio &raquo; </h1>
 				<div id="myCarousel" class="carousel slide">
-
 	           <div class="carousel-inner">
-	            
-	
 				<!-- @TODO: [App.content.home.features] -->
 	             <div class="item {{item.type}}" ng-repeat="item in App.content.home.slider">
 	               <img src="http://placehold.it/620x350" alt="" ng-src="{{item.image}}"/>
@@ -35,22 +19,10 @@
 	           <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
 	         </div>
 	         </div>
-
-
-
-
-
-
-			  <div class="row-fluid">
-	           <div class="span12 well bg-grey">
-	             <p>{{App.content.home.body}}</p>
-	           </div><!--/span-->
-	         </div><!--/row-->
-	
 	
 			<div id="content-row" class="row-fluid">
 				<div class="span12">
-					<div id="markdown-content"></div>
+				 
 				</div>
 			</div>
 	

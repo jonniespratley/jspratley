@@ -155,12 +155,13 @@ jspratleyApp.controller('MainCtrl', function($scope, $rootScope, $http, $documen
 			/* ======================[ @TODO: Profile sidebar of the website ]====================== */
 			profile: {
 				title: 'Jonnie Spratley',
-				subtitle: 'JavaScript Ninja, Application Architect',
+				subtitle: 'JavaScript Expert, Application Architect',
 				image: '/img/avatar.png',
 				data:[
-					{ title: '7824 Spring Valley', icon: 'home' },
-					{ title: 'Roseville, CA', icon: 'map-marker' },
-					{ title: 'jonniespratley.me', icon: 'globe' },
+					{ title: 'AppMatrix, Inc.', icon: 'home' },
+					{ title: 'Citrus Heights, CA', icon: 'map-marker' },
+					{ title: 'jonniespratley', icon: 'facebook' },
+					{ title: 'jonniespratley', icon: 'twitter' },
 					{ title: 'JonnieSpratley@me.com', icon: 'mail' }
 				],
 				address: 'PO BOX 340091, Sacramento, CA 95834-0091',
@@ -169,7 +170,7 @@ jspratleyApp.controller('MainCtrl', function($scope, $rootScope, $http, $documen
 			},
 			/* ======================[ @TODO: Home page of the website ]====================== */
 			home: {
-				title: 'Jonnie Spratley',
+				title: 'Profile',
 				body: 'I am excellent listener and communicator who effectively brings information verbally as well as in writing. Highly analytical thinking with demonstrated talent for identifying, scrutinizing, improving, and streamlining complex work processes. \nI am a computer-literate with extensive software proficiency covering wide variety of applications as well as programming all types of web applications. \nI am also a flexible team player who thrives in environments requiring ability to prioritize effectively and juggle multiple concurrent projects, and a driven achiever with exemplary planning and organizational skills, along with a high degree of detail orientation ',
 				features: [
 					{ slug: 'schedule', icon: 'desktop', image:'polaroid', title: 'Schedule', href: '/schedule', body: 'Just pick your day, time, package and your ready to go!' },
@@ -189,6 +190,14 @@ jspratleyApp.controller('MainCtrl', function($scope, $rootScope, $http, $documen
 							{ title: 'High School Diploma', subtitle: '', body: '' }
 						] 
 					}
+				]
+			},
+			portfolio: {
+				title: '',
+				body: '',
+				data: [
+					{ id: null, title: 'Web Design', type: 'section', body:'' },
+					{ id: null, title: 'Advanced Guide to Flex', type: 'post', image: '/assets/jonnie/images/post_acdguide1.png', body:'' }
 				]
 			}
 		},

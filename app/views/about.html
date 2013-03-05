@@ -1,1 +1,36 @@
-<p>This is the about view.</p>
+<div id="about" ng-controller="MainCtrl" ng-init="App.init()" class="page">
+	     <div class="row">
+			<div class="span8">
+				<div id="markdown-content"></div>
+			</div>		
+	      
+			<div class="span4">
+				<div class="well">
+					<div class="avatar">
+	                   <img ng-src="{{App.content.profile.image}}" src="/img/avatar.png"/>
+	               </div><!--/avatar -->
+	               <br class="clearfix" />
+
+	               <div class="bio">
+	                   <h1>{{App.content.profile.title}}</h1>
+						<p>{{App.content.profile.subtitle}}</p>
+	               </div><!--/bio -->
+	               <br class="clearfix" />
+
+	               <div class="contact">
+	                   <p ng-repeat="item in App.content.profile.data">{{item.title}} <i class="icon-{{item.icon}}"></i></p>
+
+	               </div><!--/contact -->
+	               <br class="clearfix" />
+
+	               <div class="button no-display">
+	                   <p><a class="btn no-radius btn-resume no-display" href="#" id="print"><i class="icon-print"></i> Print</a> 
+	                   <a class="btn no-radius btn-resume no-display" href="javascript:void(location.href='http://www.pdfspot.com/html-to-pdf-converter.aspx?url=' + escape(location.href)+'&pdf_name=' + escape('') + '&pdf_orientation=portrait&pdf_page_size=A4&scripts_enabled=true' )"><i class="icon-download-alt"></i> Download</a> 
+	               </div> <!--/button -->
+				</div><!--/.well -->
+	       </div><!--/span-->
+
+	     </div><!--/row-->
+
+	
+</div>

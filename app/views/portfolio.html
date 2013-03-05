@@ -1,1 +1,16 @@
-<p>This is the portfolio view.</p>
+<div id="portfolio-row" class="row-fluid">
+	<div class="span12">
+		
+		<div class="media" ng-repeat="item in App.content.portfolio.data">
+			<a class="pull-left" href="{{item.href}}" ng-show="item.image">
+                <img alt="image" class="img-polaroid" src="http://placehold.it/75" ng-src="{{item.image}}">
+              </a>			  
+			<div class="media-body">
+			<a href="{{item.href}}" class="btn btn-primary pull-right btn-small" ng-show="item.github">View Github</a>
+		    <h4 class="media-heading">{{item.title}}  <small>{{item.type}}</small></h4>
+			<p>{{item.body}}</p>
+		  </div>
+		</div>
+		
+	</div>
+</div>

@@ -28,9 +28,11 @@ h3.project-heading.ng-binding {
 /* My Comment */
 
 .projects li a.thumbnail img {
-	height: 250px;
+	height: 255px;
 	width: 100%;
 }
+
+/* My Comment */
 
 
 .carousel img{

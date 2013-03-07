@@ -56,6 +56,11 @@ jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile,
 				});
 			});
 		},
+		liveProjects:function(){
+		    $rootScope.App.Api.get('projects', null, function(data){
+                $rootScope.App.content.portfolio.data = data;
+            });
+		},
 		localProjects: function(){
 			$http.get('/assets/projects.json').success(function(data){
 				$rootScope.App.content.portfolio.data = data;			
@@ -120,9 +125,7 @@ jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile,
 			}
 		},
 		init: function(){
-			$rootScope.App.Api.get('projects', null, function(data){
-				$rootScope.App.content.portfolio.data = data;
-			});
+			this.localProjects();
 		},
 		project:null,
 		loadReadme: function(where){

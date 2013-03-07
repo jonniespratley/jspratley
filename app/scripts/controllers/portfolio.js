@@ -1,9 +1,12 @@
 'use strict';
 
-jspratleyApp.controller('PortfolioCtrl', function($scope) {
-  $scope.awesomeThings = [
-    'HTML5 Boilerplate',
-    'AngularJS',
-    'Testacular'
-  ];
+jspratleyApp.controller('PortfolioCtrl', function($scope, $rootScope) {
+	console.log($scope);
+	
+	$scope.project = {};
+	$scope.selectProject = function(p){
+		this.project = p;
+		console.log('selectProject', p);
+	}
+	
 });

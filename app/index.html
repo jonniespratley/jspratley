@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="styles/main.css"/>
 
     </head>
-    <body ng-app="jspratleyApp">
+    <body ng-app="jspratleyApp" ng-controller="AppCtrl">
 
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
@@ -34,8 +34,7 @@
 			        <span class="icon-bar"></span>
 			      </a>
 
-		          <a class="brand" href="#">
-					<i class="icon-box"></i>{{App.sitetitle}}</a>
+		          <a class="brand" href="#">{{App.sitetitle}}</a>
 
 			      <!-- Everything you want hidden at 940px or less, place within here -->
 			      <div class="nav-collapse collapse">
@@ -50,17 +49,28 @@
 			    </div>
 			  </div>
 			</div>
+			
+			
+		
+			
         <!-- Add your site or application content here -->
-        <div class="container" ng-view></div>
+        <div id="content" class="container">
+			<div ng-view></div>
 
-	     <hr>
 
-	     <footer>
-	       <p>Copyright &copy; 2013 jonniespratley </p>
-	     </footer>
+			     <hr>
+		     <footer class="row-fluid">		
+				<div class="span12">
+			       <p>Copyright &copy; 2013 jonniespratley </p>
+				</div>
+		     </footer>
 
-	   </div><!--/.fluid-container-->
+        </div>
+
+
+
 	
+
 		<script src="scripts/vendor/jquery.min.js"></script>
         <script src="scripts/vendor/angular.min.js"></script>
         <script src="scripts/vendor/angular-strap.min.js"></script>
@@ -75,6 +85,7 @@
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/portfolio.js"></script>
         <script src="scripts/controllers/contact.js"></script>
+        <script src="scripts/directives/sitetap.js"></script>
         <!-- endbuild -->
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. 

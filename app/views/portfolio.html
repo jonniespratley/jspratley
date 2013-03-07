@@ -1,16 +1,53 @@
-<div id="portfolio-row" class="row-fluid">
+<div id="portfolio-row" class="row-fluid" ng-controller="PortfolioCtrl">
 	<div class="span12">
-		
-		<div class="media" ng-repeat="item in App.content.portfolio.data">
-			<a class="pull-left" href="{{item.href}}" ng-show="item.image">
-                <img alt="image" class="img-polaroid" src="http://placehold.it/75" ng-src="{{item.image}}">
-              </a>			  
-			<div class="media-body">
-			<a href="{{item.href}}" class="btn btn-primary pull-right btn-small" ng-show="item.github">View Github</a>
-		    <h4 class="media-heading">{{item.title}}  <small>{{item.type}}</small></h4>
-			<p>{{item.body}}</p>
-		  </div>
+		<div class="page-header">
+		  <h1>Portfolio <small>just some stuff i built.</small></h1>
 		</div>
+		
+	<ul class="thumbnails projects">
+			<li class="span4 well" ng-repeat="item in App.content.portfolio.data">
+				<a class="thumbnail" data-toggle="modal" href="#projectDetailsModal" ng-click="App.selectProject(item);">
+				   <img alt="image" class="img-" src="http://placehold.it/320x250" ng-src="/assets/jonnie/{{item.project}}/thumb.png">
+	              </a>			  
+				<div class="project-body">
+			    	<h3 class="project-heading">{{item.title}}</h3>
+					<p>
+					 
+					</p>
+			  </div>
+			</li>
+	</ul>
+	
+	
+	
+	
+	
+	
+	<!-- @TODO: [Detail Modal] -->
+
+
+	<div class="modal fade hide" id="projectDetailsModal">
+	  <div class="modal-header">
+	    <button type="button" class="close" data-dismiss="modal">×</button>
+	    <h3>{{App.project.title}}</h3>
+	  </div>
+	  <div class="modal-body">
+		{{App.project.description}}
+	    {{App.project.screenshots}}
+	  </div>
+	  <div class="modal-footer">
+	    <a href="#" class="btn" data-dismiss="modal">Try the demo</a>
+		<a href="#" class="btn"> <i class="icon-github"></i> View Github</a>
+	  </div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
 		
 	</div>
 </div>

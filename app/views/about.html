@@ -1,9 +1,9 @@
-<div id="about" ng-controller="MainCtrl" ng-init="App.init()" class="page">
+<div id="about" class="page">
 	     <div class="row">
 			<div class="span8">
-				<div id="markdown-content"></div>
+				<div id="markdown-content" ng-init="App.loadReadme('README.md');"></div>
 			</div>		
-	      
+
 			<div class="span4">
 				<div class="well">
 					<div class="avatar">

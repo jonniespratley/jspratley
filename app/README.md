@@ -104,8 +104,12 @@ Creating Rich Components with Flash and Flex have never been so easy, you just n
 about, until now. Many designers and developers dislike using the Flash CS4 as there primary
 coding IDE when creating applications, website, or even simple banners. Why?
 
+---
+
+
 
 ## Code
+
 
 
 ### GITHUB 
@@ -113,3 +117,11 @@ https://github.com/jonniespratley
 
 ### BEHANCE
 http://www.behance.net/JonnieSpratley	
+
+
+
+
+---
+
+
+## Portfolio

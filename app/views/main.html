@@ -1,4 +1,4 @@
-<div id="main" ng-controller="MainCtrl" ng-init="App.init()" class="page">
+<div id="main" >
 
 	     <div class="row">
 
@@ -20,12 +20,24 @@
 	         </div>
 	         </div>
 	
-			<div id="content-row" class="row-fluid">
+	
+			<div id="portfolio-row" class="row-fluid">
 				<div class="span12">
-				 
+
+					<div class="media well" ng-repeat="item in App.content.portfolio.data">
+						<a class="pull-left" href="{{item.href}}" ng-show="item.image">
+			                <img alt="image" class="img-polaroid" src="http://placehold.it/75" ng-src="{{item.image}}" style="height:100px;">
+			              </a>			  
+						<div class="media-body">
+						<a href="{{item.href}}" class="btn btn-primary pull-right btn-small" ng-show="item.github">View Github</a>
+					    <h4 class="media-heading">{{item.title}}  </h4>
+						<p>{{item.description}}</p>
+						<small class="label label-info">{{item.status}}</small>
+					  </div>
+					</div>
+
 				</div>
 			</div>
-	
 
 	       </div><!--/span-->
 

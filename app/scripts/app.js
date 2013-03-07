@@ -48,11 +48,17 @@ jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile,
 
 	$rootScope.App = {
 		Api: Api,
-		syncProjects: function(){
-			angular.forEach($rootScope.App.content.portfolio.data, function(o){
-				$rootScope.App.Api.create('projects', o, function(data){
-					console.log(data);
+		projects:{},
+		syncProjects: function(items){
+			angular.forEach(items, function(o){
+				$rootScope.App.Api.create('projects', o, function(result){
+					console.log(result);
 				});
+			});
+		},
+		localProjects: function(){
+			$http.get('/assets/projects.json').success(function(data){
+				$rootScope.App.content.portfolio.data = data;			
 			});
 		},
 		sitetitle: 'Jonnie Spratley',

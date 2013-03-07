@@ -23,56 +23,57 @@
             <script src="scripts/vendor/json3.min.js"></script>
         <![endif]-->
 
-			<div class="navbar navbar-static-top navbar-inverse">
-			  <div class="navbar-inner">
-			    <div class="container">
+            <div class="navbar navbar-static-top navbar-inverse">
+              <div class="navbar-inner">
+                <div class="container">
 
-			      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-			      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			      </a>
+                  <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+                  <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </a>
 
-		          <a class="brand" href="#">{{App.sitetitle}}</a>
+                  <a class="brand" href="#">{{App.sitetitle}}</a>
 
-			      <!-- Everything you want hidden at 940px or less, place within here -->
-			      <div class="nav-collapse collapse">
-			        <!-- .nav, .navbar-search, .navbar-form, etc -->
-					    <ul class="nav pull-right animated">
+                  <!-- Everything you want hidden at 940px or less, place within here -->
+                  <div class="nav-collapse collapse">
+                    <!-- .nav, .navbar-search, .navbar-form, etc -->
+                        <ul class="nav pull-right animated">
 
-			              <li ng-repeat="item in App.menu.nav"><a href="{{item.href}}">{{item.title}}</a></li>		  
+                          <li ng-repeat="item in App.menu.nav"><a href="{{item.href}}">{{item.title}}</a></li>        
 
-			            </ul>
-			      </div>
+                        </ul>
+                  </div>
 
-			    </div>
-			  </div>
-			</div>
-			
-			
-		
-			
+                </div>
+              </div>
+            </div>
+            
+            
+        
+            
         <!-- Add your site or application content here -->
         <div id="content" class="container">
-			<div ng-view></div>
+            <div ng-view></div>
 
 
-			     <hr>
-		     <footer class="row-fluid">		
-				<div class="span12">
-			       <p>Copyright &copy; 2013 jonniespratley </p>
-				</div>
-		     </footer>
+                 <hr>
+             <footer class="row-fluid">     
+                <div class="span12">
+                   <p>Copyright &copy; 2013 jonniespratley </p>
+                </div>
+             </footer>
 
         </div>
 
 
 
-	
+    
 
-		<script src="scripts/vendor/jquery.min.js"></script>
+        <script src="scripts/vendor/jquery.min.js"></script>
         <script src="scripts/vendor/angular.min.js"></script>
+        <script src="scripts/vendor/angular-resource.js"></script>
         <script src="scripts/vendor/angular-strap.min.js"></script>
         <script src="scripts/vendor/angular-ui.min.js"></script>
         <script src="scripts/vendor/bootstrap.min.js"></script>
@@ -86,6 +87,8 @@
         <script src="scripts/controllers/portfolio.js"></script>
         <script src="scripts/controllers/contact.js"></script>
         <script src="scripts/directives/sitetap.js"></script>
+        <script src="scripts/controllers/manage.js"></script>
+        <script src="scripts/services/api.js"></script>
         <!-- endbuild -->
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. 

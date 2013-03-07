@@ -5,15 +5,13 @@
 		</div>
 		
 	<ul class="thumbnails projects">
-			<li class="span4 well" ng-repeat="item in App.content.portfolio.data">
+			<li class="span6 well" ng-repeat="item in App.content.portfolio.data">
 				<a class="thumbnail" data-toggle="modal" href="#projectDetailsModal" ng-click="App.selectProject(item);">
 				   <img alt="image" class="img-" src="http://placehold.it/320x250" ng-src="/assets/jonnie/{{item.project}}/thumb.png">
 	              </a>			  
 				<div class="project-body">
-			    	<h3 class="project-heading">{{item.title}}</h3>
-					<p>
-					 
-					</p>
+			    	<h3 class="project-heading">{{item.title}} <span class="label label-info">{{item.type}}</span></h3>
+				
 			  </div>
 			</li>
 	</ul>

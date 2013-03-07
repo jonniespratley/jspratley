@@ -1,6 +1,7 @@
 
 
-/* @override http://localhost:3501/styles/main.css */
+/* @override http://localhost:5050/styles/main.css */
+
 
 /* 
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
@@ -10,10 +11,25 @@ Will be compiled down to a single stylesheet with your sass files */
 @import url("//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css");
 @import url('bootstrap.min.css');
 @import url('bootstrap-responsive.min.css');
+
+h3.project-heading.ng-binding {
+	font-size: 1.5em;
+	text-align: center;
+}
+
 .projects li{
 	margin-left: 1% !important;
 	overflow: hidden;
+
+	
+	
+}
+
+/* My Comment */
+
+.projects li a.thumbnail img {
 	height: 250px;
+	width: 100%;
 }
 
 

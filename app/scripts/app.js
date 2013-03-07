@@ -2,22 +2,39 @@
 
 var jspratleyApp = angular.module('jspratleyApp', [])
   .config(['$routeProvider', function($routeProvider) {
+    var routeResolver = {
+        delay : function($q, $timeout) {
+            var delay = $q.defer();
+            $timeout(delay.resolve, 500);
+            return delay.promise;
+        }
+    };
+    
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: 'MainCtrl',
+        resolve: routeResolver
       })
       .when('/about', {
         templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+        controller: 'AboutCtrl',
+        resolve: routeResolver
       })
       .when('/portfolio', {
         templateUrl: 'views/portfolio.html',
-        controller: 'PortfolioCtrl'
+        controller: 'PortfolioCtrl',
+        resolve: routeResolver
       })
       .when('/contact', {
         templateUrl: 'views/contact.html',
-        controller: 'ContactCtrl'
+        controller: 'ContactCtrl',
+        resolve: routeResolver
+      })
+      .when('/manage', {
+        templateUrl: 'views/manage.html',
+        controller: 'ManageCtrl',
+        resolve: routeResolver
       })
       .otherwise({
         redirectTo: '/'
@@ -26,10 +43,18 @@ var jspratleyApp = angular.module('jspratleyApp', [])
 
 
 /* ======================[ @TODO: GLobal app controller ]====================== */
-jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile) {
+jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile, Api) {
 	
 
 	$rootScope.App = {
+		Api: Api,
+		syncProjects: function(){
+			angular.forEach($rootScope.App.content.portfolio.data, function(o){
+				$rootScope.App.Api.create('projects', o, function(data){
+					console.log(data);
+				});
+			});
+		},
 		sitetitle: 'Jonnie Spratley',
 		menu: {
 			nav: [
@@ -89,10 +114,8 @@ jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile)
 			}
 		},
 		init: function(){
-
-			$http.get('/assets/projects.json').success(function(data){
-				$rootScope.App.content.portfolio.data = data.data;
-				console.log('gotProjects', data);
+			$rootScope.App.Api.get('projects', null, function(data){
+				$rootScope.App.content.portfolio.data = data;
 			});
 		},
 		project:null,

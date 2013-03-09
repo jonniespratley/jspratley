@@ -1,3 +1,7 @@
+# About
+
+This is about Jonnie Spratley.
+
 ## Certifications »
 
 #### ADOBE FLEX 4 EXPERT  

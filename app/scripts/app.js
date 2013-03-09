@@ -44,7 +44,8 @@ var jspratleyApp = angular.module('jspratleyApp', [])
 
 /* ======================[ @TODO: GLobal app controller ]====================== */
 jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile, Api) {
-	
+	//https://dl.dropbox.com/u/26906414/jonniespratley.me/jonnie/
+	$rootScope.cdn = '/assets/jonnie/';
 
 	$rootScope.App = {
 		Api: Api,
@@ -63,7 +64,7 @@ jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile,
 		},
 		localProjects: function(){
 			$http.get('/assets/projects.json').success(function(data){
-				$rootScope.App.content.portfolio.data = data;			
+				$rootScope.App.content.portfolio.data = data;
 			});
 		},
 		sitetitle: 'Jonnie Spratley',

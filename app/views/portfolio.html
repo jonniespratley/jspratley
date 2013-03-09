@@ -5,9 +5,9 @@
 		</div>
 		
 	<ul class="thumbnails projects">
-			<li class="span6 well" ng-repeat="item in App.content.portfolio.data">
+			<li class="span4 well" ng-repeat="item in App.content.portfolio.data">
 				<a class="thumbnail" data-toggle="modal" href="#projectDetailsModal" ng-click="App.selectProject(item);">
-				   <img alt="image" class="img-" src="http://placehold.it/320x250" ng-src="/assets/jonnie/{{item.project}}/thumb.png">
+				   <img alt="image" class="img-" src="http://placehold.it/320x250" ng-src="{{cdn}}{{item.project}}/thumb.png">
 	              </a>			  
 				<div class="project-body">
 			    	<h3 class="project-heading">{{item.title}} <span class="label label-info">{{item.type}}</span></h3>
@@ -34,7 +34,7 @@
        <div class="carousel-inner">
 		<!-- @TODO: [App.content.home.features] -->
          <div class="item {{item.type}}" ng-repeat="item in App.project.screenshots">
-           <img ng-src="http://placehold.it/620x350" alt="" ng-src="{{item.image}}"/>
+           <img ng-src="http://placehold.it/620x350" alt="" ng-src="https://dl.dropbox.com/u/26906414/jonniespratley.me/jonnie/{{item.image}}"/>
            <div class="carousel-caption">
              <h4>{{item.title}}</h4>
              <p>{{item.body}}</p>

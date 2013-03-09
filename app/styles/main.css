@@ -8,7 +8,7 @@
 @import url('../css/whiteandclean.css');
 Will be compiled down to a single stylesheet with your sass files */
 @import url('../css/style.css');
-@import url("//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css");
+@import url("font-awesome.min.css");
 @import url('bootstrap.min.css');
 @import url('bootstrap-responsive.min.css');
 
@@ -28,7 +28,7 @@ h3.project-heading.ng-binding {
 /* My Comment */
 
 .projects li a.thumbnail img {
-	height: 255px;
+	max-height: 220px;
 	width: 100%;
 }
 

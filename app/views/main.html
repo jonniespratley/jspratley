@@ -7,7 +7,7 @@
 				<div id="myCarousel" class="carousel slide">
 	           <div class="carousel-inner">
 				<!-- @TODO: [App.content.home.features] -->
-	             <div class="item {{item.type}}" ng-repeat="item in App.content.home.slider">
+	             <div class="item {{item.type}}" ng-repeat="item in App.content.portfolio.slider">
 	               <img src="http://placehold.it/620x350" alt="" ng-src="{{item.image}}"/>
 	               <div class="carousel-caption">
 	                 <h4>{{item.title}}</h4>
@@ -25,8 +25,10 @@
 				<div class="span12">
 
 					<div class="media well" ng-repeat="item in App.content.portfolio.data">
-						<a class="pull-left" href="{{item.href}}" ng-show="item.image">
-			                <img alt="image" class="img-polaroid" src="http://placehold.it/75" ng-src="{{item.image}}" style="height:100px;">
+						<a class="pull-left" href="{{item.href}}">
+							<img alt="image" class="img-polaroid" src="http://placehold.it/75" 
+								style="width:135px;"
+								ng-src="{{cdn}}{{item.project}}/thumb.png">
 			              </a>			  
 						<div class="media-body">
 						<a href="{{item.href}}" class="btn btn-primary pull-right btn-small" ng-show="item.github">View Github</a>

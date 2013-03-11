@@ -2,6 +2,8 @@
 
 This is about Jonnie Spratley.
 
+Updated this file.
+
 ## Certifications »
 
 #### ADOBE FLEX 4 EXPERT  

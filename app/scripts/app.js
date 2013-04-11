@@ -1,6 +1,6 @@
 'use strict';
 
-var jspratleyApp = angular.module('jspratleyApp', [])
+var jspratleyApp = angular.module('jspratleyApp', ['ngGrid'])
   .config(['$routeProvider', function($routeProvider) {
     var routeResolver = {
         delay : function($q, $timeout) {
@@ -51,42 +51,49 @@ jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile,
 		Api: Api,
 		projects:{},
 		syncProjects: function(items){
+		    if(!items){
+		        items = $rootScope.App.content.portfolio.data; 
+		    }
 			angular.forEach(items, function(o){
-				$rootScope.App.Api.create('projects', o, function(result){
-					console.log(result);
+				Api.create('projects', o, function(result){
+					console.log('API-save', o, result);
 				});
 			});
+			return items;
 		},
 		liveProjects:function(){
 		    $rootScope.App.Api.get('projects', null, function(data){
                 $rootScope.App.content.portfolio.data = data;
+                return data;
             });
+             
 		},
 		localProjects: function(){
-			$http.get('/assets/projects.json').success(function(data){
+			$http.get('/projects.json').success(function(data){
 				$rootScope.App.content.portfolio.data = data;
+				return data;
 			});
 		},
 		sitetitle: 'Jonnie Spratley',
 		menu: {
 			nav: [
 			//	{id: null, href: '#/', title: 'Home'},
-				{id: null, href: '#/about', title: 'About'},
-				{id: null, href: '#/portfolio', title: 'Portfolio'},
-				{id: null, href: '#/contact', title: 'Contact'}
+			//	{id: null, href: '#/about', title: 'About'},
+			//	{id: null, href: '#/portfolio', title: 'Portfolio'},
+			//	{id: null, href: '#/contact', title: 'Contact'}
 			]
 		},
 		content:{
 			profile: {
 				title: 'Jonnie Spratley',
 				subtitle: 'JavaScript Expert, Application Architect',
-				image: '/img/avatar.png',
+				image: '/assets/jonnie/avatar.png',
 				data:[
 					{ title: 'AppMatrix, Inc.', icon: 'home' },
 					{ title: 'Citrus Heights, CA', icon: 'map-marker' },
 					{ title: 'jonniespratley', icon: 'facebook' },
 					{ title: 'jonniespratley', icon: 'twitter' },
-					{ title: 'JonnieSpratley@me.com', icon: 'mail' }
+					{ title: 'jonniespratley@me.com', icon: 'envelope-alt' }
 				],
 				address: 'PO BOX 340091, Sacramento, CA 95834-0091',
 				phone: '(916) 802-8618',
@@ -129,14 +136,15 @@ jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile,
 			this.localProjects();
 		},
 		project:null,
-		loadReadme: function(where){
+		loadReadme: function(where, el){
 			$http.get(where).success(function(data){
-				angular.element('#markdown-content').html(markdown.toHTML(data));
+				angular.element(el).html(markdown.toHTML(data));
 			});	
 		},
 		selectProject: function(p){
 			this.project = p;
 			console.log('selectProject', p);
+			this.loadReadme('/assets/jonnie/'+p.project+'/README.md', '#project-markdown-content');
 		}
 	};
 

@@ -56,7 +56,7 @@ task :deploy => :build do
   login = 'root'
   
   Net::SSH.start(server, login, :password => "fred3212") do |ssh|
-    ssh.scp.upload!("dist", "/var/www", { :recursive => true, :verbose => true }) do |ch, name, sent, total|
+    ssh.scp.upload!("www", "/var", { :recursive => true, :verbose => true }) do |ch, name, sent, total|
       puts "#{name}: #{sent}/#{total}"
     end
   end

@@ -1,49 +1,7 @@
-
-
-/* @override http://localhost:5050/styles/main.css */
-
-
-/* 
-<link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
-@import url('../css/whiteandclean.css');
-Will be compiled down to a single stylesheet with your sass files */
-@import url('../css/style.css');
-@import url("font-awesome.min.css");
+/* Will be compiled down to a single stylesheet with your sass files */
 @import url('bootstrap.min.css');
 @import url('bootstrap-responsive.min.css');
-
-h3.project-heading.ng-binding {
-	font-size: 1.5em;
-	text-align: center;
-}
-
-.projects li{
-	margin-left: 1% !important;
-	overflow: hidden;
-
-	
-	
-}
-
-/* My Comment */
-
-.projects li a.thumbnail img {
-	max-height: 220px;
-	width: 100%;
-}
-
-/* My Comment */
-
-
-.carousel img{
-	width: 100%;
-}
-.page{
-	padding-top: 25px;
-}
-.bio h1{
-	text-align: center;
-	white-space: nowrap;
-	font-size: 2.3em;
-}
+@import url('style.css');
+@import url("font-awesome.min.css");
+@import url('ng-grid.css');
 

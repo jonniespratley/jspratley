@@ -11,7 +11,7 @@ module.exports = function (grunt) {
   // configurable paths
   var yeomanConfig = {
     app: 'app',
-    dist: 'dist'
+    dist: 'www'
   };
 
   try {
@@ -222,10 +222,13 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>',
           dest: '<%= yeoman.dist %>',
           src: [
-            '*.{ico,txt}',
+            '*.{ico,txt,json,md}',
             '.htaccess',
             'scripts/vendor/**/*',
-            'components/**/*'
+			//Dont need to copy this all the time
+            'ico/**/*',
+           // 'assets/**/*',
+           // 'components/**/*',
           ]
         }]
       }
@@ -268,8 +271,8 @@ module.exports = function (grunt) {
     'copy',
     'cdnify',
     'usemin',
-    'ngmin',
-    'uglify'
+    //'ngmin',
+   // 'uglify'
   ]);
 
   grunt.registerTask('default', ['build']);

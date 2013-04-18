@@ -1,0 +1,52 @@
+<!-- saved from url=(0014)about:internet -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>SourceViewerController.as</title>
+<link rel="stylesheet" type="text/css" href="../../../../../SourceStyles.css"/>
+</head>
+
+<body><pre><span class="ActionScriptASDoc">/** ***********************************************
+ * SourceViewer
+ *
+ * MyCodeIsYourCode
+ *
+ * @author  Jonnie Spratley
+ * @date 3/05/2009
+ * @licence MCIYC
+ * @website http://jonniespratley.com/code
+ * @contact jonniespratley@gmail.com
+ *********************************************** */</span>
+<span class="ActionScriptpackage">package</span> <span class="ActionScriptDefault_Text">com</span><span class="ActionScriptOperator">.</span><span class="ActionScriptDefault_Text">jonniespratley</span><span class="ActionScriptOperator">.</span><span class="ActionScriptDefault_Text">SourceViewer</span><span class="ActionScriptOperator">.</span><span class="ActionScriptDefault_Text">control</span>
+<span class="ActionScriptBracket/Brace">{</span>
+    <span class="ActionScriptReserved">import</span> <span class="ActionScriptDefault_Text">com</span><span class="ActionScriptOperator">.</span><span class="ActionScriptDefault_Text">adobe</span><span class="ActionScriptOperator">.</span><span class="ActionScriptDefault_Text">cairngorm</span><span class="ActionScriptOperator">.</span><span class="ActionScriptDefault_Text">control</span><span class="ActionScriptOperator">.</span><span class="ActionScriptDefault_Text">FrontController</span>;
+    <span class="ActionScriptReserved">import</span> <span class="ActionScriptDefault_Text">com</span><span class="ActionScriptOperator">.</span><span class="ActionScriptDefault_Text">jonniespratley</span><span class="ActionScriptOperator">.</span><span class="ActionScriptDefault_Text">SourceViewer</span><span class="ActionScriptOperator">.</span><span class="ActionScriptDefault_Text">commands</span><span class="ActionScriptOperator">.</span><span class="ActionScriptOperator">*</span>;
+    <span class="ActionScriptReserved">import</span> <span class="ActionScriptDefault_Text">com</span><span class="ActionScriptOperator">.</span><span class="ActionScriptDefault_Text">jonniespratley</span><span class="ActionScriptOperator">.</span><span class="ActionScriptDefault_Text">SourceViewer</span><span class="ActionScriptOperator">.</span><span class="ActionScriptDefault_Text">events</span><span class="ActionScriptOperator">.</span><span class="ActionScriptOperator">*</span>;
+
+    <span class="ActionScriptASDoc">/**
+     * The Front Controller is a central place where all the commands are mapped to
+     * the relevant events. Once an event is dispatched, the Front Controller finds
+     * the corresponding command to execute.
+     */</span>
+    <span class="ActionScriptReserved">public</span> <span class="ActionScriptReserved">final</span> <span class="ActionScriptclass">class</span> <span class="ActionScriptDefault_Text">SourceViewerController</span> <span class="ActionScriptReserved">extends</span> <span class="ActionScriptDefault_Text">FrontController</span>
+    <span class="ActionScriptBracket/Brace">{</span>
+        <span class="ActionScriptReserved">public</span> <span class="ActionScriptfunction">function</span> <span class="ActionScriptDefault_Text">SourceViewerController</span><span class="ActionScriptBracket/Brace">(</span><span class="ActionScriptBracket/Brace">)</span>
+        <span class="ActionScriptBracket/Brace">{</span>
+            <span class="ActionScriptReserved">this</span><span class="ActionScriptOperator">.</span><span class="ActionScriptDefault_Text">initialize</span><span class="ActionScriptBracket/Brace">(</span><span class="ActionScriptBracket/Brace">)</span>;
+        <span class="ActionScriptBracket/Brace">}</span>
+
+        <span class="ActionScriptReserved">private</span> <span class="ActionScriptfunction">function</span> <span class="ActionScriptDefault_Text">initialize</span><span class="ActionScriptBracket/Brace">(</span><span class="ActionScriptBracket/Brace">)</span>:<span class="ActionScriptReserved">void</span>
+        <span class="ActionScriptBracket/Brace">{</span>
+            <span class="ActionScriptComment">//Map events.WHAT TYPE OF EVENT, to COMMAND
+</span>            <span class="ActionScriptReserved">this</span><span class="ActionScriptOperator">.</span><span class="ActionScriptDefault_Text">addCommand</span><span class="ActionScriptBracket/Brace">(</span><span class="ActionScriptDefault_Text">GetDirectoryEvent</span><span class="ActionScriptOperator">.</span><span class="ActionScriptDefault_Text">GET_DIRECTORY_EVENT</span><span class="ActionScriptOperator">,</span> <span class="ActionScriptDefault_Text">GetDirectoryCommand</span><span class="ActionScriptBracket/Brace">)</span>;
+            <span class="ActionScriptReserved">this</span><span class="ActionScriptOperator">.</span><span class="ActionScriptDefault_Text">addCommand</span><span class="ActionScriptBracket/Brace">(</span><span class="ActionScriptDefault_Text">ReadFileEvent</span><span class="ActionScriptOperator">.</span><span class="ActionScriptDefault_Text">READ_FILE_EVENT</span><span class="ActionScriptOperator">,</span> <span class="ActionScriptDefault_Text">ReadFileCommand</span><span class="ActionScriptBracket/Brace">)</span>;
+            <span class="ActionScriptReserved">this</span><span class="ActionScriptOperator">.</span><span class="ActionScriptDefault_Text">addCommand</span><span class="ActionScriptBracket/Brace">(</span><span class="ActionScriptDefault_Text">SelectedFileEvent</span><span class="ActionScriptOperator">.</span><span class="ActionScriptDefault_Text">SELECTED_FILE_EVENT</span><span class="ActionScriptOperator">,</span> <span class="ActionScriptDefault_Text">SelectedFileCommand</span><span class="ActionScriptBracket/Brace">)</span>;
+            <span class="ActionScriptReserved">this</span><span class="ActionScriptOperator">.</span><span class="ActionScriptDefault_Text">addCommand</span><span class="ActionScriptBracket/Brace">(</span><span class="ActionScriptDefault_Text">GetWorkspaceEvent</span><span class="ActionScriptOperator">.</span><span class="ActionScriptDefault_Text">GET_WORKSPACE_EVENT</span><span class="ActionScriptOperator">,</span> <span class="ActionScriptDefault_Text">GetWorkspaceCommand</span><span class="ActionScriptBracket/Brace">)</span>;
+
+            <span class="ActionScriptComment">//todo: add commands
+</span>        <span class="ActionScriptBracket/Brace">}</span>
+    <span class="ActionScriptBracket/Brace">}</span>
+<span class="ActionScriptBracket/Brace">}</span>
+</pre></body>
+</html>

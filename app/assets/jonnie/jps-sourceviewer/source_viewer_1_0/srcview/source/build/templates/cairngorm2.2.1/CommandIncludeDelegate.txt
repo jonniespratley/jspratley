@@ -1,0 +1,52 @@
+@copy@
+package @namespace@.commands
+{
+	import com.adobe.cairngorm.commands.ICommand;
+	import com.adobe.cairngorm.control.CairngormEvent;
+
+	import @namespace@.events.@sequence@Event;
+	import @namespace@.model.ModelLocator;
+	import @namespace@.vo.*;
+
+	import mx.rpc.events.FaultEvent;
+	import mx.rpc.events.ResultEvent;
+	import mx.rpc.AsyncToken;
+	import mx.rpc.IResponder;
+	import mx.controls.Alert;
+	import mx.collections.ArrayCollection;
+
+	/**
+	 * For every feature or use case in your application, a corresponding custom command
+	 * and event must be created. Each command contains an execute() method that is run
+	 * by the framework when the user action has been executed.
+	 * These classes are occasionally referred to as worker classes because they carry
+	 * out the work for an application.
+	 *
+	 */
+	public class @sequence@Command implements ICommand, IResponder
+	{
+		private var model:ModelLocator = ModelLocator.getInstance();
+
+		public function execute( event:CairngormEvent ) : void
+		{
+			var evt:@sequence@Event = event as @sequence@Event;
+			//todo: Add the Service Call Below
+
+		}
+
+		public function result( data:Object ) : void
+		{
+			var result:ResultEvent = data as ResultEvent;
+			//todo: add result handler
+			
+		}
+
+		public function fault( fault:Object ):void
+		{
+			var faultEvt:FaultEvent = fault as FaultEvent;
+			Alert.show(faultEvt.fault.toString(), "Error");
+			trace(faultEvt.fault.faultString);
+		}
+
+	}
+}

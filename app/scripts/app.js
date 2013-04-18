@@ -77,9 +77,9 @@ jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile,
 		sitetitle: 'Jonnie Spratley',
 		menu: {
 			nav: [
-			//	{id: null, href: '#/', title: 'Home'},
-			//	{id: null, href: '#/about', title: 'About'},
-			//	{id: null, href: '#/portfolio', title: 'Portfolio'},
+			//	{id: null, href: '#/', title: 'Jonnie Spratley'},
+				{id: null, href: '#/about', title: 'About'},
+				{id: null, href: '#/portfolio', title: 'Portfolio'},
 			//	{id: null, href: '#/contact', title: 'Contact'}
 			]
 		},

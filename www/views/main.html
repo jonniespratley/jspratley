@@ -5,16 +5,16 @@
 
 		<div id="contact-row" class="row-fluid">
 			
-			<div class="span8">
+			<div class="span12">
 				
-					<!-- @TODO: [About] -->
+					<!-- @TODO: [About] 
 					<div id="about-row" class="row-fluid">
 						<div class="span12">
 							<div id="markdown-content" ng-init="App.loadReadme( '/README.md', '#markdown-content');"></div>
 						</div>
 					</div>
-
-					<!-- @TODO: [Portfolio] -->
+-->
+					<!-- @TODO: [Portfolio] 
 					<div id="portfolio-row" class="row-fluid">
 						<div class="span12">					
 							<div class="page-header">
@@ -25,7 +25,10 @@
 							<div class="media well" ng-repeat="item in App.content.portfolio.data">
 
 								<a class="pull-left" data-toggle="modal" href="#projectDetailsModal">
-									<img alt="image" class="img-polaroid" src="http://placehold.it/75" style="width:135px" ng-click="App.selectProject(item);" ng-src="{{cdn}}{{item.project}}/thumb.png">
+									<img alt="image" class="img-polaroid" src="http://placehold.it/75" 
+										style="width:135px;"
+										ng-click="App.selectProject(item);"
+										ng-src="{{cdn}}{{item.project}}/thumb.png">
 					              </a>			  
 								<div class="media-body">
 									<a href="{{item.href}}" class="btn btn-primary pull-right btn-small" ng-show="item.github">View Github</a>
@@ -34,9 +37,10 @@
 								<small class="label label-inverse">{{item.technologies}}</small>
 							  </div>
 							</div>
+							-->
 							
 							
-							<!-- @TODO: [Detail Modal] -->
+							<!-- @TODO: [Detail Modal] 
 							<div class="modal fade hide" id="projectDetailsModal">
 							  <div class="modal-header">
 							    <button type="button" class="close" data-dismiss="modal">×</button>
@@ -49,7 +53,7 @@
 								<a href="#" class="btn"> <i class="icon-github"></i> View Github</a>
 							  </div>
 							</div>
-							
+							-->
 							
 				       </div><!--/span-->
 					</div><!--/row-->
@@ -57,7 +61,7 @@
 			</div>
 			
  
-			<div class="span4">
+			<div class="span4 hidden">
 			
 				<div class="well">
 					<div class="avatar">
@@ -85,5 +89,4 @@
 			</div>	
 
 			
-		</div>	
-</div>
+			

@@ -1,0 +1,11 @@
+/** ***********************************************
+ * SourceViewer
+ *
+ * MyCodeIsYourCode
+ *
+ * @author  Jonnie Spratley
+ * @date 3/05/2009
+ * @licence MCIYC
+ * @website http://jonniespratley.com/code
+ * @contact jonniespratley@gmail.com
+ *********************************************** */

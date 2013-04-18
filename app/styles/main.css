@@ -1,3 +1,5 @@
+/* @override http://localhost:5050/styles/main.css */
+
 /* Will be compiled down to a single stylesheet with your sass files */
 @import url('bootstrap.min.css');
 @import url('bootstrap-responsive.min.css');
@@ -5,3 +7,120 @@
 @import url("font-awesome.min.css");
 @import url('ng-grid.css');
 
+body{
+	padding-top: 60px;
+}
+
+div.name-text {
+	font-size: 40px;
+	line-height: 1.2em;
+}
+
+ div.major-text i {
+	color: #666;
+}
+
+h3.project-heading.ng-binding {
+	font-size: 1.5em;
+	text-align: center;
+}
+
+.projects li{
+	margin-left: 1% !important;
+	overflow: hidden;
+	
+}
+
+/* My Comment */
+
+.projects li a.thumbnail img {
+	width: 100%;
+	height: 180px;
+}
+
+div.hero-unit {
+	padding: 15px;	
+}
+
+#content footer p {
+	text-align: center;
+	font-size: 11px;
+	color: #666;
+}
+
+
+#projectCarousel {
+	min-height: 200px;
+}
+
+/* My Comment */
+
+
+.carousel img{
+	width: 100%;
+}
+.page{
+	padding-top: 25px;
+}
+.bio h1{
+	text-align: right;
+	white-space: nowrap;
+	font-size: 180%;
+	margin-bottom: 0;
+}
+
+div.bio p{
+	font-size: 90%;
+	color: #777;
+}
+
+h1{
+	
+	
+}
+
+h2{
+	font-size: 2em;
+	border-bottom: 1px solid #eee;
+
+
+}
+
+div.contact , .bio{
+text-align: right;
+}
+h3{
+	font-size: 1.4em;
+	
+	margin-top: 20px;
+	margin-bottom: 0px;
+}
+h4{
+	
+	margin-top: 20px;
+	margin-bottom: 0px;
+}
+
+h5{
+	font-size: 2em;
+}
+
+h5{
+	font-size: 2em;
+}
+
+em{
+	font-size: .8em;
+
+	color: #777;
+}
+
+#markdown-content p em {
+}
+
+#markdown-content p {
+}
+
+strong {
+	
+}

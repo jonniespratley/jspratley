@@ -1,0 +1,218 @@
+<!-- saved from url=(0014)about:internet -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>sourceViewer.as</title>
+<link rel="stylesheet" type="text/css" href="../../../../../SourceStyles.css"/>
+</head>
+
+<body><pre><span class="ActionScriptComment">// ActionScript file
+</span><span class="ActionScriptReserved">import</span> <span class="ActionScriptDefault_Text">net</span>.<span class="ActionScriptDefault_Text">anirudh</span>.<span class="ActionScriptDefault_Text">as3syntaxhighlight</span>.<span class="ActionScriptDefault_Text">PseudoThread</span>;
+            <span class="ActionScriptReserved">import</span> <span class="ActionScriptDefault_Text">net</span>.<span class="ActionScriptDefault_Text">anirudh</span>.<span class="ActionScriptDefault_Text">as3syntaxhighlight</span>.<span class="ActionScriptDefault_Text">CodePrettyPrint</span>;
+
+            <span class="ActionScriptReserved">private</span> <span class="ActionScriptvar">var</span> <span class="ActionScriptDefault_Text">cssString</span><span class="ActionScriptOperator">:</span><span class="ActionScriptDefault_Text">String</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptString">&quot;&quot;</span> <span class="ActionScriptOperator">+</span>
+                    <span class="ActionScriptString">&quot;.spl { color: #4f94cd; } &quot;</span> <span class="ActionScriptOperator">+</span>
+                    <span class="ActionScriptString">&quot;.str { color: #990000; } &quot;</span> <span class="ActionScriptOperator">+</span>
+                    <span class="ActionScriptString">&quot;.kwd { color: #000088; } &quot;</span> <span class="ActionScriptOperator">+</span>
+                    <span class="ActionScriptString">&quot;.com { color: #009900; } &quot;</span> <span class="ActionScriptOperator">+</span>
+                    <span class="ActionScriptString">&quot;.typ { color: #0068CF; } &quot;</span> <span class="ActionScriptOperator">+</span>
+                    <span class="ActionScriptString">&quot;.lit { color: #6699CC; } &quot;</span> <span class="ActionScriptOperator">+</span>
+                    <span class="ActionScriptString">&quot;.pun { color: #666600; } &quot;</span> <span class="ActionScriptOperator">+</span>
+                    <span class="ActionScriptString">&quot;.pln { color: #222222; } &quot;</span> <span class="ActionScriptOperator">+</span>
+                    <span class="ActionScriptString">&quot;.tag { color: #0000ff; } &quot;</span> <span class="ActionScriptOperator">+</span>
+                    <span class="ActionScriptString">&quot;.atn { color: #660066; } &quot;</span> <span class="ActionScriptOperator">+</span>
+                    <span class="ActionScriptString">&quot;.atv { color: #0033ff; } &quot;</span> <span class="ActionScriptOperator">+</span>
+                    <span class="ActionScriptString">&quot;.dec { color: #660066; } &quot;</span>;
+
+            <span class="ActionScriptReserved">private</span> <span class="ActionScriptvar">var</span> <span class="ActionScriptDefault_Text">codeStyle</span><span class="ActionScriptOperator">:</span><span class="ActionScriptDefault_Text">StyleSheet</span>;
+            <span class="ActionScriptReserved">private</span> <span class="ActionScriptvar">var</span> <span class="ActionScriptDefault_Text">codePrettyPrint</span><span class="ActionScriptOperator">:</span><span class="ActionScriptDefault_Text">CodePrettyPrint</span>;
+            <span class="ActionScriptReserved">private</span> <span class="ActionScriptvar">var</span> <span class="ActionScriptDefault_Text">codeTimer</span><span class="ActionScriptOperator">:</span><span class="ActionScriptDefault_Text">Timer</span>;
+            <span class="ActionScriptReserved">private</span> <span class="ActionScriptvar">var</span> <span class="ActionScriptDefault_Text">asyncStop</span><span class="ActionScriptOperator">:</span><span class="ActionScriptDefault_Text">Boolean</span>;
+            <span class="ActionScriptReserved">private</span> <span class="ActionScriptvar">var</span> <span class="ActionScriptDefault_Text">asyncRunning</span><span class="ActionScriptOperator">:</span><span class="ActionScriptDefault_Text">Boolean</span>;
+            <span class="ActionScriptReserved">private</span> <span class="ActionScriptvar">var</span> <span class="ActionScriptDefault_Text">codeStylePF</span><span class="ActionScriptOperator">:</span><span class="ActionScriptDefault_Text">StyleSheet</span>;
+            <span class="ActionScriptReserved">private</span> <span class="ActionScriptvar">var</span> <span class="ActionScriptDefault_Text">srclenPF</span><span class="ActionScriptOperator">:</span><span class="ActionScriptDefault_Text">int</span>;
+            <span class="ActionScriptReserved">private</span> <span class="ActionScriptvar">var</span> <span class="ActionScriptDefault_Text">arrPF</span><span class="ActionScriptOperator">:</span><span class="ActionScriptDefault_Text">Array</span>;
+            <span class="ActionScriptReserved">private</span> <span class="ActionScriptvar">var</span> <span class="ActionScriptDefault_Text">lenPF</span><span class="ActionScriptOperator">:</span><span class="ActionScriptDefault_Text">int</span>;
+            <span class="ActionScriptReserved">private</span> <span class="ActionScriptvar">var</span> <span class="ActionScriptDefault_Text">firstNodePF</span><span class="ActionScriptOperator">:</span><span class="ActionScriptDefault_Text">Boolean</span>;
+            <span class="ActionScriptReserved">private</span> <span class="ActionScriptvar">var</span> <span class="ActionScriptDefault_Text">firstIndexPF</span><span class="ActionScriptOperator">:</span><span class="ActionScriptDefault_Text">int</span>;
+            <span class="ActionScriptReserved">private</span> <span class="ActionScriptvar">var</span> <span class="ActionScriptDefault_Text">pfasyncrunning</span><span class="ActionScriptOperator">:</span><span class="ActionScriptDefault_Text">Boolean</span>;
+            <span class="ActionScriptReserved">private</span> <span class="ActionScriptvar">var</span> <span class="ActionScriptDefault_Text">pfasyncstop</span><span class="ActionScriptOperator">:</span><span class="ActionScriptDefault_Text">Boolean</span>;
+            <span class="ActionScriptReserved">private</span> <span class="ActionScriptvar">var</span> <span class="ActionScriptDefault_Text">desclenPF</span><span class="ActionScriptOperator">:</span><span class="ActionScriptDefault_Text">int</span>;
+            <span class="ActionScriptReserved">private</span> <span class="ActionScriptvar">var</span> <span class="ActionScriptDefault_Text">colorThread</span><span class="ActionScriptOperator">:</span><span class="ActionScriptDefault_Text">PseudoThread</span>;
+            <span class="ActionScriptBracket/Brace">[</span><span class="ActionScriptMetadata">Bindable</span><span class="ActionScriptBracket/Brace">]</span> <span class="ActionScriptReserved">private</span> <span class="ActionScriptvar">var</span> <span class="ActionScriptDefault_Text">asyncCodeState</span><span class="ActionScriptOperator">:</span><span class="ActionScriptDefault_Text">String</span>;
+<span class="ActionScriptReserved">private</span> <span class="ActionScriptfunction">function</span> <span class="ActionScriptDefault_Text">codeHighlight</span><span class="ActionScriptBracket/Brace">()</span><span class="ActionScriptOperator">:</span><span class="ActionScriptReserved">void</span>
+            <span class="ActionScriptBracket/Brace">{</span>
+                <span class="ActionScriptReserved">if</span> <span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptOperator">!</span><span class="ActionScriptDefault_Text">codeTimer</span> <span class="ActionScriptBracket/Brace">)</span>
+                <span class="ActionScriptBracket/Brace">{</span>
+                    <span class="ActionScriptDefault_Text">codeTimer</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptReserved">new</span> <span class="ActionScriptDefault_Text">Timer</span><span class="ActionScriptBracket/Brace">(</span> 200, 1 <span class="ActionScriptBracket/Brace">)</span>;
+                    <span class="ActionScriptDefault_Text">codeTimer</span>.<span class="ActionScriptDefault_Text">addEventListener</span><span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptDefault_Text">TimerEvent</span>.<span class="ActionScriptDefault_Text">TIMER</span>, <span class="ActionScriptDefault_Text">doPrettyPrint</span> <span class="ActionScriptBracket/Brace">)</span>;
+                <span class="ActionScriptBracket/Brace">}</span>
+
+                <span class="ActionScriptReserved">if</span> <span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptDefault_Text">codeTimer</span>.<span class="ActionScriptDefault_Text">running</span> <span class="ActionScriptBracket/Brace">)</span>
+                <span class="ActionScriptBracket/Brace">{</span>
+                    <span class="ActionScriptDefault_Text">codeTimer</span>.<span class="ActionScriptDefault_Text">stop</span><span class="ActionScriptBracket/Brace">()</span>;
+                <span class="ActionScriptBracket/Brace">}</span>
+
+                <span class="ActionScriptDefault_Text">codeTimer</span>.<span class="ActionScriptDefault_Text">reset</span><span class="ActionScriptBracket/Brace">()</span>;
+                <span class="ActionScriptComment">// wait for some time to see if we need to highlight or not
+</span>                <span class="ActionScriptDefault_Text">codeTimer</span>.<span class="ActionScriptDefault_Text">start</span><span class="ActionScriptBracket/Brace">()</span>;
+            <span class="ActionScriptBracket/Brace">}</span>
+
+            <span class="ActionScriptReserved">private</span> <span class="ActionScriptfunction">function</span> <span class="ActionScriptDefault_Text">doPrettyPrint</span><span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptDefault_Text">event</span><span class="ActionScriptOperator">:</span><span class="ActionScriptDefault_Text">TimerEvent</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptReserved">null</span> <span class="ActionScriptBracket/Brace">)</span><span class="ActionScriptOperator">:</span><span class="ActionScriptReserved">void</span>
+            <span class="ActionScriptBracket/Brace">{</span>
+                <span class="ActionScriptReserved">if</span> <span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptOperator">!</span><span class="ActionScriptDefault_Text">codeStyle</span> <span class="ActionScriptBracket/Brace">)</span>
+                <span class="ActionScriptBracket/Brace">{</span>
+                    <span class="ActionScriptDefault_Text">codeStyle</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptReserved">new</span> <span class="ActionScriptDefault_Text">StyleSheet</span><span class="ActionScriptBracket/Brace">()</span>;
+                    <span class="ActionScriptDefault_Text">codePrettyPrint</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptReserved">new</span> <span class="ActionScriptDefault_Text">CodePrettyPrint</span><span class="ActionScriptBracket/Brace">()</span>;
+                    <span class="ActionScriptDefault_Text">codeStyle</span>.<span class="ActionScriptDefault_Text">parseCSS</span><span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptDefault_Text">cssString</span> <span class="ActionScriptBracket/Brace">)</span>;
+                <span class="ActionScriptBracket/Brace">}</span>
+
+                <span class="ActionScriptReserved">if</span> <span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptDefault_Text">codePrettyPrint</span>.<span class="ActionScriptDefault_Text">asyncRunning</span> <span class="ActionScriptBracket/Brace">)</span>
+                <span class="ActionScriptBracket/Brace">{</span>
+                    <span class="ActionScriptDefault_Text">codePrettyPrint</span>.<span class="ActionScriptDefault_Text">prettyPrintStopAsyc</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptReserved">true</span>;
+                    <span class="ActionScriptDefault_Text">callLater</span><span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptDefault_Text">doPrettyPrint</span> <span class="ActionScriptBracket/Brace">)</span>;
+                    <span class="ActionScriptReserved">return</span>;
+                <span class="ActionScriptBracket/Brace">}</span>
+
+                <span class="ActionScriptReserved">if</span> <span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptDefault_Text">pfasyncrunning</span> <span class="ActionScriptBracket/Brace">)</span>
+                <span class="ActionScriptBracket/Brace">{</span>
+                    <span class="ActionScriptDefault_Text">pfasyncstop</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptReserved">true</span>;
+                    <span class="ActionScriptDefault_Text">callLater</span><span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptDefault_Text">doPrettyPrint</span> <span class="ActionScriptBracket/Brace">)</span>;
+
+                    <span class="ActionScriptReserved">return</span>;
+                <span class="ActionScriptBracket/Brace">}</span>
+
+                <span class="ActionScriptDefault_Text">codeHighlightInPlace</span><span class="ActionScriptBracket/Brace">()</span>;
+            <span class="ActionScriptBracket/Brace">}</span>
+
+            <span class="ActionScriptReserved">private</span> <span class="ActionScriptfunction">function</span> <span class="ActionScriptDefault_Text">pfinit</span><span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptDefault_Text">startIdx</span><span class="ActionScriptOperator">:</span><span class="ActionScriptDefault_Text">int</span>, <span class="ActionScriptDefault_Text">endIdx</span><span class="ActionScriptOperator">:</span><span class="ActionScriptDefault_Text">int</span> <span class="ActionScriptBracket/Brace">)</span><span class="ActionScriptOperator">:</span><span class="ActionScriptReserved">void</span>
+            <span class="ActionScriptBracket/Brace">{</span>
+                <span class="ActionScriptDefault_Text">codeStylePF</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptDefault_Text">codeStyle</span>;
+                <span class="ActionScriptDefault_Text">srclenPF</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptDefault_Text">endIdx</span> <span class="ActionScriptOperator">-</span> <span class="ActionScriptDefault_Text">startIdx</span>;
+                <span class="ActionScriptDefault_Text">arrPF</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptDefault_Text">codePrettyPrint</span>.<span class="ActionScriptDefault_Text">mainDecorations</span>;
+                <span class="ActionScriptDefault_Text">lenPF</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptDefault_Text">arrPF</span>.<span class="ActionScriptDefault_Text">length</span>;
+                <span class="ActionScriptDefault_Text">firstIndexPF</span> <span class="ActionScriptOperator">=</span> 0;
+                <span class="ActionScriptDefault_Text">firstNodePF</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptReserved">false</span>;
+                <span class="ActionScriptDefault_Text">pfasyncrunning</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptReserved">false</span>;
+                <span class="ActionScriptDefault_Text">pfasyncstop</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptReserved">false</span>;
+                <span class="ActionScriptDefault_Text">desclenPF</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptDefault_Text">txt_code</span>.<span class="ActionScriptDefault_Text">text</span>.<span class="ActionScriptDefault_Text">length</span>;
+            <span class="ActionScriptBracket/Brace">}</span>
+
+            <span class="ActionScriptReserved">private</span> <span class="ActionScriptfunction">function</span> <span class="ActionScriptDefault_Text">processFormattedCodeAsync</span><span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptDefault_Text">startIdx</span><span class="ActionScriptOperator">:</span><span class="ActionScriptDefault_Text">int</span>, <span class="ActionScriptDefault_Text">endIdx</span><span class="ActionScriptOperator">:</span><span class="ActionScriptDefault_Text">int</span>, <span class="ActionScriptDefault_Text">completeFn</span><span class="ActionScriptOperator">:</span><span class="ActionScriptDefault_Text">Function</span>, <span class="ActionScriptDefault_Text">optIdx</span><span class="ActionScriptOperator">:</span><span class="ActionScriptDefault_Text">int</span><span class="ActionScriptOperator">=</span>0 <span class="ActionScriptBracket/Brace">)</span><span class="ActionScriptOperator">:</span><span class="ActionScriptDefault_Text">Boolean</span>
+            <span class="ActionScriptBracket/Brace">{</span>
+                <span class="ActionScriptReserved">if</span> <span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptDefault_Text">pfasyncstop</span> <span class="ActionScriptBracket/Brace">)</span>
+                <span class="ActionScriptBracket/Brace">{</span>
+                    <span class="ActionScriptDefault_Text">pfasyncrunning</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptReserved">false</span>;
+                    <span class="ActionScriptDefault_Text">pfasyncstop</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptReserved">false</span>;
+                    <span class="ActionScriptReserved">return</span> <span class="ActionScriptReserved">false</span>;
+                <span class="ActionScriptBracket/Brace">}</span>
+
+                <span class="ActionScriptDefault_Text">pfasyncrunning</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptReserved">true</span>;
+                <span class="ActionScriptReserved">if</span> <span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptDefault_Text">arrPF</span> <span class="ActionScriptOperator">==</span> <span class="ActionScriptReserved">null</span> <span class="ActionScriptOperator">||</span> <span class="ActionScriptDefault_Text">srclenPF</span> <span class="ActionScriptOperator">&lt;</span> 1 <span class="ActionScriptBracket/Brace">)</span>
+                <span class="ActionScriptBracket/Brace">{</span>
+                    <span class="ActionScriptDefault_Text">pfasyncrunning</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptReserved">false</span>;
+                    <span class="ActionScriptReserved">return</span> <span class="ActionScriptReserved">false</span>;
+                <span class="ActionScriptBracket/Brace">}</span>
+
+                <span class="ActionScripttrace">trace</span><span class="ActionScriptBracket/Brace">(</span><span class="ActionScriptString">&quot;color worker &quot;</span> <span class="ActionScriptOperator">+</span> <span class="ActionScriptDefault_Text">optIdx</span><span class="ActionScriptBracket/Brace">)</span>;
+
+                <span class="ActionScriptvar">var</span> <span class="ActionScriptDefault_Text">tr</span><span class="ActionScriptOperator">:</span><span class="ActionScriptDefault_Text">TextRange</span>;
+                <span class="ActionScriptvar">var</span> <span class="ActionScriptDefault_Text">thecolor</span><span class="ActionScriptOperator">:</span><span class="ActionScriptDefault_Text">Object</span>;
+                <span class="ActionScriptvar">var</span> <span class="ActionScriptDefault_Text">i</span><span class="ActionScriptOperator">:</span><span class="ActionScriptDefault_Text">int</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptDefault_Text">optIdx</span>;
+
+                <span class="ActionScriptReserved">if</span> <span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptDefault_Text">i</span> <span class="ActionScriptOperator">&gt;</span> 0 <span class="ActionScriptOperator">&amp;&amp;</span> <span class="ActionScriptDefault_Text">i</span> <span class="ActionScriptOperator">%</span> 5 <span class="ActionScriptOperator">==</span> 0 <span class="ActionScriptBracket/Brace">)</span>
+                <span class="ActionScriptBracket/Brace">{</span>
+                    <span class="ActionScriptDefault_Text">asyncCodeState</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptString">&quot;Highlighting (&quot;</span> <span class="ActionScriptOperator">+</span> <span class="ActionScriptDefault_Text">int</span><span class="ActionScriptBracket/Brace">((</span><span class="ActionScriptDefault_Text">i</span> <span class="ActionScriptOperator">/</span> <span class="ActionScriptDefault_Text">lenPF</span><span class="ActionScriptBracket/Brace">)</span> <span class="ActionScriptOperator">*</span> 100<span class="ActionScriptBracket/Brace">)</span> <span class="ActionScriptOperator">+</span> <span class="ActionScriptString">&quot;%) Finished..&quot;</span>;
+                <span class="ActionScriptBracket/Brace">}</span>
+
+                <span class="ActionScriptReserved">if</span> <span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptDefault_Text">i</span> <span class="ActionScriptOperator">&lt;</span> <span class="ActionScriptDefault_Text">lenPF</span> <span class="ActionScriptBracket/Brace">)</span>
+                <span class="ActionScriptBracket/Brace">{</span>
+                    <span class="ActionScriptComment">/* find first node */</span>
+                    <span class="ActionScriptReserved">if</span> <span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptDefault_Text">arrPF</span><span class="ActionScriptBracket/Brace">[</span><span class="ActionScriptDefault_Text">i</span><span class="ActionScriptBracket/Brace">]</span> <span class="ActionScriptOperator">==</span> 0 <span class="ActionScriptOperator">&amp;&amp;</span> <span class="ActionScriptDefault_Text">firstNodePF</span> <span class="ActionScriptOperator">==</span> <span class="ActionScriptReserved">false</span> <span class="ActionScriptBracket/Brace">)</span>
+                    <span class="ActionScriptBracket/Brace">{</span>
+                        <span class="ActionScriptDefault_Text">firstNodePF</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptReserved">true</span>;
+                        <span class="ActionScriptReserved">return</span> <span class="ActionScriptReserved">true</span>;
+                    <span class="ActionScriptBracket/Brace">}</span>
+                    <span class="ActionScriptReserved">else</span> <span class="ActionScriptReserved">if</span> <span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptDefault_Text">arrPF</span><span class="ActionScriptBracket/Brace">[</span><span class="ActionScriptDefault_Text">i</span><span class="ActionScriptBracket/Brace">]</span> <span class="ActionScriptOperator">==</span> 0 <span class="ActionScriptOperator">&amp;&amp;</span> <span class="ActionScriptDefault_Text">firstNodePF</span> <span class="ActionScriptOperator">==</span> <span class="ActionScriptReserved">true</span> <span class="ActionScriptBracket/Brace">)</span>
+                    <span class="ActionScriptBracket/Brace">{</span>
+                        <span class="ActionScriptDefault_Text">firstNodePF</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptReserved">false</span>;
+                        <span class="ActionScriptDefault_Text">firstIndexPF</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptDefault_Text">i</span>;
+
+                    <span class="ActionScriptBracket/Brace">}</span>
+                    <span class="ActionScriptReserved">if</span> <span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptDefault_Text">i</span> <span class="ActionScriptOperator">-</span> 2 <span class="ActionScriptOperator">&gt;</span> 0 <span class="ActionScriptBracket/Brace">)</span>
+                    <span class="ActionScriptBracket/Brace">{</span>
+                        <span class="ActionScriptReserved">if</span> <span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptDefault_Text">arrPF</span><span class="ActionScriptBracket/Brace">[</span><span class="ActionScriptDefault_Text">i</span><span class="ActionScriptOperator">-</span>2<span class="ActionScriptBracket/Brace">]</span>  <span class="ActionScriptOperator">!=</span> <span class="ActionScriptDefault_Text">arrPF</span><span class="ActionScriptBracket/Brace">[</span><span class="ActionScriptDefault_Text">i</span><span class="ActionScriptBracket/Brace">]</span> <span class="ActionScriptOperator">&amp;&amp;</span> <span class="ActionScriptDefault_Text">arrPF</span><span class="ActionScriptBracket/Brace">[</span><span class="ActionScriptDefault_Text">i</span><span class="ActionScriptBracket/Brace">]</span> <span class="ActionScriptOperator">&lt;</span> <span class="ActionScriptDefault_Text">txt_code</span>.<span class="ActionScriptDefault_Text">text</span>.<span class="ActionScriptDefault_Text">length</span> <span class="ActionScriptBracket/Brace">)</span>
+                        <span class="ActionScriptBracket/Brace">{</span>
+                            <span class="ActionScriptDefault_Text">tr</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptReserved">new</span> <span class="ActionScriptDefault_Text">TextRange</span><span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptDefault_Text">txt_code</span>, <span class="ActionScriptReserved">false</span>, <span class="ActionScriptDefault_Text">arrPF</span><span class="ActionScriptBracket/Brace">[</span><span class="ActionScriptDefault_Text">i</span><span class="ActionScriptOperator">-</span>2<span class="ActionScriptBracket/Brace">]</span> <span class="ActionScriptOperator">+</span> <span class="ActionScriptDefault_Text">startIdx</span>, <span class="ActionScriptDefault_Text">arrPF</span><span class="ActionScriptBracket/Brace">[</span><span class="ActionScriptDefault_Text">i</span><span class="ActionScriptBracket/Brace">]</span> <span class="ActionScriptOperator">+</span> <span class="ActionScriptDefault_Text">startIdx</span> <span class="ActionScriptBracket/Brace">)</span>;
+                            <span class="ActionScriptDefault_Text">thecolor</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptDefault_Text">codeStylePF</span>.<span class="ActionScriptDefault_Text">getStyle</span><span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptString">&quot;.&quot;</span> <span class="ActionScriptOperator">+</span> <span class="ActionScriptDefault_Text">arrPF</span><span class="ActionScriptBracket/Brace">[</span><span class="ActionScriptDefault_Text">i</span><span class="ActionScriptOperator">-</span>1<span class="ActionScriptBracket/Brace">]</span> <span class="ActionScriptBracket/Brace">)</span>.<span class="ActionScriptDefault_Text">color</span>;
+                            <span class="ActionScriptDefault_Text">tr</span>.<span class="ActionScriptDefault_Text">color</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptDefault_Text">thecolor</span>;
+                        <span class="ActionScriptBracket/Brace">}</span>
+
+                    <span class="ActionScriptBracket/Brace">}</span>
+                    <span class="ActionScriptReserved">return</span> <span class="ActionScriptReserved">true</span>;
+
+
+                <span class="ActionScriptBracket/Brace">}</span>
+                <span class="ActionScriptReserved">if</span> <span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptDefault_Text">i</span> <span class="ActionScriptOperator">&gt;</span> 0 <span class="ActionScriptBracket/Brace">)</span>
+                <span class="ActionScriptBracket/Brace">{</span>
+                    <span class="ActionScriptDefault_Text">i</span> <span class="ActionScriptOperator">-=</span> 2;
+                    <span class="ActionScriptReserved">if</span> <span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptDefault_Text">arrPF</span><span class="ActionScriptBracket/Brace">[</span><span class="ActionScriptDefault_Text">i</span><span class="ActionScriptBracket/Brace">]</span> <span class="ActionScriptOperator">+</span> <span class="ActionScriptDefault_Text">startIdx</span> <span class="ActionScriptOperator">&lt;</span> <span class="ActionScriptDefault_Text">endIdx</span> <span class="ActionScriptBracket/Brace">)</span>
+                    <span class="ActionScriptBracket/Brace">{</span>
+                        <span class="ActionScriptDefault_Text">tr</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptReserved">new</span> <span class="ActionScriptDefault_Text">TextRange</span><span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptDefault_Text">txt_code</span>, <span class="ActionScriptReserved">false</span>, <span class="ActionScriptDefault_Text">arrPF</span><span class="ActionScriptBracket/Brace">[</span><span class="ActionScriptDefault_Text">i</span><span class="ActionScriptBracket/Brace">]</span> <span class="ActionScriptOperator">+</span> <span class="ActionScriptDefault_Text">startIdx</span>, <span class="ActionScriptDefault_Text">endIdx</span><span class="ActionScriptBracket/Brace">)</span> ;
+                        <span class="ActionScriptDefault_Text">thecolor</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptDefault_Text">codeStylePF</span>.<span class="ActionScriptDefault_Text">getStyle</span><span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptString">&quot;.&quot;</span> <span class="ActionScriptOperator">+</span> <span class="ActionScriptDefault_Text">arrPF</span><span class="ActionScriptBracket/Brace">[</span><span class="ActionScriptDefault_Text">i</span><span class="ActionScriptOperator">+</span>1<span class="ActionScriptBracket/Brace">]</span> <span class="ActionScriptBracket/Brace">)</span>.<span class="ActionScriptDefault_Text">color</span>;
+                        <span class="ActionScriptvar">var</span> <span class="ActionScriptDefault_Text">totlen</span><span class="ActionScriptOperator">:</span><span class="ActionScriptDefault_Text">int</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptDefault_Text">txt_code</span>.<span class="ActionScriptDefault_Text">text</span>.<span class="ActionScriptDefault_Text">length</span>;
+                        <span class="ActionScriptReserved">if</span> <span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptDefault_Text">totlen</span> <span class="ActionScriptOperator">&gt;=</span> <span class="ActionScriptDefault_Text">endIdx</span> <span class="ActionScriptBracket/Brace">)</span>
+                            <span class="ActionScriptDefault_Text">tr</span>.<span class="ActionScriptDefault_Text">color</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptDefault_Text">thecolor</span>;
+
+                    <span class="ActionScriptBracket/Brace">}</span>
+                <span class="ActionScriptBracket/Brace">}</span>
+
+                <span class="ActionScriptReserved">if</span> <span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptDefault_Text">completeFn</span> <span class="ActionScriptOperator">!=</span> <span class="ActionScriptReserved">null</span> <span class="ActionScriptBracket/Brace">)</span>
+                    <span class="ActionScriptDefault_Text">completeFn</span><span class="ActionScriptBracket/Brace">()</span>;
+                <span class="ActionScripttrace">trace</span><span class="ActionScriptBracket/Brace">(</span><span class="ActionScriptString">&quot;color worker done&quot;</span><span class="ActionScriptBracket/Brace">)</span>;
+
+                <span class="ActionScriptDefault_Text">pfasyncrunning</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptReserved">false</span>;
+
+                <span class="ActionScriptReserved">return</span> <span class="ActionScriptReserved">false</span>;
+
+            <span class="ActionScriptBracket/Brace">}</span>
+
+            <span class="ActionScriptReserved">private</span> <span class="ActionScriptfunction">function</span> <span class="ActionScriptDefault_Text">codePFComplete</span><span class="ActionScriptBracket/Brace">()</span><span class="ActionScriptOperator">:</span><span class="ActionScriptReserved">void</span>
+            <span class="ActionScriptBracket/Brace">{</span>
+                <span class="ActionScriptDefault_Text">asyncCodeState</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptString">&quot;&quot;</span>;
+            <span class="ActionScriptBracket/Brace">}</span>
+
+            <span class="ActionScriptReserved">private</span> <span class="ActionScriptfunction">function</span> <span class="ActionScriptDefault_Text">codeInPlaceComplete</span><span class="ActionScriptBracket/Brace">()</span><span class="ActionScriptOperator">:</span><span class="ActionScriptReserved">void</span>
+            <span class="ActionScriptBracket/Brace">{</span>
+                <span class="ActionScriptDefault_Text">asyncCodeState</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptString">&quot;Highlighting Complete&quot;</span>;
+
+                <span class="ActionScriptReserved">if</span> <span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptDefault_Text">pfasyncrunning</span> <span class="ActionScriptBracket/Brace">)</span>
+                <span class="ActionScriptBracket/Brace">{</span>
+                    <span class="ActionScriptDefault_Text">pfasyncstop</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptReserved">true</span>;
+                    <span class="ActionScriptDefault_Text">callLater</span><span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptDefault_Text">codeInPlaceComplete</span> <span class="ActionScriptBracket/Brace">)</span>;
+                    <span class="ActionScriptReserved">return</span>;
+                <span class="ActionScriptBracket/Brace">}</span>
+                <span class="ActionScriptDefault_Text">asyncRunning</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptReserved">false</span>;
+
+                <span class="ActionScriptDefault_Text">pfinit</span><span class="ActionScriptBracket/Brace">(</span> 0, <span class="ActionScriptDefault_Text">txt_code</span>.<span class="ActionScriptDefault_Text">length</span> <span class="ActionScriptBracket/Brace">)</span>;
+                <span class="ActionScriptDefault_Text">colorThread</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptReserved">new</span> <span class="ActionScriptDefault_Text">PseudoThread</span><span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptReserved">this</span>.<span class="ActionScriptDefault_Text">systemManager</span>, <span class="ActionScriptDefault_Text">processFormattedCodeAsync</span>, <span class="ActionScriptReserved">this</span>, <span class="ActionScriptBracket/Brace">[</span>0, <span class="ActionScriptDefault_Text">txt_code</span>.<span class="ActionScriptDefault_Text">length</span>, <span class="ActionScriptDefault_Text">codePFComplete</span>, 0<span class="ActionScriptBracket/Brace">]</span>, 3, 2 <span class="ActionScriptBracket/Brace">)</span>;
+            <span class="ActionScriptBracket/Brace">}</span>
+
+            <span class="ActionScriptReserved">private</span> <span class="ActionScriptfunction">function</span> <span class="ActionScriptDefault_Text">lexInt</span><span class="ActionScriptBracket/Brace">(</span><span class="ActionScriptDefault_Text">idx</span><span class="ActionScriptOperator">:</span><span class="ActionScriptDefault_Text">int</span>, <span class="ActionScriptDefault_Text">total</span><span class="ActionScriptOperator">:</span><span class="ActionScriptDefault_Text">int</span><span class="ActionScriptBracket/Brace">)</span><span class="ActionScriptOperator">:</span><span class="ActionScriptReserved">void</span>
+            <span class="ActionScriptBracket/Brace">{</span>
+                <span class="ActionScriptReserved">if</span> <span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptDefault_Text">idx</span> <span class="ActionScriptOperator">&gt;</span> 0 <span class="ActionScriptOperator">&amp;&amp;</span> <span class="ActionScriptDefault_Text">idx</span> <span class="ActionScriptOperator">%</span> 5 <span class="ActionScriptOperator">==</span> 0 <span class="ActionScriptBracket/Brace">)</span>
+                <span class="ActionScriptBracket/Brace">{</span>
+                    <span class="ActionScriptDefault_Text">asyncCodeState</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptString">&quot;Scanning (&quot;</span> <span class="ActionScriptOperator">+</span> <span class="ActionScriptDefault_Text">int</span><span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptDefault_Text">idx</span> <span class="ActionScriptOperator">/</span> <span class="ActionScriptDefault_Text">total</span> <span class="ActionScriptBracket/Brace">)</span> <span class="ActionScriptOperator">*</span> 100 <span class="ActionScriptBracket/Brace">)</span> <span class="ActionScriptOperator">+</span> <span class="ActionScriptString">&quot;%) Finished...&quot;</span>;
+                <span class="ActionScriptBracket/Brace">}</span>
+            <span class="ActionScriptBracket/Brace">}</span>
+
+            <span class="ActionScriptReserved">private</span> <span class="ActionScriptfunction">function</span> <span class="ActionScriptDefault_Text">codeHighlightInPlace</span><span class="ActionScriptBracket/Brace">()</span><span class="ActionScriptOperator">:</span><span class="ActionScriptReserved">void</span>
+            <span class="ActionScriptBracket/Brace">{</span>
+                <span class="ActionScriptDefault_Text">asyncRunning</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptReserved">true</span>;
+                <span class="ActionScriptDefault_Text">asyncCodeState</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptString">&quot;Scanning...&quot;</span>;
+                <span class="ActionScriptDefault_Text">codePrettyPrint</span>.<span class="ActionScriptDefault_Text">prettyPrintAsync</span><span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptDefault_Text">txt_code</span>.<span class="ActionScriptDefault_Text">text</span>, <span class="ActionScriptReserved">null</span>, <span class="ActionScriptDefault_Text">codeInPlaceComplete</span>, <span class="ActionScriptDefault_Text">lexInt</span>, <span class="ActionScriptReserved">this</span>.<span class="ActionScriptDefault_Text">systemManager</span> <span class="ActionScriptBracket/Brace">)</span>;
+
+            <span class="ActionScriptBracket/Brace">}</span>
+</pre></body>
+</html>

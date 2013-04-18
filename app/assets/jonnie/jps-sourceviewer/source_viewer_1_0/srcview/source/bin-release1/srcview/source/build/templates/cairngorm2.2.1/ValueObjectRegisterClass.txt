@@ -1,0 +1,18 @@
+@copy@
+package @namespace@.@vo.dir@
+{
+
+	/**
+	 * VOs are used to create a layer of business objects that can be 
+	 * transferred between tiers, instead of using records, results sets, and datasets.
+	 */
+	
+	[Bindable]
+	public class @vo@VO
+	{
+		
+		public function  @vo@VO()
+		{			
+		}
+	}
+}

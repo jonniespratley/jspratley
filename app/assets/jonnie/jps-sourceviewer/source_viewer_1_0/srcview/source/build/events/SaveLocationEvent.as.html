@@ -1,0 +1,58 @@
+<!-- saved from url=(0014)about:internet -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>SaveLocationEvent.as</title>
+<link rel="stylesheet" type="text/css" href="../../../SourceStyles.css"/>
+</head>
+
+<body><pre><span class="ActionScriptASDoc">/** *******************************************************************
+ * FlexContacts
+ * Copyright (c) 2008 Jonnie Spratley. All Rights Reserved.
+ * @author  Jonnie Spratley
+ * @contact jonniespratley@gmail.com
+ * @internal
+ ******************************************************************* */</span>
+<span class="ActionScriptpackage">package</span> <span class="ActionScriptDefault_Text">com</span><span class="ActionScriptOperator">.</span><span class="ActionScriptDefault_Text">jonniespratley</span><span class="ActionScriptOperator">.</span><span class="ActionScriptDefault_Text">flexcontacts</span><span class="ActionScriptOperator">.</span><span class="ActionScriptDefault_Text">events</span>
+<span class="ActionScriptBracket/Brace">{</span>
+    <span class="ActionScriptASDoc">/**
+     * Cairngorm provides a singleton Cairngorm Event Dispatcher that works with the Front Controller class. 
+     * Whenever you want to dispatch Cairngorm events, you use the Cairngorm Event Dispatcher. 
+     *
+     * The following code shows how to broadcast a Cairngorm event using 
+     * the Cairngorm Event Dispatcher: 
+     *
+     * &lt;code&gt;
+     *    var evt:YourEvent = new YourEvent( YourEvent.NAME_OF_EVENT );
+     *        evt.dispatchEvent();
+     *&lt;/code&gt;
+     *
+     * The dispatchEvent() method of the Cairngorm Event Dispatcher singleton takes a parameter of 
+     * type flash.events.Event. This event is dispatched and the corresponding command is executed.
+     *
+     * This is how the Front Controller, Cairngorm Event Dispatcher, Command patterns, and 
+     * Cairngorm Events work together with the Cairngorm Event, the Model Locator, and VO 
+     * patterns to create an immersive experience for the user of an RIA.
+     *
+     */</span>
+    <span class="ActionScriptReserved">import</span> <span class="ActionScriptDefault_Text">com</span><span class="ActionScriptOperator">.</span><span class="ActionScriptDefault_Text">adobe</span><span class="ActionScriptOperator">.</span><span class="ActionScriptDefault_Text">cairngorm</span><span class="ActionScriptOperator">.</span><span class="ActionScriptDefault_Text">control</span><span class="ActionScriptOperator">.</span><span class="ActionScriptDefault_Text">CairngormEvent</span>;
+    <span class="ActionScriptReserved">import</span> <span class="ActionScriptDefault_Text">flash</span><span class="ActionScriptOperator">.</span><span class="ActionScriptDefault_Text">events</span><span class="ActionScriptOperator">.</span><span class="ActionScriptDefault_Text">Event</span>;
+        
+    <span class="ActionScriptReserved">public</span> <span class="ActionScriptReserved">final</span> <span class="ActionScriptclass">class</span> <span class="ActionScriptDefault_Text">SaveLocationEvent</span> <span class="ActionScriptReserved">extends</span> <span class="ActionScriptDefault_Text">CairngormEvent</span>
+    <span class="ActionScriptBracket/Brace">{</span>
+        <span class="ActionScriptReserved">public</span> <span class="ActionScriptReserved">static</span> <span class="ActionScriptReserved">const</span> <span class="ActionScriptDefault_Text">SAVELOCATION_EVENT</span>:<span class="ActionScriptDefault_Text">String</span> <span class="ActionScriptOperator">=</span> <span class="ActionScriptString">"SaveLocation_Event"</span>;
+
+        <span class="ActionScriptReserved">public</span> <span class="ActionScriptfunction">function</span> <span class="ActionScriptDefault_Text">SaveLocationEvent</span><span class="ActionScriptBracket/Brace">(</span><span class="ActionScriptBracket/Brace">)</span>
+        <span class="ActionScriptBracket/Brace">{</span>
+            <span class="ActionScriptReserved">super</span><span class="ActionScriptBracket/Brace">(</span> <span class="ActionScriptDefault_Text">SAVELOCATION_EVENT</span> <span class="ActionScriptBracket/Brace">)</span>;
+        <span class="ActionScriptBracket/Brace">}</span>
+        
+        <span class="ActionScriptReserved">override</span> <span class="ActionScriptReserved">public</span> <span class="ActionScriptfunction">function</span> <span class="ActionScriptDefault_Text">clone</span><span class="ActionScriptBracket/Brace">(</span><span class="ActionScriptBracket/Brace">)</span>:<span class="ActionScriptDefault_Text">Event</span>
+        <span class="ActionScriptBracket/Brace">{</span>
+            <span class="ActionScriptReserved">return</span> <span class="ActionScriptReserved">new</span> <span class="ActionScriptDefault_Text">SaveLocationEvent</span><span class="ActionScriptBracket/Brace">(</span><span class="ActionScriptBracket/Brace">)</span>;
+            <span class="ActionScriptComment">//todo: Add any arguments to events
+</span>        <span class="ActionScriptBracket/Brace">}</span>
+    <span class="ActionScriptBracket/Brace">}</span>
+<span class="ActionScriptBracket/Brace">}</span></pre></body>
+</html>

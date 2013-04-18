@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<index>
+	<title>Source of SourceViewer</title>
+	<nodes>
+		<node label="bin-release1">
+			<node label="assets">
+				<node label="css">
+					<node label="images">
+						<node icon="imageIcon" label="ai.png" url="source/bin-release1/assets/css/images/ai.png.html"/>
+						<node icon="imageIcon" label="air.png" url="source/bin-release1/assets/css/images/air.png.html"/>
+						<node icon="imageIcon" label="application.png" url="source/bin-release1/assets/css/images/application.png.html"/>
+						<node icon="imageIcon" label="as.gif" url="source/bin-release1/assets/css/images/as.gif.html"/>
+						<node icon="imageIcon" label="code.png" url="source/bin-release1/assets/css/images/code.png.html"/>
+						<node icon="imageIcon" label="css.png" url="source/bin-release1/assets/css/images/css.png.html"/>
+						<node icon="imageIcon" label="db.png" url="source/bin-release1/assets/css/images/db.png.html"/>
+						<node icon="imageIcon" label="directory.png" url="source/bin-release1/assets/css/images/directory.png.html"/>
+						<node icon="imageIcon" label="doc.png" url="source/bin-release1/assets/css/images/doc.png.html"/>
+						<node icon="imageIcon" label="document-copy.png" url="source/bin-release1/assets/css/images/document-copy.png.html"/>
+						<node icon="imageIcon" label="document-excel.png" url="source/bin-release1/assets/css/images/document-excel.png.html"/>
+						<node icon="imageIcon" label="document-flash-movie.png" url="source/bin-release1/assets/css/images/document-flash-movie.png.html"/>
+						<node icon="imageIcon" label="document-office.png" url="source/bin-release1/assets/css/images/document-office.png.html"/>
+						<node icon="imageIcon" label="document-pdf-text.png" url="source/bin-release1/assets/css/images/document-pdf-text.png.html"/>
+						<node icon="imageIcon" label="document-photoshop-image.png" url="source/bin-release1/assets/css/images/document-photoshop-image.png.html"/>
+						<node icon="imageIcon" label="file.png" url="source/bin-release1/assets/css/images/file.png.html"/>
+						<node icon="imageIcon" label="film.png" url="source/bin-release1/assets/css/images/film.png.html"/>
+						<node icon="imageIcon" label="flash.png" url="source/bin-release1/assets/css/images/flash.png.html"/>
+						<node icon="imageIcon" label="folder_open.png" url="source/bin-release1/assets/css/images/folder_open.png.html"/>
+						<node icon="imageIcon" label="html.png" url="source/bin-release1/assets/css/images/html.png.html"/>
+						<node icon="imageIcon" label="java.png" url="source/bin-release1/assets/css/images/java.png.html"/>
+						<node icon="imageIcon" label="linux.png" url="source/bin-release1/assets/css/images/linux.png.html"/>
+						<node icon="imageIcon" label="music.png" url="source/bin-release1/assets/css/images/music.png.html"/>
+						<node icon="imageIcon" label="mxml.png" url="source/bin-release1/assets/css/images/mxml.png.html"/>
+						<node icon="imageIcon" label="pdf.png" url="source/bin-release1/assets/css/images/pdf.png.html"/>
+						<node icon="imageIcon" label="php.png" url="source/bin-release1/assets/css/images/php.png.html"/>
+						<node icon="imageIcon" label="picture.png" url="source/bin-release1/assets/css/images/picture.png.html"/>
+						<node icon="imageIcon" label="ppt.png" url="source/bin-release1/assets/css/images/ppt.png.html"/>
+						<node icon="imageIcon" label="psd.png" url="source/bin-release1/assets/css/images/psd.png.html"/>
+						<node icon="imageIcon" label="ruby.png" url="source/bin-release1/assets/css/images/ruby.png.html"/>
+						<node icon="imageIcon" label="script.png" url="source/bin-release1/assets/css/images/script.png.html"/>
+						<node icon="imageIcon" label="spinner.gif" url="source/bin-release1/assets/css/images/spinner.gif.html"/>
+						<node icon="imageIcon" label="swc.png" url="source/bin-release1/assets/css/images/swc.png.html"/>
+						<node icon="imageIcon" label="txt.png" url="source/bin-release1/assets/css/images/txt.png.html"/>
+						<node icon="imageIcon" label="xls.png" url="source/bin-release1/assets/css/images/xls.png.html"/>
+						<node icon="imageIcon" label="zip.png" url="source/bin-release1/assets/css/images/zip.png.html"/>
+					</node>
+					<node icon="cssIcon" label="jquery.fileTree.css" url="source/bin-release1/assets/css/jquery.fileTree.css.html"/>
+				</node>
+				<node label="fonts">
+					<node icon="swfIcon" label="Helvetica-Neue.swf" url="source/bin-release1/assets/fonts/Helvetica-Neue.swf"/>
+					<node icon="swfIcon" label="Helvetica.swf" url="source/bin-release1/assets/fonts/Helvetica.swf"/>
+					<node icon="swfIcon" label="Monaco.swf" url="source/bin-release1/assets/fonts/Monaco.swf"/>
+				</node>
+				<node label="js">
+					<node label="chili">
+						<node label="cplusplus.js" url="source/bin-release1/assets/js/chili/cplusplus.js.txt"/>
+						<node label="csharp.js" url="source/bin-release1/assets/js/chili/csharp.js.txt"/>
+						<node label="css.js" url="source/bin-release1/assets/js/chili/css.js.txt"/>
+						<node label="delphi.js" url="source/bin-release1/assets/js/chili/delphi.js.txt"/>
+						<node label="html.js" url="source/bin-release1/assets/js/chili/html.js.txt"/>
+						<node label="java.js" url="source/bin-release1/assets/js/chili/java.js.txt"/>
+						<node label="jquery.chili.js" url="source/bin-release1/assets/js/chili/jquery.chili.js.txt"/>
+						<node label="js.js" url="source/bin-release1/assets/js/chili/js.js.txt"/>
+						<node label="lotusscript.js" url="source/bin-release1/assets/js/chili/lotusscript.js.txt"/>
+						<node label="mysql.js" url="source/bin-release1/assets/js/chili/mysql.js.txt"/>
+						<node label="php-f.js" url="source/bin-release1/assets/js/chili/php-f.js.txt"/>
+						<node label="php.js" url="source/bin-release1/assets/js/chili/php.js.txt"/>
+						<node label="recipes.js" url="source/bin-release1/assets/js/chili/recipes.js.txt"/>
+					</node>
+					<node label="jquery-ui.js" url="source/bin-release1/assets/js/jquery-ui.js.txt"/>
+					<node label="jquery.corners.js" url="source/bin-release1/assets/js/jquery.corners.js.txt"/>
+					<node label="jquery.fileTree.js" url="source/bin-release1/assets/js/jquery.fileTree.js.txt"/>
+					<node label="jquery.js" url="source/bin-release1/assets/js/jquery.js.txt"/>
+				</node>
+				<node label="skin">
+					<node label="Fonts">
+						<node icon="swfIcon" label="Aller.swf" url="source/bin-release1/assets/skin/Fonts/Aller.swf"/>
+						<node icon="swfIcon" label="Helvetica-Neue.swf" url="source/bin-release1/assets/skin/Fonts/Helvetica-Neue.swf"/>
+						<node icon="swfIcon" label="Helvetica.swf" url="source/bin-release1/assets/skin/Fonts/Helvetica.swf"/>
+						<node icon="swfIcon" label="Monaco.swf" url="source/bin-release1/assets/skin/Fonts/Monaco.swf"/>
+					</node>
+					<node icon="imageIcon" label="btn_disabled.png" url="source/bin-release1/assets/skin/btn_disabled.png.html"/>
+					<node icon="imageIcon" label="btn_over.png" url="source/bin-release1/assets/skin/btn_over.png.html"/>
+					<node icon="imageIcon" label="btn_up.png" url="source/bin-release1/assets/skin/btn_up.png.html"/>
+					<node icon="cssIcon" label="codegen.css" url="source/bin-release1/assets/skin/codegen.css.html"/>
+					<node icon="imageIcon" label="downArrow.png" url="source/bin-release1/assets/skin/downArrow.png.html"/>
+					<node icon="imageIcon" label="js_box_bg.gif" url="source/bin-release1/assets/skin/js_box_bg.gif.html"/>
+					<node icon="imageIcon" label="js_box_bg_2.gif" url="source/bin-release1/assets/skin/js_box_bg_2.gif.html"/>
+					<node icon="imageIcon" label="js_hl.gif" url="source/bin-release1/assets/skin/js_hl.gif.html"/>
+					<node icon="imageIcon" label="scrolltrack.png" url="source/bin-release1/assets/skin/scrolltrack.png.html"/>
+					<node icon="cssIcon" label="styles.css" url="source/bin-release1/assets/skin/styles.css.html"/>
+					<node icon="imageIcon" label="thumb.png" url="source/bin-release1/assets/skin/thumb.png.html"/>
+					<node icon="imageIcon" label="upArrow.png" url="source/bin-release1/assets/skin/upArrow.png.html"/>
+				</node>
+				<node label="styles">
+					<node icon="cssIcon" label="styles.css" url="source/bin-release1/assets/styles/styles.css.html"/>
+				</node>
+				<node label="Sv_icons">
+					<node icon="imageIcon" label="icon_016.png" url="source/bin-release1/assets/Sv_icons/icon_016.png.html"/>
+					<node icon="imageIcon" label="icon_032.png" url="source/bin-release1/assets/Sv_icons/icon_032.png.html"/>
+					<node icon="imageIcon" label="icon_048.png" url="source/bin-release1/assets/Sv_icons/icon_048.png.html"/>
+					<node icon="imageIcon" label="icon_128.png" url="source/bin-release1/assets/Sv_icons/icon_128.png.html"/>
+					<node icon="imageIcon" label="icon_256.png" url="source/bin-release1/assets/Sv_icons/icon_256.png.html"/>
+					<node icon="imageIcon" label="icon_512.png" url="source/bin-release1/assets/Sv_icons/icon_512.png.html"/>
+				</node>
+			</node>
+			<node label="com">
+				<node label="jonniespratley">
+					<node label="SourceViewer">
+						<node label="assets">
+							<node icon="swfIcon" label="MimeTypeIcons.swf" url="source/bin-release1/com/jonniespratley/SourceViewer/assets/MimeTypeIcons.swf"/>
+						</node>
+					</node>
+				</node>
+			</node>
+			<node label="history">
+				<node icon="cssIcon" label="history.css" url="source/bin-release1/history/history.css.html"/>
+				<node label="history.js" url="source/bin-release1/history/history.js.txt"/>
+				<node icon="htmlIcon" label="historyFrame.html" url="source/bin-release1/history/historyFrame.html"/>
+			</node>
+			<node label="services">
+				<node label="FileSystemService.php" url="source/bin-release1/services/FileSystemService.php.txt"/>
+				<node label="RESTDirectoryService.php" url="source/bin-release1/services/RESTDirectoryService.php.txt"/>
+				<node label="scratch.php" url="source/bin-release1/services/scratch.php.txt"/>
+				<node label="SourceViewer.php" url="source/bin-release1/services/SourceViewer.php.txt"/>
+			</node>
+			<node label="skin">
+				<node label="project">
+					<node label="cg_icons">
+						<node icon="imageIcon" label="icon_016.png" url="source/bin-release1/skin/project/cg_icons/icon_016.png.html"/>
+						<node icon="imageIcon" label="icon_032.png" url="source/bin-release1/skin/project/cg_icons/icon_032.png.html"/>
+						<node icon="imageIcon" label="icon_048.png" url="source/bin-release1/skin/project/cg_icons/icon_048.png.html"/>
+						<node icon="imageIcon" label="icon_128.png" url="source/bin-release1/skin/project/cg_icons/icon_128.png.html"/>
+						<node icon="imageIcon" label="icon_256.png" url="source/bin-release1/skin/project/cg_icons/icon_256.png.html"/>
+						<node icon="imageIcon" label="icon_512.png" url="source/bin-release1/skin/project/cg_icons/icon_512.png.html"/>
+					</node>
+					<node label="fonts">
+						<node icon="swfIcon" label="Helvetica-Neue.swf" url="source/bin-release1/skin/project/fonts/Helvetica-Neue.swf"/>
+						<node icon="swfIcon" label="Helvetica.swf" url="source/bin-release1/skin/project/fonts/Helvetica.swf"/>
+					</node>
+					<node label="icons">
+						<node icon="imageIcon" label="arrow-circle-double.png" url="source/bin-release1/skin/project/icons/arrow-circle-double.png.html"/>
+						<node icon="imageIcon" label="block--minus.png" url="source/bin-release1/skin/project/icons/block--minus.png.html"/>
+						<node icon="imageIcon" label="block--plus.png" url="source/bin-release1/skin/project/icons/block--plus.png.html"/>
+						<node icon="imageIcon" label="cg_logo.png" url="source/bin-release1/skin/project/icons/cg_logo.png.html"/>
+						<node icon="imageIcon" label="database-small.png" url="source/bin-release1/skin/project/icons/database-small.png.html"/>
+						<node icon="imageIcon" label="document-copy.png" url="source/bin-release1/skin/project/icons/document-copy.png.html"/>
+						<node icon="imageIcon" label="document-share.png" url="source/bin-release1/skin/project/icons/document-share.png.html"/>
+						<node icon="imageIcon" label="folder-open.png" url="source/bin-release1/skin/project/icons/folder-open.png.html"/>
+						<node icon="imageIcon" label="folder.png" url="source/bin-release1/skin/project/icons/folder.png.html"/>
+						<node icon="imageIcon" label="folders.png" url="source/bin-release1/skin/project/icons/folders.png.html"/>
+						<node icon="imageIcon" label="si_logo.png" url="source/bin-release1/skin/project/icons/si_logo.png.html"/>
+						<node icon="imageIcon" label="sv_logo.png" url="source/bin-release1/skin/project/icons/sv_logo.png.html"/>
+						<node icon="imageIcon" label="table-small.png" url="source/bin-release1/skin/project/icons/table-small.png.html"/>
+					</node>
+					<node label="images">
+						<node icon="imageIcon" label="closeNav.png" url="source/bin-release1/skin/project/images/closeNav.png.html"/>
+						<node icon="imageIcon" label="downArrow.png" url="source/bin-release1/skin/project/images/downArrow.png.html"/>
+						<node icon="swfIcon" label="header.swf" url="source/bin-release1/skin/project/images/header.swf"/>
+						<node icon="imageIcon" label="openNav.png" url="source/bin-release1/skin/project/images/openNav.png.html"/>
+						<node icon="imageIcon" label="scrolltrack.png" url="source/bin-release1/skin/project/images/scrolltrack.png.html"/>
+						<node icon="imageIcon" label="sliderThumb.png" url="source/bin-release1/skin/project/images/sliderThumb.png.html"/>
+						<node icon="imageIcon" label="sliderThumb_down.png" url="source/bin-release1/skin/project/images/sliderThumb_down.png.html"/>
+						<node icon="imageIcon" label="sliderThumb_over.png" url="source/bin-release1/skin/project/images/sliderThumb_over.png.html"/>
+						<node icon="imageIcon" label="thumb.png" url="source/bin-release1/skin/project/images/thumb.png.html"/>
+						<node icon="imageIcon" label="upArrow.png" url="source/bin-release1/skin/project/images/upArrow.png.html"/>
+					</node>
+					<node icon="cssIcon" label="project.css" url="source/bin-release1/skin/project/project.css.html"/>
+				</node>
+			</node>
+			<node label="srcview">
+				<node label="source">
+					<node label="assets">
+						<node label="fonts">
+							<node icon="swfIcon" label="Helvetica-Neue.swf" url="source/bin-release1/srcview/source/assets/fonts/Helvetica-Neue.swf"/>
+							<node icon="swfIcon" label="Helvetica.swf" url="source/bin-release1/srcview/source/assets/fonts/Helvetica.swf"/>
+							<node icon="swfIcon" label="Monaco.swf" url="source/bin-release1/srcview/source/assets/fonts/Monaco.swf"/>
+						</node>
+						<node label="styles">
+							<node icon="htmlIcon" label="styles.css.html" url="source/bin-release1/srcview/source/assets/styles/styles.css.html"/>
+						</node>
+					</node>
+					<node label="build">
+						<node label="config">
+							<node label="cairngen.properties" url="source/bin-release1/srcview/source/build/config/cairngen.properties"/>
+							<node label="log.properties" url="source/bin-release1/srcview/source/build/config/log.properties"/>
+						</node>
+						<node label="events">
+							<node icon="htmlIcon" label="GetContactsEvent.as.html" url="source/bin-release1/srcview/source/build/events/GetContactsEvent.as.html"/>
+							<node icon="htmlIcon" label="GetLocationsEvent.as.html" url="source/bin-release1/srcview/source/build/events/GetLocationsEvent.as.html"/>
+							<node icon="htmlIcon" label="GetOneContactEvent.as.html" url="source/bin-release1/srcview/source/build/events/GetOneContactEvent.as.html"/>
+							<node icon="htmlIcon" label="LocationSelectedEvent.as.html" url="source/bin-release1/srcview/source/build/events/LocationSelectedEvent.as.html"/>
+							<node icon="htmlIcon" label="RemoveContactEvent.as.html" url="source/bin-release1/srcview/source/build/events/RemoveContactEvent.as.html"/>
+							<node icon="htmlIcon" label="RemoveLocationEvent.as.html" url="source/bin-release1/srcview/source/build/events/RemoveLocationEvent.as.html"/>
+							<node icon="htmlIcon" label="SaveContactEvent.as.html" url="source/bin-release1/srcview/source/build/events/SaveContactEvent.as.html"/>
+							<node icon="htmlIcon" label="SaveLocationEvent.as.html" url="source/bin-release1/srcview/source/build/events/SaveLocationEvent.as.html"/>
+							<node icon="htmlIcon" label="SelectedContactEvent.as.html" url="source/bin-release1/srcview/source/build/events/SelectedContactEvent.as.html"/>
+						</node>
+						<node label="libs">
+							<node label="ant-contrib-1.0b3.jar" url="source/bin-release1/srcview/source/build/libs/ant-contrib-1.0b3.jar"/>
+							<node label="antform.jar" url="source/bin-release1/srcview/source/build/libs/antform.jar"/>
+						</node>
+						<node label="templates">
+							<node label="cairngorm2.2.1">
+								<node label="BusinessDelegate.txt" url="source/bin-release1/srcview/source/build/templates/cairngorm2.2.1/BusinessDelegate.txt"/>
+								<node label="CommandExcludeDelegate.txt" url="source/bin-release1/srcview/source/build/templates/cairngorm2.2.1/CommandExcludeDelegate.txt"/>
+								<node label="CommandIncludeDelegate.txt" url="source/bin-release1/srcview/source/build/templates/cairngorm2.2.1/CommandIncludeDelegate.txt"/>
+								<node label="Event.txt" url="source/bin-release1/srcview/source/build/templates/cairngorm2.2.1/Event.txt"/>
+								<node label="FrontController.txt" url="source/bin-release1/srcview/source/build/templates/cairngorm2.2.1/FrontController.txt"/>
+								<node label="ModelLocator.txt" url="source/bin-release1/srcview/source/build/templates/cairngorm2.2.1/ModelLocator.txt"/>
+								<node label="Services.txt" url="source/bin-release1/srcview/source/build/templates/cairngorm2.2.1/Services.txt"/>
+								<node label="ValueObject.txt" url="source/bin-release1/srcview/source/build/templates/cairngorm2.2.1/ValueObject.txt"/>
+								<node label="ValueObjectRegisterClass.txt" url="source/bin-release1/srcview/source/build/templates/cairngorm2.2.1/ValueObjectRegisterClass.txt"/>
+							</node>
+							<node label="view">
+								<node label="ViewDetails.txt" url="source/bin-release1/srcview/source/build/templates/view/ViewDetails.txt"/>
+								<node label="ViewForm.txt" url="source/bin-release1/srcview/source/build/templates/view/ViewForm.txt"/>
+								<node label="ViewList.txt" url="source/bin-release1/srcview/source/build/templates/view/ViewList.txt"/>
+							</node>
+							<node label="file-header-copy.txt" url="source/bin-release1/srcview/source/build/templates/file-header-copy.txt"/>
+						</node>
+					</node>
+					<node label="com">
+						<node label="jonniespratley">
+							<node label="SourceViewer">
+								<node label="as">
+									<node icon="htmlIcon" label="sourceViewer.as.html" url="source/bin-release1/srcview/source/com/jonniespratley/SourceViewer/as/sourceViewer.as.html"/>
+								</node>
+								<node label="assets">
+									<node icon="htmlIcon" label="MimeTypeIcons.as.html" url="source/bin-release1/srcview/source/com/jonniespratley/SourceViewer/assets/MimeTypeIcons.as.html"/>
+									<node icon="swfIcon" label="MimeTypeIcons.swf" url="source/bin-release1/srcview/source/com/jonniespratley/SourceViewer/assets/MimeTypeIcons.swf"/>
+								</node>
+								<node label="business">
+									<node icon="htmlIcon" label="GetDirectoryDelegate.as.html" url="source/bin-release1/srcview/source/com/jonniespratley/SourceViewer/business/GetDirectoryDelegate.as.html"/>
+									<node icon="htmlIcon" label="GetWorkspaceDelegate.as.html" url="source/bin-release1/srcview/source/com/jonniespratley/SourceViewer/business/GetWorkspaceDelegate.as.html"/>
+									<node icon="htmlIcon" label="ReadFileDelegate.as.html" url="source/bin-release1/srcview/source/com/jonniespratley/SourceViewer/business/ReadFileDelegate.as.html"/>
+									<node icon="htmlIcon" label="SelectedFileDelegate.as.html" url="source/bin-release1/srcview/source/com/jonniespratley/SourceViewer/business/SelectedFileDelegate.as.html"/>
+									<node icon="htmlIcon" label="Services.mxml.html" url="source/bin-release1/srcview/source/com/jonniespratley/SourceViewer/business/Services.mxml.html"/>
+								</node>
+								<node label="commands">
+									<node icon="htmlIcon" label="GetDirectoryCommand.as.html" url="source/bin-release1/srcview/source/com/jonniespratley/SourceViewer/commands/GetDirectoryCommand.as.html"/>
+									<node icon="htmlIcon" label="GetWorkspaceCommand.as.html" url="source/bin-release1/srcview/source/com/jonniespratley/SourceViewer/commands/GetWorkspaceCommand.as.html"/>
+									<node icon="htmlIcon" label="ReadFileCommand.as.html" url="source/bin-release1/srcview/source/com/jonniespratley/SourceViewer/commands/ReadFileCommand.as.html"/>
+									<node icon="htmlIcon" label="SelectedFileCommand.as.html" url="source/bin-release1/srcview/source/com/jonniespratley/SourceViewer/commands/SelectedFileCommand.as.html"/>
+								</node>
+								<node label="control">
+									<node icon="htmlIcon" label="SourceViewerController.as.html" url="source/bin-release1/srcview/source/com/jonniespratley/SourceViewer/control/SourceViewerController.as.html"/>
+								</node>
+								<node label="events">
+									<node icon="htmlIcon" label="GetDirectoryEvent.as.html" url="source/bin-release1/srcview/source/com/jonniespratley/SourceViewer/events/GetDirectoryEvent.as.html"/>
+									<node icon="htmlIcon" label="GetWorkspaceEvent.as.html" url="source/bin-release1/srcview/source/com/jonniespratley/SourceViewer/events/GetWorkspaceEvent.as.html"/>
+									<node icon="htmlIcon" label="ReadFileEvent.as.html" url="source/bin-release1/srcview/source/com/jonniespratley/SourceViewer/events/ReadFileEvent.as.html"/>
+									<node icon="htmlIcon" label="SelectedFileEvent.as.html" url="source/bin-release1/srcview/source/com/jonniespratley/SourceViewer/events/SelectedFileEvent.as.html"/>
+								</node>
+								<node label="factories">
+									<node icon="htmlIcon" label="CodeFactory.as.html" url="source/bin-release1/srcview/source/com/jonniespratley/SourceViewer/factories/CodeFactory.as.html"/>
+								</node>
+								<node label="model">
+									<node icon="htmlIcon" label="ModelLocator.as.html" url="source/bin-release1/srcview/source/com/jonniespratley/SourceViewer/model/ModelLocator.as.html"/>
+								</node>
+								<node label="view">
+									<node label="components">
+										<node icon="htmlIcon" label="CodeViewer.mxml.html" url="source/bin-release1/srcview/source/com/jonniespratley/SourceViewer/view/components/CodeViewer.mxml.html"/>
+										<node icon="htmlIcon" label="DirectoryTree.mxml.html" url="source/bin-release1/srcview/source/com/jonniespratley/SourceViewer/view/components/DirectoryTree.mxml.html"/>
+										<node icon="htmlIcon" label="FileDetails.mxml.html" url="source/bin-release1/srcview/source/com/jonniespratley/SourceViewer/view/components/FileDetails.mxml.html"/>
+										<node icon="htmlIcon" label="SourceViewerFooter.mxml.html" url="source/bin-release1/srcview/source/com/jonniespratley/SourceViewer/view/components/SourceViewerFooter.mxml.html"/>
+										<node icon="htmlIcon" label="SyntaxHighlighter_Test.mxml.html" url="source/bin-release1/srcview/source/com/jonniespratley/SourceViewer/view/components/SyntaxHighlighter_Test.mxml.html"/>
+										<node icon="htmlIcon" label="WorkspaceTree.mxml.html" url="source/bin-release1/srcview/source/com/jonniespratley/SourceViewer/view/components/WorkspaceTree.mxml.html"/>
+									</node>
+									<node icon="htmlIcon" label="MainView.mxml.html" url="source/bin-release1/srcview/source/com/jonniespratley/SourceViewer/view/MainView.mxml.html"/>
+								</node>
+								<node label="vo">
+									<node icon="htmlIcon" label="FileVO.as.html" url="source/bin-release1/srcview/source/com/jonniespratley/SourceViewer/vo/FileVO.as.html"/>
+								</node>
+							</node>
+						</node>
+					</node>
+					<node label="html-template">
+						<node label="history">
+							<node icon="htmlIcon" label="history.css.html" url="source/bin-release1/srcview/source/html-template/history/history.css.html"/>
+							<node label="history.js.txt" url="source/bin-release1/srcview/source/html-template/history/history.js.txt"/>
+							<node icon="htmlIcon" label="historyFrame.html" url="source/bin-release1/srcview/source/html-template/history/historyFrame.html"/>
+						</node>
+						<node label="AC_OETags.js.txt" url="source/bin-release1/srcview/source/html-template/AC_OETags.js.txt"/>
+						<node icon="htmlIcon" label="index.template.html" url="source/bin-release1/srcview/source/html-template/index.template.html"/>
+						<node icon="swfIcon" label="playerProductInstall.swf" url="source/bin-release1/srcview/source/html-template/playerProductInstall.swf"/>
+					</node>
+					<node label="libs">
+						<node label="as3corelib.swc" url="source/bin-release1/srcview/source/libs/as3corelib.swc"/>
+						<node label="as3crypto.swc" url="source/bin-release1/srcview/source/libs/as3crypto.swc"/>
+						<node label="Cairngorm.swc" url="source/bin-release1/srcview/source/libs/Cairngorm.swc"/>
+					</node>
+					<node label="net">
+						<node label="anirudh">
+							<node label="as3syntaxhighlight">
+								<node icon="htmlIcon" label="CodePrettyPrint.as.html" url="source/bin-release1/srcview/source/net/anirudh/as3syntaxhighlight/CodePrettyPrint.as.html"/>
+								<node icon="htmlIcon" label="PseudoThread.as.html" url="source/bin-release1/srcview/source/net/anirudh/as3syntaxhighlight/PseudoThread.as.html"/>
+							</node>
+						</node>
+					</node>
+					<node label="cairngenremix-log.txt" url="source/bin-release1/srcview/source/cairngenremix-log.txt"/>
+					<node icon="htmlIcon" label="SourceViewer.mxml.html" url="source/bin-release1/srcview/source/SourceViewer.mxml.html"/>
+				</node>
+				<node label="AC_OETags.js" url="source/bin-release1/srcview/AC_OETags.js.txt"/>
+				<node icon="imageIcon" label="downloadIcon.png" url="source/bin-release1/srcview/downloadIcon.png.html"/>
+				<node icon="htmlIcon" label="index.html" url="source/bin-release1/srcview/index.html"/>
+				<node icon="swfIcon" label="playerProductInstall.swf" url="source/bin-release1/srcview/playerProductInstall.swf"/>
+				<node label="SourceIndex.xml" url="source/bin-release1/srcview/SourceIndex.xml.txt"/>
+				<node icon="cssIcon" label="SourceStyles.css" url="source/bin-release1/srcview/SourceStyles.css.html"/>
+				<node icon="htmlIcon" label="SourceTree.html" url="source/bin-release1/srcview/SourceTree.html"/>
+				<node icon="swfIcon" label="SourceTree.swf" url="source/bin-release1/srcview/SourceTree.swf"/>
+				<node label="SourceViewer.zip" url="source/bin-release1/srcview/SourceViewer.zip"/>
+			</node>
+			<node label="AC_OETags.js" url="source/bin-release1/AC_OETags.js.txt"/>
+			<node icon="htmlIcon" label="flex_sourceviewer.html" url="source/bin-release1/flex_sourceviewer.html"/>
+			<node icon="swfIcon" label="flex_sourceviewer.swf" url="source/bin-release1/flex_sourceviewer.swf"/>
+			<node label="jqueryFileTree.php" url="source/bin-release1/jqueryFileTree.php.txt"/>
+			<node icon="swfIcon" label="playerProductInstall.swf" url="source/bin-release1/playerProductInstall.swf"/>
+			<node icon="htmlIcon" label="SourceViewer.html" url="source/bin-release1/SourceViewer.html"/>
+			<node icon="swfIcon" label="SourceViewer.swf" url="source/bin-release1/SourceViewer.swf"/>
+			<node label="SourceViewer.tmproj" url="source/bin-release1/SourceViewer.tmproj"/>
+			<node label="swfobject.js" url="source/bin-release1/swfobject.js.txt"/>
+		</node>
+		<node label="bin-release2">
+		</node>
+		<node label="bin-release3">
+		</node>
+		<node label="build.config">
+			<node label="cairngen.properties" url="source/build/config/cairngen.properties"/>
+			<node label="log.properties" url="source/build/config/log.properties"/>
+		</node>
+		<node icon="packageIcon" label="build.events" expanded="true">
+			<node icon="actionScriptIcon" label="GetContactsEvent.as" url="source/build/events/GetContactsEvent.as.html"/>
+			<node icon="actionScriptIcon" label="GetLocationsEvent.as" url="source/build/events/GetLocationsEvent.as.html"/>
+			<node icon="actionScriptIcon" label="GetOneContactEvent.as" url="source/build/events/GetOneContactEvent.as.html"/>
+			<node icon="actionScriptIcon" label="LocationSelectedEvent.as" url="source/build/events/LocationSelectedEvent.as.html"/>
+			<node icon="actionScriptIcon" label="RemoveContactEvent.as" url="source/build/events/RemoveContactEvent.as.html"/>
+			<node icon="actionScriptIcon" label="RemoveLocationEvent.as" url="source/build/events/RemoveLocationEvent.as.html"/>
+			<node icon="actionScriptIcon" label="SaveContactEvent.as" url="source/build/events/SaveContactEvent.as.html"/>
+			<node icon="actionScriptIcon" label="SaveLocationEvent.as" url="source/build/events/SaveLocationEvent.as.html"/>
+			<node icon="actionScriptIcon" label="SelectedContactEvent.as" url="source/build/events/SelectedContactEvent.as.html"/>
+		</node>
+		<node label="build.libs">
+			<node label="ant-contrib-1.0b3.jar" url="source/build/libs/ant-contrib-1.0b3.jar"/>
+			<node label="antform.jar" url="source/build/libs/antform.jar"/>
+		</node>
+		<node label="build.templates">
+			<node label="cairngorm2.2.1">
+				<node label="BusinessDelegate.txt" url="source/build/templates/cairngorm2.2.1/BusinessDelegate.txt"/>
+				<node label="CommandExcludeDelegate.txt" url="source/build/templates/cairngorm2.2.1/CommandExcludeDelegate.txt"/>
+				<node label="CommandIncludeDelegate.txt" url="source/build/templates/cairngorm2.2.1/CommandIncludeDelegate.txt"/>
+				<node label="Event.txt" url="source/build/templates/cairngorm2.2.1/Event.txt"/>
+				<node label="FrontController.txt" url="source/build/templates/cairngorm2.2.1/FrontController.txt"/>
+				<node label="ModelLocator.txt" url="source/build/templates/cairngorm2.2.1/ModelLocator.txt"/>
+				<node label="Services.txt" url="source/build/templates/cairngorm2.2.1/Services.txt"/>
+				<node label="ValueObject.txt" url="source/build/templates/cairngorm2.2.1/ValueObject.txt"/>
+				<node label="ValueObjectRegisterClass.txt" url="source/build/templates/cairngorm2.2.1/ValueObjectRegisterClass.txt"/>
+			</node>
+			<node label="view">
+				<node label="ViewDetails.txt" url="source/build/templates/view/ViewDetails.txt"/>
+				<node label="ViewForm.txt" url="source/build/templates/view/ViewForm.txt"/>
+				<node label="ViewList.txt" url="source/build/templates/view/ViewList.txt"/>
+			</node>
+			<node label="file-header-copy.txt" url="source/build/templates/file-header-copy.txt"/>
+		</node>
+		<node label="history">
+			<node icon="cssIcon" label="history.css" url="source/history/history.css.html"/>
+			<node label="history.js" url="source/history/history.js.txt"/>
+			<node icon="htmlIcon" label="historyFrame.html" url="source/history/historyFrame.html"/>
+		</node>
+		<node label="html-template">
+			<node label="history">
+				<node icon="cssIcon" label="history.css" url="source/html-template/history/history.css.html"/>
+				<node label="history.js" url="source/html-template/history/history.js.txt"/>
+				<node icon="htmlIcon" label="historyFrame.html" url="source/html-template/history/historyFrame.html"/>
+			</node>
+			<node icon="htmlIcon" label="index.template.html" url="source/html-template/index.template.html"/>
+			<node icon="swfIcon" label="playerProductInstall.swf" url="source/html-template/playerProductInstall.swf"/>
+			<node label="swfobject.js" url="source/html-template/swfobject.js.txt"/>
+		</node>
+		<node label="libs">
+			<node label="as3corelib.swc" url="source/libs/as3corelib.swc"/>
+			<node label="as3crypto.swc" url="source/libs/as3crypto.swc"/>
+			<node label="Cairngorm.swc" url="source/libs/Cairngorm.swc"/>
+		</node>
+		<node label="src">
+			<node icon="packageIcon" label="com.jonniespratley.SourceViewer.as" expanded="true">
+				<node icon="actionScriptIcon" label="sourceViewer.as" url="source/com/jonniespratley/SourceViewer/as/sourceViewer.as.html"/>
+			</node>
+			<node icon="packageIcon" label="com.jonniespratley.SourceViewer.assets" expanded="true">
+				<node icon="actionScriptIcon" label="MimeTypeIcons.as" url="source/com/jonniespratley/SourceViewer/assets/MimeTypeIcons.as.html"/>
+				<node icon="swfIcon" label="MimeTypeIcons.swf" url="source/com/jonniespratley/SourceViewer/assets/MimeTypeIcons.swf"/>
+			</node>
+			<node icon="packageIcon" label="com.jonniespratley.SourceViewer.business" expanded="true">
+				<node icon="actionScriptIcon" label="GetDirectoryDelegate.as" url="source/com/jonniespratley/SourceViewer/business/GetDirectoryDelegate.as.html"/>
+				<node icon="actionScriptIcon" label="GetWorkspaceDelegate.as" url="source/com/jonniespratley/SourceViewer/business/GetWorkspaceDelegate.as.html"/>
+				<node icon="actionScriptIcon" label="ReadFileDelegate.as" url="source/com/jonniespratley/SourceViewer/business/ReadFileDelegate.as.html"/>
+				<node icon="actionScriptIcon" label="SelectedFileDelegate.as" url="source/com/jonniespratley/SourceViewer/business/SelectedFileDelegate.as.html"/>
+				<node icon="mxmlIcon" label="Services.mxml" url="source/com/jonniespratley/SourceViewer/business/Services.mxml.html"/>
+			</node>
+			<node icon="packageIcon" label="com.jonniespratley.SourceViewer.commands" expanded="true">
+				<node icon="actionScriptIcon" label="GetDirectoryCommand.as" url="source/com/jonniespratley/SourceViewer/commands/GetDirectoryCommand.as.html"/>
+				<node icon="actionScriptIcon" label="GetWorkspaceCommand.as" url="source/com/jonniespratley/SourceViewer/commands/GetWorkspaceCommand.as.html"/>
+				<node icon="actionScriptIcon" label="ReadFileCommand.as" url="source/com/jonniespratley/SourceViewer/commands/ReadFileCommand.as.html"/>
+				<node icon="actionScriptIcon" label="SelectedFileCommand.as" url="source/com/jonniespratley/SourceViewer/commands/SelectedFileCommand.as.html"/>
+			</node>
+			<node icon="packageIcon" label="com.jonniespratley.SourceViewer.control" expanded="true">
+				<node icon="actionScriptIcon" label="SourceViewerController.as" url="source/com/jonniespratley/SourceViewer/control/SourceViewerController.as.html"/>
+			</node>
+			<node icon="packageIcon" label="com.jonniespratley.SourceViewer.events" expanded="true">
+				<node icon="actionScriptIcon" label="GetDirectoryEvent.as" url="source/com/jonniespratley/SourceViewer/events/GetDirectoryEvent.as.html"/>
+				<node icon="actionScriptIcon" label="GetWorkspaceEvent.as" url="source/com/jonniespratley/SourceViewer/events/GetWorkspaceEvent.as.html"/>
+				<node icon="actionScriptIcon" label="ReadFileEvent.as" url="source/com/jonniespratley/SourceViewer/events/ReadFileEvent.as.html"/>
+				<node icon="actionScriptIcon" label="SelectedFileEvent.as" url="source/com/jonniespratley/SourceViewer/events/SelectedFileEvent.as.html"/>
+			</node>
+			<node icon="packageIcon" label="com.jonniespratley.SourceViewer.factories" expanded="true">
+				<node icon="actionScriptIcon" label="CodeFactory.as" url="source/com/jonniespratley/SourceViewer/factories/CodeFactory.as.html"/>
+			</node>
+			<node icon="packageIcon" label="com.jonniespratley.SourceViewer.model" expanded="true">
+				<node icon="actionScriptIcon" label="ModelLocator.as" url="source/com/jonniespratley/SourceViewer/model/ModelLocator.as.html"/>
+			</node>
+			<node icon="packageIcon" label="com.jonniespratley.SourceViewer.utils" expanded="true">
+				<node icon="actionScriptIcon" label="ByteUtils.as" url="source/com/jonniespratley/SourceViewer/utils/ByteUtils.as.html"/>
+			</node>
+			<node icon="packageIcon" label="com.jonniespratley.SourceViewer.view" expanded="true">
+				<node icon="mxmlIcon" label="MainView.mxml" url="source/com/jonniespratley/SourceViewer/view/MainView.mxml.html"/>
+			</node>
+			<node icon="packageIcon" label="com.jonniespratley.SourceViewer.view.components" expanded="true">
+				<node icon="mxmlIcon" label="AssetView.mxml" url="source/com/jonniespratley/SourceViewer/view/components/AssetView.mxml.html"/>
+				<node icon="mxmlIcon" label="CodeView.mxml" url="source/com/jonniespratley/SourceViewer/view/components/CodeView.mxml.html"/>
+				<node icon="mxmlIcon" label="DirectoryTree.mxml" url="source/com/jonniespratley/SourceViewer/view/components/DirectoryTree.mxml.html"/>
+				<node icon="mxmlIcon" label="FileDetails.mxml" url="source/com/jonniespratley/SourceViewer/view/components/FileDetails.mxml.html"/>
+				<node icon="mxmlIcon" label="SourceViewerFooter.mxml" url="source/com/jonniespratley/SourceViewer/view/components/SourceViewerFooter.mxml.html"/>
+				<node icon="mxmlIcon" label="WorkspaceTree.mxml" url="source/com/jonniespratley/SourceViewer/view/components/WorkspaceTree.mxml.html"/>
+			</node>
+			<node icon="packageIcon" label="com.jonniespratley.SourceViewer.vo" expanded="true">
+				<node icon="actionScriptIcon" label="FileVO.as" url="source/com/jonniespratley/SourceViewer/vo/FileVO.as.html"/>
+			</node>
+			<node icon="packageIcon" label="skin.project" expanded="true">
+				<node icon="cssIcon" label="project.css" url="source/skin/project/project.css.html"/>
+			</node>
+			<node label="skin.project.cg_icons">
+				<node icon="imageIcon" label="icon_016.png" url="source/skin/project/cg_icons/icon_016.png.html"/>
+				<node icon="imageIcon" label="icon_032.png" url="source/skin/project/cg_icons/icon_032.png.html"/>
+				<node icon="imageIcon" label="icon_048.png" url="source/skin/project/cg_icons/icon_048.png.html"/>
+				<node icon="imageIcon" label="icon_128.png" url="source/skin/project/cg_icons/icon_128.png.html"/>
+				<node icon="imageIcon" label="icon_256.png" url="source/skin/project/cg_icons/icon_256.png.html"/>
+				<node icon="imageIcon" label="icon_512.png" url="source/skin/project/cg_icons/icon_512.png.html"/>
+			</node>
+			<node icon="packageIcon" label="skin.project.components" expanded="true">
+				<node icon="mxmlIcon" label="Pod.mxml" url="source/skin/project/components/Pod.mxml.html"/>
+				<node icon="mxmlIcon" label="PodHeader.mxml" url="source/skin/project/components/PodHeader.mxml.html"/>
+				<node icon="mxmlIcon" label="ProjectFooter.mxml" url="source/skin/project/components/ProjectFooter.mxml.html"/>
+				<node icon="mxmlIcon" label="ProjectHeader.mxml" url="source/skin/project/components/ProjectHeader.mxml.html"/>
+			</node>
+			<node label="skin.project.fonts">
+				<node icon="swfIcon" label="Helvetica-Neue.swf" url="source/skin/project/fonts/Helvetica-Neue.swf"/>
+				<node icon="swfIcon" label="Helvetica.swf" url="source/skin/project/fonts/Helvetica.swf"/>
+			</node>
+			<node label="skin.project.icons">
+				<node icon="imageIcon" label="arrow-circle-double.png" url="source/skin/project/icons/arrow-circle-double.png.html"/>
+				<node icon="imageIcon" label="block--minus.png" url="source/skin/project/icons/block--minus.png.html"/>
+				<node icon="imageIcon" label="block--plus.png" url="source/skin/project/icons/block--plus.png.html"/>
+				<node icon="imageIcon" label="cg_logo.png" url="source/skin/project/icons/cg_logo.png.html"/>
+				<node icon="imageIcon" label="database-small.png" url="source/skin/project/icons/database-small.png.html"/>
+				<node icon="imageIcon" label="document-copy.png" url="source/skin/project/icons/document-copy.png.html"/>
+				<node icon="imageIcon" label="document-share.png" url="source/skin/project/icons/document-share.png.html"/>
+				<node icon="imageIcon" label="folder-open.png" url="source/skin/project/icons/folder-open.png.html"/>
+				<node icon="imageIcon" label="folder.png" url="source/skin/project/icons/folder.png.html"/>
+				<node icon="imageIcon" label="folders.png" url="source/skin/project/icons/folders.png.html"/>
+				<node icon="imageIcon" label="si_logo.png" url="source/skin/project/icons/si_logo.png.html"/>
+				<node icon="imageIcon" label="sv_logo.png" url="source/skin/project/icons/sv_logo.png.html"/>
+				<node icon="imageIcon" label="table-small.png" url="source/skin/project/icons/table-small.png.html"/>
+			</node>
+			<node label="skin.project.images">
+				<node icon="imageIcon" label="closeNav.png" url="source/skin/project/images/closeNav.png.html"/>
+				<node icon="imageIcon" label="downArrow.png" url="source/skin/project/images/downArrow.png.html"/>
+				<node icon="swfIcon" label="header.swf" url="source/skin/project/images/header.swf"/>
+				<node icon="imageIcon" label="openNav.png" url="source/skin/project/images/openNav.png.html"/>
+				<node icon="imageIcon" label="scrolltrack.png" url="source/skin/project/images/scrolltrack.png.html"/>
+				<node icon="imageIcon" label="sliderThumb.png" url="source/skin/project/images/sliderThumb.png.html"/>
+				<node icon="imageIcon" label="sliderThumb_down.png" url="source/skin/project/images/sliderThumb_down.png.html"/>
+				<node icon="imageIcon" label="sliderThumb_over.png" url="source/skin/project/images/sliderThumb_over.png.html"/>
+				<node icon="imageIcon" label="thumb.png" url="source/skin/project/images/thumb.png.html"/>
+				<node icon="imageIcon" label="upArrow.png" url="source/skin/project/images/upArrow.png.html"/>
+			</node>
+			<node icon="mxmlAppIcon" selected="true" label="flex_sourceviewer.mxml" url="source/flex_sourceviewer.mxml.html"/>
+		</node>
+		<node label="AC_OETags.js" url="source/AC_OETags.js.txt"/>
+		<node label="build.xml" url="source/build.xml.txt"/>
+		<node icon="swfIcon" label="playerProductInstall.swf" url="source/playerProductInstall.swf"/>
+		<node label="project.properties" url="source/project.properties"/>
+		<node icon="htmlIcon" label="SourceViewer.html" url="source/SourceViewer.html"/>
+		<node icon="swfIcon" label="SourceViewer.swf" url="source/SourceViewer.swf"/>
+	</nodes>
+	<zipfile label="Download source (ZIP, 2064K)" url="SourceViewer.zip">
+	</zipfile>
+	<sdklink label="Download Flex SDK" url="http://www.adobe.com/go/flex4_sdk_download">
+	</sdklink>
+</index>

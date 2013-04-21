@@ -1,36 +1,72 @@
-<div id="about" class="page">
-	     <div class="row">
-			<div class="span8">
-				<div id="markdown-content" ng-init="App.loadReadme( 'README.md', '#markdown-content');"></div>
-			</div>		
+<div class="container">
+	<div class="header">
+		<div class="row">
+			<div class="span2">
+				<img src="http://jonniespratley.me/assets/jonnie/avatar.png" class="img-polaroid" style="width:150px">
+			</div>
+			<!--/photo-->
+			<div class="span5 margin-bottom-5">
+				<div class="name-text">
+					Jonnie Spratley
+				</div>
+				<div class="major-text">
+					<i>Software Engineer &amp; JavaScript Expert</i>
+				</div>
+			</div>
+			<!--/name-->
+			<div class="span5 pull-right">
+				<div class="span">
+					<address class="margin-bottom-5">
+						7824 Spring Valley Ave <br>
+						Citrus Heights, CA
+					</address>
+					<abbr rel="tooltip" data-original-title="Phone">
+						P:
+					</abbr>
+					&nbsp;&nbsp;916-241-3613
+					<br>
+					<abbr rel="tooltip" data-original-title="Email">
+						E:
+					</abbr>
+					&nbsp;&nbsp;
+					<a href="mailto:jonniespratley@me.com">jonniespratley@me.com</a>
+					<br>
+					<abbr rel="tooltip" data-original-title="Website">
+						W:
+					</abbr>
+					&nbsp;
+					<a href="www.jonniespratley.me">www.jonniespratley.me</a>
+					<br>
+					<br>
+					<div class="margin-top-5 margin-bottom-5">
+						<a href="#" rel="tooltip" data-original-title="LinkedIn">
+							<img src="/assets/jonnie/icons/linkedin.png" alt="LinkedIn" width="20">
+						</a>
+						&nbsp;
+						<a href="#" rel="tooltip" data-original-title="Twitter"><img src="/assets/jonnie/icons/twitter.png" alt="Twitter" width="20"></a>
+						&nbsp;
+						<a href="#" rel="tooltip" data-original-title="Facebook"><img src="/assets/jonnie/icons/facebook.png" alt="Facebook" width="20"></a>
+						&nbsp;
+						<a href="#" rel="tooltip" data-original-title="Google Plus"><img src="/assets/jonnie/icons/google.png" alt="Google Plus" width="20"></a>
+						&nbsp;
+						<a href="#" rel="tooltip" data-original-title="Skype"><img src="/assets/jonnie/icons/skype.png" alt="Skype" width="20"></a>
 
-			<div class="span4" style="display:">
-				<div class="well">
-					<div class="avatar">
-	                   <img ng-src="{{App.content.profile.image}}" src="/img/avatar.png">
-	               </div><!--/avatar -->
-	               <br class="clearfix">
-
-	               <div class="bio">
-	                   <h1>{{App.content.profile.title}}</h1>
-						<p>{{App.content.profile.subtitle}}</p>
-	               </div><!--/bio -->
-	               <br class="clearfix">
-
-	               <div class="contact">
-	                   <p ng-repeat="item in App.content.profile.data">{{item.title}} <i class="icon-{{item.icon}}"></i></p>
-
-	               </div><!--/contact -->
-	               <br class="clearfix">
-
-	               <div class="button no-display">
-	                   <p><a class="btn no-radius btn-resume no-display" href="#" id="print"><i class="icon-print"></i> Print</a> 
-	                   <a class="btn no-radius btn-resume no-display" href="javascript:void(location.href='http://www.pdfspot.com/html-to-pdf-converter.aspx?url=' + escape(location.href)+'&pdf_name=' + escape('') + '&pdf_orientation=portrait&pdf_page_size=A4&scripts_enabled=true' )"><i class="icon-download-alt"></i> Download</a> 
-	               </p></div> <!--/button -->
-				</div><!--/.well -->
-	       </div><!--/span-->
-
-	     </div><!--/row-->
-
-	
-</div>
+					</div>
+				</div>
+				<div class="span img-polaroid">
+					<img src="/assets/jonnie/qrcode.png" style="width:140px" rel="tooltip" data-original-title="Save my vCard">
+				</div>
+				<a class="pdf" href="cv.pdf" target="_blank" rel="tooltip" data-original-title="Download as PDF"></a>
+			</div>
+			<!--/contacts-->
+		</div>
+	</div>
+	<div>
+	<div id="about" class="page">
+		     <div class="row">
+				<div class="span12">
+					<div id="markdown-content" ng-init="App.loadReadme( 'README.md', '#markdown-content');"></div>
+				</div>		
+		     </div><!--/row-->
+	</div>
+</div></div>

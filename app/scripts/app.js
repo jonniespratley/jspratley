@@ -12,7 +12,7 @@ var jspratleyApp = angular.module('jspratleyApp', ['ngGrid'])
     
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: 'views/about.html',
         controller: 'MainCtrl',
         resolve: routeResolver
       })

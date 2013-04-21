@@ -12,7 +12,7 @@ var jspratleyApp = angular.module('jspratleyApp', ['ngGrid'])
     
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: 'views/about.html',
         controller: 'MainCtrl',
         resolve: routeResolver
       })
@@ -74,13 +74,13 @@ jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile,
 				return data;
 			});
 		},
-		sitetitle: '',
+		sitetitle: 'Jonnie Spratley',
 		menu: {
 			nav: [
-				{id: null, href: '#/', title: 'Jonnie Spratley'},
+			//	{id: null, href: '#/', title: 'Jonnie Spratley'},
 				{id: null, href: '#/about', title: 'About'},
 				{id: null, href: '#/portfolio', title: 'Portfolio'},
-				{id: null, href: '#/contact', title: 'Contact'}
+			//	{id: null, href: '#/contact', title: 'Contact'}
 			]
 		},
 		content:{

@@ -224,11 +224,10 @@ module.exports = function (grunt) {
           src: [
             '*.{ico,txt,json,md}',
             '.htaccess',
+            'styles/**/*',
             'scripts/vendor/**/*',
-			//Dont need to copy this all the time
             'ico/**/*',
-           // 'assets/**/*',
-           // 'components/**/*',
+           	//'assets/**/*'
           ]
         }]
       }

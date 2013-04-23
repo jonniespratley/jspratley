@@ -228,7 +228,7 @@ module.exports = function (grunt) {
             'styles/**/*',
             'scripts/vendor/**/*',
             'ico/**/*',
-           	//'assets/**/*'
+           	'assets/**/*.{png,json,md}'
           ]
         }]
       }

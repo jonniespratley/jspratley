@@ -74,7 +74,7 @@ jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile,
 				return data;
 			});
 		},
-		sitetitle: 'Jonnie Spratley',
+		sitetitle: 'JonnieSpratley.me',
 		menu: {
 			nav: [
 			//	{id: null, href: '#/', title: 'Jonnie Spratley'},
@@ -310,9 +310,11 @@ jspratleyApp.controller('AboutCtrl', function($scope) {
 'use strict';
 
 jspratleyApp.controller('PortfolioCtrl', function($scope, $rootScope) {
-	console.log($scope);
-	
+	console.log($rootScope);
+	$scope.predicate = 'modified';
+	$scope.reverse = true;
 	$scope.project = {};
+
 	$scope.selectProject = function(p){
 		this.project = p;
 		console.log('selectProject', p);

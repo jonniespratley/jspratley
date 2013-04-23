@@ -33,6 +33,7 @@ I am excellent listener and communicator who effectively brings information verb
 _Computer Science, General, 2005 - 2009_  
 Rich Internet Applications Club  
 
+
  
 
 ###### Bella Vista High School  
@@ -76,11 +77,11 @@ Content Management System application for AppMatrix, Inc. Products. User interfa
 
 #### Co-Founder @ Cumulous.biz  
 _April 2011 - August 2011 (5 Months)_  
-Created entire web application framework with custom dashboard and client subscription system. Tons of JavaScript and WordPress Core integration.
+Created entire web application framework with custom dashboard and client subscription system, lots of JavaScript, jQuery Mobile and WordPress integration.
 
 #### Web Developer @ Patterson Properties Inc.  
 _March 2009 - June 2010 (1 Year 4 Months)_  
-Various web duties.
+Site Maintenance, Web Form Creation, Validation, Design, internal network infrastructure.
 
 #### Developer @ Cal-West Graphics  
 _February 2009 - April 2009 (3 Months)_  
@@ -89,15 +90,7 @@ Worked as a Web Developer creating, designing and maintaining client websites.
 
 #### Junior Developer @ EventReady  
 _October 2008 - January 2009 (4 Months)_  
-Worked with the lead Senior Developer architecting a re-creation of the companies current web application.
-
-#### Shipping Department @ Deutsche Bank  
-_October 2005 - June 2007 (1 Year 9 Months)_  
-Received and stocked company supplies, maintained all product supplies throughout office.
-
-#### Server @ Red Robin
-_June 2005 - October 2006 (1 Year )_  
- 
+Bug Tracking, Database Maintenance, Worked with a team of developers planing a new and improved web based management application.
 
 
 

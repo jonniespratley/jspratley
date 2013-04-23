@@ -74,7 +74,7 @@ jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile,
 				return data;
 			});
 		},
-		sitetitle: 'Jonnie Spratley',
+		sitetitle: 'JonnieSpratley.me',
 		menu: {
 			nav: [
 			//	{id: null, href: '#/', title: 'Jonnie Spratley'},

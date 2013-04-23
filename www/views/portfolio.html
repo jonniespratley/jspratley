@@ -7,10 +7,10 @@
 			</div>
 
 
-
+			
 
 		<ul class="thumbnails projects">
-				<li class="span4 well" ng-repeat="item in App.content.portfolio.data">
+				<li class="span4 well" ng-repeat="item in App.content.portfolio.data | orderBy:predicate:reverse">
 					<a class="thumbnail" data-toggle="modal" href="#projectDetailsModal" ng-click="App.selectProject(item);">
 					   <img alt="image" class="img-" src="http://placehold.it/320x250" ng-src="{{cdn}}{{item.project}}/thumb.png">
 		              </a>			  

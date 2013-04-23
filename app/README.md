@@ -10,6 +10,15 @@
 I am a flexible team player who thrives in environments requiring ability to prioritize effectively and juggle multiple concurrent projects, and a driven achiever with exemplary planning and organizational skills, along with a high degree of detail orientation.
 
 
+## Technical »
+
+I am computer-literate with extensive software proficiency covering a variety of applications and programming languages.
+
+* **Databases:**				MySQL, MongoDB, Microsoft SQL Server, CouchDB, IndexedDB
+* **Languages:** 				PHP5, HTML5, CSS3, JavaScript, ActionScript 3, Titanium Alloy, Ruby, Node.js
+* **Development Tools:**		Textmate, Titanium Studio, Eclipse
+* **Web Servers:**				Apache, UNIX, Linux, J2EE
+ 
 
 
 
@@ -34,19 +43,10 @@ Four Year Varsity Football
 
 
 
-## Technical Skills »
-
-I am computer-literate with extensive software proficiency covering a variety of applications and programming languages.
-
-* **Databases:**		MySQL, MongoDB, Microsoft SQL Server, CouchDB, IndexedDB
-* **Languages:** 				PHP5, HTML5, CSS3, JavaScript, ActionScript 3, Titanium Alloy, Ruby, Node.js
-* **Development Tools:**		Textmate, Titanium Studio, Eclipse
-* **Web Servers:**				Apache, UNIX, Linux, J2EE
- 
 
  
 
-## Employment History »
+## Employment »
 
 
 #### Director of Product Design @ AppMatrix, Inc.  

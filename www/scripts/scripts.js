@@ -36,17 +36,23 @@ var jspratleyApp = angular.module('jspratleyApp', ['ngGrid'])
         controller: 'ManageCtrl',
         resolve: routeResolver
       })
+	  .when('/code', {
+        templateUrl: 'views/code.html',
+        controller: 'MainCtrl',
+        resolve: routeResolver
+      })
       .otherwise({
         redirectTo: '/'
       });
   }]);
 
-
 /* ======================[ @TODO: GLobal app controller ]====================== */
 jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile, Api) {
 	//https://dl.dropbox.com/u/26906414/jonniespratley.me/jonnie/
 	$rootScope.cdn = '/assets/jonnie/';
-
+	
+	
+	
 	$rootScope.App = {
 		Api: Api,
 		projects:{},
@@ -80,6 +86,7 @@ jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile,
 			//	{id: null, href: '#/', title: 'Jonnie Spratley'},
 				{id: null, href: '#/about', title: 'About'},
 				{id: null, href: '#/portfolio', title: 'Portfolio'},
+				{id: null, href: '#/code', title: 'Code'},
 			//	{id: null, href: '#/contact', title: 'Contact'}
 			]
 		},
@@ -122,6 +129,24 @@ jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile,
 						] 
 					}
 				]
+			},			
+			repos: {
+				title: 'Open Source Projects',
+				body: '',
+				data: [
+					{ id: null, title: 'jps-passbook-manager', body: 'A Passbook manager built with Bootstrap, Angular.js and MongoDB, with Node and express to serve the API.', url: 'https://github.com/jonniespratley/jps-passbook-manager' },
+					{ id: null, title: 'jspratley', body: 'This is my personal website that showcases all of my work.', url: 'https://github.com/jonniespratley/jspratley' },
+					{ id: null, title: 'angular-cms', body: 'A lightweight content management system build with the solid Angular.js framework.', url: 'https://github.com/jonniespratley/angular-cms' },
+					{ id: null, title: 'angular-mobile', body: 'HTML5 mobile components built with Angular.js', url: 'https://github.com/jonniespratley/angular-mobile.js' },
+					{ id: null, title: 'jps-codegen', body: 'A Code Generator for various programming languages.', url: 'https://github.com/jonniespratley/jps-codegen' },
+					{ id: null, title: 'flex-codegen', body: 'Code Generator for Flex and PHP based applications.', url: 'https://code.google.com/p/flex-codegen/' },
+					{ id: null, title: 'amfphp-redux', body: 'A remix of amfphp with tons of features', url: 'https://code.google.com/p/amfphp-redux/' },
+					{ id: null, title: 'flex-databasemanager', body: 'Flex MySQL Monitor, Manager, Query Builder,', url: 'https://code.google.com/p/flex-databasemanager/' },
+					{ id: null, title: 'flex-formgen', body: 'Flex based HTML Form Generator', url: 'https://code.google.com/p/flex-formgen/' },
+					{ id: null, title: 'flex-textpattern', body: 'Textpattern admin manager built with Flex', url: 'https://code.google.com/p/flex-textpattern/' },
+					{ id: null, title: 'flex-wordpress', body: 'Flex Admin interface for WordPress', url: 'https://code.google.com/p/flex-wordpress/' },
+					{ id: null, title: 'jquery-jtwitter', body: 'jQuery plugin that allows full access of the Twitter API through a PHP proxy class.', url: 'https://code.google.com/p/jquery-jtwitter/' }
+				]
 			},
 			portfolio: {
 				title: '',
@@ -143,10 +168,19 @@ jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile,
 		},
 		selectProject: function(p){
 			this.project = p;
-			console.log('selectProject', p);
+			
+
 			this.loadReadme('/assets/jonnie/'+p.project+'/README.md', '#project-markdown-content');
 		}
 	};
+
+
+	var pageTracker = pageTracker || {};
+	
+	$rootScope.$on('$routeChangeSuccess', function () {
+			pageTracker = _gat._createTracker('UA-40428307-1');
+			pageTracker._trackPageview();
+	});
 
 	window.App = $rootScope.App;
 	App.init();

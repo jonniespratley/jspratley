@@ -16,7 +16,6 @@
 		              </a>			  
 					<div class="project-body">
 				    	<h3 class="project-heading">{{item.title}} </h3>
-
 				  </div>
 				</li>
 		</ul>
@@ -33,10 +32,17 @@
 		    <h3>{{App.project.title}}</h3>
 		  </div>
 		  <div class="modal-body">
-		 <div id="project-markdown-content"></div>
+		 
+		 	<div id="project-markdown-content"></div>
 		  </div>
-		  <div class="modal-footer">
-			<a href="#" class="btn"> <i class="icon-github"></i> View Github</a>
+		  <div class="modal-footer clearfix">
+			<div class="pull-left">
+				<span class="label label-info" ng-show="App.project.technologies">{{App.project.technologies}}</span>
+			</div><!--/-->
+			<div class="pull-right">
+				<a href="{{App.project.local_url}}" ng-show="App.project.local_url" target="_blank" class="btn"> <i class="icon-eye-open"></i> View Demo</a>
+				<a href="{{App.project.repo_url}}" ng-show="App.project.repo_url" target="_blank" class="btn"> <i class="icon-github"></i> View Github</a>
+			</div>
 		  </div>
 		</div>
 

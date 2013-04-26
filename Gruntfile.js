@@ -227,8 +227,8 @@ module.exports = function (grunt) {
             'views/**/*',
             'styles/**/*',
             'scripts/vendor/**/*',
-            'ico/**/*',
-           	'assets/**/*.{png,json,md}'
+            //'ico/**/*',
+           	'assets/**/*.{json,md}'
           ]
         }]
       }
@@ -257,6 +257,15 @@ module.exports = function (grunt) {
     'testacular'
   ]);
 
+  grunt.registerTask('build:q', [
+    'clean:dist',
+    'coffee',
+    'compass:dist',
+    'concat',
+    'copy',
+    'cdnify',
+    'usemin'
+  ]);
   grunt.registerTask('build', [
     'clean:dist',
     //'jshint',
@@ -264,9 +273,9 @@ module.exports = function (grunt) {
     'coffee',
     'compass:dist',
     'useminPrepare',
-    'imagemin',
-    'cssmin',
-    'htmlmin',
+   'imagemin',
+   'cssmin',
+   'htmlmin',
     'concat',
     'copy',
     'cdnify',

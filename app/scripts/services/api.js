@@ -107,15 +107,16 @@ function(http, rootScope) {
          * @param {Function} callback
          */
         save : function(model, data, callback) {
-            App.log('App.Api.save ' + model, data);
 
+			var id = data._id;
+			
             var options = {
-                method : 'POST',
-                url : '/api/v1/projectmanager/' + model,
+                method : 'PUT',
+                url : '/api/v1/projectmanager/' + model + '/' + id,
                 data : data
             };
             http(options).success(function(result) {
-                App.log('save:success', result);
+                console.log('save:success', result);
                 if (callback) {
                     callback(result);
                 }
@@ -127,6 +128,7 @@ function(http, rootScope) {
                 }
                 console.error('App.Api.save.error', result);
             });
+			console.log('App.Api.save ' + model, data);
         },
         refresh : function() {
         }

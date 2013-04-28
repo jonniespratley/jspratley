@@ -54,6 +54,7 @@ var RestResource = {
     //Init the resource applying the config object
     init: function(config){
         this.config = config;
+
     },
     //Display default message on index /
     index : function (req, res, next) {
@@ -91,13 +92,14 @@ var RestResource = {
         }
         //Log for interal usage
         console.log('query', query, 'options', options);
-        //new database instance
-        var db = new mongo.Db (req.params.db, new mongo.Server (config.db.host, config.db.port, {
+       	 //new database instance
+		this.db = new mongo.Db (req.params.db, new mongo.Server (config.db.host, config.db.port, {
             auto_reconnect : true,
             safe : true
         }));
+	
         //open database
-        db.open(function (err, db) {
+        this.db.open(function (err, db) {
             if (err) {
                 console.log(err);
             } else {
@@ -190,19 +192,23 @@ var RestResource = {
         };
         var db = new mongo.Db (req.params.db, new mongo.Server (config.db.host, config.db.port, {
             'auto_reconnect' : true,
-            'safe' : true
+            'safe' : false
         }));
+
         db.open(function (err, db) {
             db.collection(req.params.collection, function (err, collection) {
-                collection.update(spec, req.body, true, function (err, docs) {
+	
+                collection.update({_id: req.params.id}, req.body, true, function (err, docs) {
                     res.header('Location', '/' + req.params.db + '/' + req.params.collection + '/' + req.params.id);
                     res.header('Content-Type', 'application/json');
-                    res.send('{"ok":1}');
+                    res.send(JSON.stringify(req.body));
+
                     db.close();
                     console.log('Location', '/' + req.params.db + '/' + req.params.collection + '/' + req.params.id);
                 });
             });
         });
+
     },
     view : function (req, res, next) {
     },

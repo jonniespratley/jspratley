@@ -41,6 +41,18 @@ var jspratleyApp = angular.module('jspratleyApp', ['ngGrid'])
         controller: 'MainCtrl',
         resolve: routeResolver
       })
+      .when('/projects', {
+        templateUrl: 'views/projects.html',
+        controller: 'ProjectsCtrl'
+      })
+      .when('/posts', {
+        templateUrl: 'views/posts.html',
+        controller: 'PostsCtrl'
+      })
+      .when('/admin', {
+        templateUrl: 'views/admin.html',
+        controller: 'AdminCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -85,7 +97,8 @@ jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile,
 			nav: [
 			//	{id: null, href: '#/', title: 'Jonnie Spratley'},
 				{id: null, href: '#/about', title: 'About'},
-				{id: null, href: '#/portfolio', title: 'Portfolio'},
+				{id: null, href: '#/posts', title: 'Posts'},
+				{id: null, href: '#/projects', title: 'Projects'},
 				{id: null, href: '#/code', title: 'Code'},
 			//	{id: null, href: '#/contact', title: 'Contact'}
 			]
@@ -178,8 +191,8 @@ jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile,
 	var pageTracker = pageTracker || {};
 	
 	$rootScope.$on('$routeChangeSuccess', function () {
-			pageTracker = _gat._createTracker('UA-40428307-1');
-			pageTracker._trackPageview();
+			//pageTracker = _gat._createTracker('UA-40428307-1');
+			//pageTracker._trackPageview();
 	});
 
 	window.App = $rootScope.App;

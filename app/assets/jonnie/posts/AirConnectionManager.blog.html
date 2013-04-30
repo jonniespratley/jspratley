@@ -1,0 +1,68 @@
+<a href="http://jonniespratley.com/wp-content/uploads/2009/06/connection_manager.png">
+<img src="http://jonniespratley.com/wp-content/uploads/2009/06/connection_manager.png" alt="connection_manager" title="connection_manager" class="alignleft size-full wp-image-612" /></a>
+
+<p>Here is a very useful script that I re-use and re-use when building Air applications. Its a simple script I am sure you can make out what is going on here.</p>
+
+<strong>ConnectionManager.as</strong>
+
+<pre class="brush: as3">
+package com.jonniespratley.air.managers
+{
+	import air.net.URLMonitor;
+	
+	import flash.events.StatusEvent;
+	import flash.net.URLRequest;
+	
+	import mx.controls.Alert;
+	
+	public class ConnectionManager
+	{
+		private var statusEvent:StatusEvent;
+		private var urlMonitor:URLMonitor;
+		private var showAlert:Boolean;
+		private var message:String;
+		
+		[Bindable] public var connectionURL:String;
+		[Bindable] public var isConnected:Boolean;	
+		
+		
+		public function ConnectionManager( showAlert:Boolean = true, 
+					connectionURL:String = "http://del.icio.us", 
+					message:String = "Del.icio.us Air must be connected to the internet to retrieve lastest bookmarks\nan Internet Connection" )
+		
+		{
+			this.showAlert = showAlert;
+			this.connectionURL = connectionURL;
+			this.message = message;
+			
+			startMonitor();
+		}
+		
+		public function startMonitor():void
+		{
+			var urlRequest:URLRequest = new URLRequest( connectionURL );
+				urlRequest.method = "HEAD";
+				
+				urlMonitor = new URLMonitor( urlRequest );
+				urlMonitor.addEventListener( StatusEvent.STATUS, statusChanged );
+				urlMonitor.start();
+		}
+		
+		public function statusChanged( event:StatusEvent ):void
+		{
+			this.isConnected = urlMonitor.available;
+			
+			if ( !this.isConnected && this.showAlert )
+			{
+				Alert.show( this.message, "Connection Failure" );
+			}
+			
+			statusEvent = new StatusEvent( StatusEvent.STATUS );
+			
+			dispatchEvent( statusEvent );			
+			
+		}
+
+	}
+}
+</pre>

@@ -1,0 +1,407 @@
+<a href="http://jonniespratley.com/wp-content/uploads/2009/05/txp_dbmanager.png"><img class="alignleft size-full wp-image-567" title="txp_dbmanager" src="http://jonniespratley.com/wp-content/uploads/2009/05/txp_dbmanager.png" alt="txp_dbmanager" width="288" height="198" /></a>
+
+<p>My First plugin attempt, I wanted to make a power user editor for making quick edits to the textpattern database. You know that it gets old 
+waiting for the page to reload every time in textpattern when you just want to make a few quick changes to the sections. Ok lets see how far I got.</p>
+
+<p>There is a <a href="http://stefdawson.com/">plugin composer</a> that you can download and it will help you out when pasting the code from
+your IDE to textpattern, make sure you grab that.</p>
+
+<p>Ok this is going to go fast. I also commented my code really good so make sure you check that out. Lets do this.<br/>
+First you need to register the tab and the event that is going to be handled by the plugin.</p>
+
+<p>Here is the first part of the plugin before the functions got put in.</p>
+
+<pre class="brush: php;">
+$plugin [ 'name' ] = 'jps_db_manager';
+$plugin [ 'version' ] = '0.1';
+$plugin [ 'author' ] = 'Jonnie Spratley';
+$plugin [ 'author_uri' ] = 'http://jonniespratley.com';
+$plugin [ 'description' ] = 'Database Manager';
+$plugin [ 'order' ] = '5';
+$plugin [ 'type' ] = '3';//only on the admin side
+
+if ( ! defined ( 'txpinterface' ) ) @include_once ( 'zem_tpl.php' );
+
+# --- BEGIN PLUGIN CODE ---
+
+if ( @txpinterface == 'admin' )
+{
+	$jpsDBTab = 'Fxk DB Manager';
+	$jpsDBEvent = 'jps_db_manager';
+
+	add_privs ( $jpsDBEvent, '1' );
+
+/* ===============================================================================
+* Register all callbacks and tabs, also permissions on all of the events
+* That is something they don't tell you.
+* 
+* I hate the resources on textpattern plugins, and the documentation, is shitty,
+* actually... what documentation??
+* ===============================================================================*/ 
+register_tab ( 'extensions', $jpsDBEvent, $jpsDBTab );
+register_callback ( $jpsDBEvent, $jpsDBEvent, null, 1 );
+
+}//ends @txpinterface == admin
+</pre>
+
+
+<p>Now after that is in place, you have to create the callback function that will be triggered once the user clicks the tab we just registered. Before that we are going to have to create the mini private functions that help out the main function.</p>
+
+
+<p><b>_getTables()</b> - This gets all of the tables in the textpattern database. Then for every table in the 
+	it creates a flex tree ready array holding the name of the table and the children which are the fields.</p><br/>
+
+
+<pre class="brush: php;">
+/**
+ * I get all of the tables in the database
+ *
+ * @return [array] - A array ready for Flex
+ */
+function _getTables()
+{
+	//This is the textpattern config.php file. txpcfg holds the info in an assoc array;
+	global $txpcfg;
+
+	//Get the database name
+	$dbDB = $txpcfg [ 'db' ];
+
+	//Build the query
+	$sql = 'SHOW TABLES FROM ' . $dbDB;
+
+	//Get the results
+	$query = getThings ( $sql );
+
+	//Set up the result array
+	$tables = array ();
+
+	//Loop the results
+	foreach ( $query as $key => $value )
+	{
+		//Set up a array for the fields
+		$fields = array ();
+
+		//For each table get the fields
+		$fields = _describeTable ( $dbDB, $value );
+
+		//and now each table, add the table name and the fields array
+		$tables [] = array ( 
+			'label' => $value, 'children' => $fields 
+		);
+	}
+
+	//Return that shit
+	return $tables;
+}
+</pre>
+
+<p><b>_describeTable( table )</b> - This gets all of the fields in the table.</p>
+
+<pre class="brush: php;">
+/**
+ * I describe a database table, I get information about the fields in the table.
+ *
+ * @param [string] $db - The database name from the txp configuration.
+ * @param [string] $tbl - The table name that you want information about.
+ * @return [array] An array containing the information.
+ */
+function _describeTable( $db, $tbl )
+{
+	$sql = 'SHOW FIELDS FROM ' . $db . '.' . $tbl;
+	$results = getThings ( $sql );
+
+	$fields = array ();
+	//Loop the results from the getThings( sql ) method
+	foreach ( $results as $key => $value )
+	{
+		//Add each field to the array
+		$fields [] = array ( 
+			'label' => $value 
+		);
+	}
+
+	//Return that shit
+	return $fields;
+}</pre>
+
+
+<p><b>jps_db_manager( event, step )</b> - This function will poop out the ui, which is going to be a heading, 
+and then a div tag containing my flex application. It also added the neccessary javascript to the page. 
+I have a switch statement inside of the body of the function that checks the url to see what to do, 
+but I am not sure how to implement that.</p>
+
+<pre class="brush: php;">
+/**
+ * array (
+ * 'db' => 'fxktextpattern',
+ * 'user' => 'root',
+ * 'pass' => 'fred',
+ * 'host' => 'localhost',
+ * 'table_prefix' => '',
+ * 'txpath' => '/Applications/MAMP/htdocs/fxk-textpattern/textpattern',
+ * 'dbcharset' => 'utf8',
+ * 'doc_root' => '/Applications/MAMP/htdocs',
+ * )
+ * 
+ *
+ * @param [string] $event - what event does textpattern trigger, 
+ * ( categories, articles, forms, etc. ) Look at the end of the url and you will see it.
+ * @param [string] $step - what event step is textpattern triggering, 
+ * ( for categories, when you create a category this is the step: category_article_create ).
+ */
+function jps_db_manager( $event, $step )
+{
+	//Default header and navigation, this took me so fucking long to figure out, 
+	//no other part of the textpattern admin was showing up.
+	//and no one would ever tell you to watch out for that, fuck.
+	pagetop ( "Textpattern", '' );//DONT FORGET TO HAVE THIS IF YOU WANT THE UGLY TEXTPATTERN TABS AND SHIT
+
+	$dbJSON = '';//get the JSON ready
+
+	//Start building the top of OUR plugin
+	$html = '<h1>Database Manager</h1>';
+
+	//Shoot that shit out really quick.
+	echo $html;
+
+	/* ==================================================================================
+	 * First part is complete, now we are going to set up for our REST admin stuff
+	 * I know its tacky but so is textpattern, but I still love it <3;
+	 * 
+	 * We are going to have a few different modes, and going to check if the url query
+	 * string has any of what we want, and if it does we want to go ahead and do the 
+	 * correct function for it.
+	 * 
+	 * Watch
+	 * ================================================================================== */
+
+	//the mode variable ( ie: http://textpattern/index.php?event=OUR_PLUGIN_EVENT_NAME&m=GETDATA )
+	$mode = '';// m = GETDATA
+	$query = '';// q = the sql you want to call
+	$dbJSON = json_encode ( _getTables () );
+	/**
+	 * Here is another shitty name for the textpattern variable, gps( what );
+	 * this shit checks for a GET variable from the url or something.
+	 * So we check if the url has a m in it for our MODE
+	 */
+	if ( gps ( 'm' ) )
+	{
+		//It does, good. set the m to the mode variable
+		$mode = gps ( 'm' );
+
+		//Good there is a mode so lets check for a q
+		if( gps ( 'q' ) )
+		{
+			$query = gps ( 'q' );
+		}
+
+		//Now lets switch depending on what mode is specified
+		switch ( $mode )
+		{
+			//case they want the tables, call the getTables() and set the return value to the $dbJSON variable we declared earlier
+			case 'getTables':
+				$dbJSON = json_encode ( _getTables () );
+			break;
+
+			case 'execute':
+				$dbJSON = json_encode( _executeQuery( $query ) );
+			break; 
+
+
+		}
+	} //ends mode check
+
+$html = <<<EOF
+<script src="js/swfobject_modified.js" type="text/javascript"></script>
+<script language="JavaScript" type="text/javascript">
+function getTables()
+{
+	dump( '$dbJSON' );
+	return '$dbJSON';
+}
+
+function gotTables()
+{
+	dump( '$dbJSON' ); 
+	return '$dbJSON';
+}
+
+function dump( str )
+{
+	document.getElementById( "fxk_debug" ).innerHTML += str;
+}
+
+function thisMovie(movieName)
+{
+    if (navigator.appName.indexOf("Microsoft") != -1) {
+        return window[movieName];
+    } else {
+        return document[movieName];
+    }
+}
+
+function tableSelected( table )
+{
+	alert( table );
+}
+</script>
+<style type="text/css">
+<!--
+#fxk_holder {
+	width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 0px;
+}
+#fxk_debug {
+	font: medium "Courier New", Courier, monospace;
+	border: 1px dotted #cccccc;
+	background: #fefefe;
+}
+-->
+</style>
+<div id="fxk_holder">
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="761" height="375" id="TxpDatabaseManager" title="TxpDatabaseManager">
+  <param name="movie" value="txp_databasemanager/TxpDatabaseManager.swf" />
+  <param name="quality" value="high" />
+  <param name="wmode" value="opaque" />
+  <param name="swfversion" value="9.0.45.0" />
+  <!-- This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don’t want users to see the prompt. -->
+  <param name="expressinstall" value="js/expressInstall.swf" />
+  <!-- Next object tag is for non-IE browsers. So hide it from IE using IECC. -->
+  <!--[if !IE]>-->
+  <object type="application/x-shockwave-flash" data="txp_databasemanager/TxpDatabaseManager.swf" width="761" height="375">
+    <!--<![endif]-->
+    <param name="quality" value="high" />
+    <param name="wmode" value="opaque" />
+    <param name="swfversion" value="9.0.45.0" />
+    <param name="expressinstall" value="js/expressInstall.swf" />
+    <!-- The browser displays the following alternative content for users with Flash Player 6.0 and older. -->
+    <div><h4>Content on this page requires a newer version of Adobe Flash Player.</h4>
+    <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p>
+    </div>
+    <!--[if !IE]>-->
+  </object>
+  <!--<![endif]-->
+</object>
+<script type="text/javascript">
+<!--
+swfobject.registerObject("TxpDatabaseManager");
+//-->
+</script>
+<div id="fxk_debug"></div>
+</div>	
+EOF;
+
+echo $html;
+}</pre>
+
+<br/>
+<p>Now that the plugin code is finished, it was time to goto the flex side. Notice that the javascript functions inside of the code, that is what I am going to be calling on, via flex's external interface.</p>
+
+<p>Here is the actionscript that will be calling on the javascript that I placed inside of the page.<p>
+<pre class="brush: as3;">
+import com.adobe.serialization.json.JSON;
+import mx.collections.ArrayCollection;
+import mx.events.ListEvent;
+
+[Bindable] private var isResults:Boolean = false;
+[Bindable] private var isAvailable:Boolean = false;
+[Bindable] private var isProcessing:Boolean = false;
+[Bindable] private var isValid:Boolean = false;
+[Bindable] private var resultCollection:ArrayCollection = new ArrayCollection();
+[Bindable] private var tableCollection:ArrayCollection = new ArrayCollection();
+
+private function init():void
+{
+	//Register all event listeners
+	btn_clear.addEventListener( MouseEvent.CLICK, clear );
+	btn_execute.addEventListener( MouseEvent.CLICK, execute );
+	btn_refresh.addEventListener( MouseEvent.CLICK, refresh );
+	tree_tables.addEventListener( ListEvent.CHANGE, onTreeChange );
+	isAvailable = ExternalInterface.available
+	getTables();
+	registerCallbacks();
+}
+
+private function registerCallbacks():void
+{
+	ExternalInterface.addCallback( 'gotTables', onGotTables );
+}
+
+private function onGotTables( raw:String ):void
+{
+	var jsonArray:Array = ( JSON.decode( raw ) as Array );
+	tableCollection = new ArrayCollection( jsonArray );
+}
+
+private function executeQuery( query:String ):void
+{
+	var raw:String = ExternalInterface.call( 'execute', query );
+	var jsonArray:Array = ( JSON.decode( raw ) as Array );
+
+	resultCollection = new ArrayCollection( jsonArray );
+}
+
+private function getTables():void
+{
+	var raw:String = ExternalInterface.call( 'getTables' );
+	var jsonArray:Array = ( JSON.decode( raw ) as Array );
+
+	tableCollection = new ArrayCollection( jsonArray );
+}
+
+private function refresh( event:MouseEvent ):void
+{
+	getTables();
+}
+
+private function clear( event:MouseEvent ):void
+{
+	txt_query.text = '';
+}
+
+private function execute( event:MouseEvent ):void
+{
+	//Todo
+}
+
+private function onTreeChange( event:Event ):void
+{
+	//Todo
+	ExternalInterface.call( 'tableSelected', event.currentTarget.selectedItem.label );
+}
+</pre>
+
+<p>And the view</p>
+
+<pre class="brush: xml;">
+<mx:HDividedBox width="100%" height="100%" paddingBottom="5" paddingLeft="5" paddingRight="5" paddingTop="5">
+
+<!--Table Tree-->
+<mx:Panel width="250" height="100%" layout="vertical" title="Tables">
+	<mx:Tree id="tree_tables" change="onTreeChange( event )" dataProvider="{ tableCollection }" width="100%" height="100%"/>
+	<mx:ControlBar>
+		<mx:Button id="btn_refresh" label="Refresh"/>
+	</mx:ControlBar>
+</mx:Panel>
+
+<!--Table Query/Results -->
+<mx:Panel width="100%" height="100%" layout="vertical" title="Table: { tree_tables.selectedItem.label }">
+	<mx:VDividedBox width="100%" height="100%">
+		<mx:TextArea id="txt_query" width="100%" height="100%"/>
+		<mx:DataGrid id="dg_results" dataProvider="{ resultCollection }" height="100%" width="100%"/>
+	</mx:VDividedBox>
+	<mx:ControlBar>
+		<mx:Button id="btn_clear" label="Clear"/>
+		<mx:Spacer width="100%"/>
+		<mx:Button id="btn_execute" label="Execute" enabled="{ isValid }"/>
+	</mx:ControlBar>
+</mx:Panel>
+</mx:HDividedBox></pre>
+<br/>
+<p>This is where I got stuck, I don't know how to go about when a user selects a table, in flex, then send that table to javascript, then javascript to php?<br/>
+
+Here is the source for both: 
+[download id="19"]
+</p>

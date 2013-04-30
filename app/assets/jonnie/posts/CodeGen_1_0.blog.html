@@ -1,0 +1,78 @@
+<a href="http://jonniespratley.com/wp-content/uploads/2009/05/codegen_1_1.png"><img class="alignleft size-full wp-image-530" style="margin: 10px;" title="codegen_1_1" src="http://jonniespratley.com/wp-content/uploads/2009/05/codegen_1_1.png" alt="codegen_1_1" width="277" height="161" /></a>
+
+Don't you just hate having to create all of the Amfphp server database files, and then all of the value objects, then mirror that on the client side with the same things but in Flex builder?
+
+Well I did, so I have decided to create a little generator that will create all of the following from an XML file.
+<ol>
+	<li>Cairngorm Folder Structure</li>
+	<li>Cairngorm Service Locator - ( service per-table )</li>
+	<li>Cairngorm Service Delegate ( per-table )</li>
+	<li>Cairngorm Commands ( per-table; save, remove, get )</li>
+	<li>Cairngorm Events  ( per-table; save, remove, get )</li>
+	<li>Cairngorm Value Objects - ( per-table )</li>
+	<li>Cairngorm Model Locator - ( per-application )</li>
+	<li>Cairngorm Controller - ( per-application )</li>
+	<li>Table Main - ( per-table )</li>
+	<li>PHP Service files - ( per-table )</li>
+	<li>PHP Value Objects - ( per-table )</li>
+</ol>
+And that's not all.
+
+Every file is generated from a template which is included in the download, you can change the templates, just be sure to look over the template key at the top of the file.
+
+Also I guarantee this to be a full CRUD application on your MySQL database using Amfphp.
+
+Most generators aren't reliable or either working out of the box right from being generated, so I was just like screw that, I am going to make this, just because I hate copy and pasting my old scripts time and time again just to do the same thing.
+
+The features that it generates:
+<ol>
+	<li>Flex validation on all table columns that are required.</li>
+	<li>Flex Data Grid listing all of the records in the database.</li>
+	<li>Flex Form that lets you view the details of the selected record, and/or editing/creating of a new record.</li>
+</ol>
+Here is how to use this CodeGen
+
+1. Require the php script inside of your file. ( just use the one included )
+<pre class="brush: php">
+require_once 'CodeGen.php';
+</pre>
+
+2. There is a config.xml file that is in the output folder, open it up and fill in your info.
+<pre class="brush: xml">
+	<config>
+	 	<host>localhost</host>
+		<user>root</user>
+		<pass>pass</pass>
+		<schema>test</schema>
+		<endpoint>http://localhost/amfphp/gateway.php</endpoint>
+		<namespace>com.namespace.project</namespace>
+	</config>
+</pre>
+
+3. Create a new instance of the CodeGen specifying the config.xml file as a constructor argument
+
+4. Use this to write a copy of your database schema in the output folder.
+<pre class="brush: php">$codegen->writeSchema();</pre>
+
+5. After you have your schema, you this below to generate the code.
+<pre class="brush: php">$codegen->generateCode( $schema );</pre>
+
+6. Just drop inside the services folder of your Amfphp installation, and your ready to roll.
+<ul>
+	<li>Server side gets generated into the output/server folder - You place this inside of the Amfphp/services folder, starting with the namespace root folder, ie. com/namespace/project</li>
+	<li>Client side get generated into the output/client folder - You place this inside of your src folder of your Flex builder project, also make sure you have the Cairngorm.swc inside of your libs folder of your Flex project.</li>
+</ul>
+7. Here is a full example of how to use it.
+<pre class="brush: php">
+require_once 'CodeGen.php';
+
+$schema = 'output/TestSchema.xml';
+$config = 'output/config.xml';
+
+$codegen = new CodeGen ( $config );
+//$codegen->writeSchema();
+$codegen->generateCode ( $schema );
+</pre>
+
+Download it here.
+[download#12]

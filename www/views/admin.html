@@ -1,0 +1,31 @@
+<style type="text/css" media="screen">
+.gridStyle {
+    border: 1px solid rgb(212,212,212);
+    width: 600px; 
+    height: 300px;
+}
+</style>
+
+<div id="admin-row" class="row-fluid">
+	<div class="span2">
+		<ul class="nav nav-list well">
+			<li class="nav-header">Admin</li>
+			<li><a ng-click="loadData('projects')">Projects</a></li>
+			<li><a ng-click="loadData('posts')">Posts</a></li>
+			<li><a ng-click="loadData('categories')">Categories</a></li>
+			<li><a ng-click="loadData('uploads')">Uploads</a></li>
+			
+		</ul>
+	</div>
+	<div class="span10">
+		<legend>{{Admin.model.name}}</legend>
+		<div style="height:450px;" ng-grid="gridOptions"></div>
+		
+		
+		<legend>Selected Item</legend>
+		<input value="{{mySelections[0].title}}" ng-model="mySelections[0].title"/>
+		<button class="btn" ng-click="Admin.save(mySelections[0]);">Update</button>
+
+		<pre>{{mySelections | json}}</pre>
+	</div>	
+</div>

@@ -9,7 +9,7 @@
 
 My name is Jonnie Spratley and I am currently working for a business in Rocklin, CA called AppMatrix; I started using HTML, PHP and JavaScript around 2004 and become addicted every since, I spent several years working with the Flex Framework, Flash, ActionScript 3 and a variety of server-side languages. In 2012 I  came back to using HTML5, CSS3, client-side JavaScript frameworks Backbone.js, Angular.js  and server-side JavaScript using Node.js, MongoDB and Express.
 
-Lately I've been focused on starting and guiding new product design and development at AppMatrix. As part of that, I built an initial prototype showing off some ideas around custom content management systems for mobile applications, graphical analytic ROI interfaces, drag and drop mobile application wizards and agile development practices to streamline the current workflow. Those prototypes eventually formed the seed of the [AppMatrix Engine](http://myappmatrix.com/modules/#/), which has aided in design, development and managing of over 30 apps in the Apple AppStore and Google Marketplace.
+Lately I've been focused on starting and guiding new product design and development at AppMatrix. As part of that, I built an initial prototype showing off some ideas around custom content management systems for mobile applications, graphical analytic ROI interfaces, drag and drop mobile application wizards and agile development practices to streamline the current workflow. Those prototypes eventually formed the seed of the ****, which has aided in design, development and managing of over 30 apps in the Apple AppStore and Google Marketplace.
 
 
 
@@ -55,7 +55,7 @@ I have a natural ability to communicate complex software development practices a
 ### + What is your history of solving issues in development productivity?
 I have history in solving issues in development productivity dating back to June of 2009, when I released an open source project called [CodeGen](https://code.google.com/p/flex-codegen/), with 700+ downloads this project enabled developers to scaffold 100% both client-side and server-side code from a structured XML document.    
 
-In January of 2013 I launched the [AppMatrix Studio](http://myappmatrix.com/modules/ame-studio/) which consists of 5 sub-applications that enables mobile application developers to design, develop, deploy and manage mobile applications created with a variety of todays cutting edge technologies including the Titanium Platform, PhoneGap, jQuery Mobile and standard HTML5 / CSS3.
+In January of 2013 I launched the ****** which consists of 5 sub-applications that enables mobile application developers to design, develop, deploy and manage mobile applications created with a variety of todays cutting edge technologies including the Titanium Platform, PhoneGap, jQuery Mobile and standard HTML5 / CSS3.
 
 
 ### + Do you design/develop libraries to streamline development?
@@ -65,7 +65,7 @@ I have designed and developed many mobile application wizards, mobile RPC librar
 ### + Do you commit to code hygiene, readable code and testability?
 I am a object-oriented programmer and take pride in all code that I write, I focus on using industry coding standards, formatting, indentation, documentation, code examples, tutorials and demo applications with source view enabled. I write code in a way that tells a story about the application or task, all of my code is usable, readable and testable using the latest frameworks available.
 
-
+ 
  
 
 ### + Are you optimistic, easy-going, and fun to be with?
@@ -191,30 +191,3 @@ Creating Rich Components with Flash and Flex have never been so easy, you just n
 about, until now. Many designers and developers dislike using the Flash CS4 as there primary
 coding IDE when creating applications, website, or even simple banners. Why?   
 [Download PDF](http://jonniespratley.me/assets/jonnie/publications/4_2009_Rich_Components_with_Flash_and_Flex.pdf)
-
- 
- 
-## Patents »
-
-#### AppMatrix SmartPush
-**United States Patent Application 85531416**   
-*Filed May 17, 2012*   
-Inventors: Jonnie Spratley, Tim DeMent
-
-#### AppMatrix SmartMerchant
-**United States Patent Application 85531438**      
-*Filed July 19, 2012*   
-Inventors: Jonnie Spratley, Tim DeMent
-
-
-#### AppMatrix SmartApp Wizard
-**United States Patent Application 85541359**   
-*Filed May 17, 2012*   
-Inventors: Jonnie Spratley, Tim DeMent
-
-
-#### AppMatrix SmartROI
-**United States Patent Application 85557359**   
-*Filed May 17, 2012*   
-Inventors: Jonnie Spratley, Tim DeMent
- 

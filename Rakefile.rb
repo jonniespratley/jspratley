@@ -43,7 +43,7 @@ end
 
 
 #deploy to production server
-desc "Deploy distribution build to production server"
+desc "Deploy distribution build to production server."
 task :deploy => :build do
   require 'net/ssh'
   require 'net/scp'
@@ -60,7 +60,7 @@ end
 
 
 #Deploy readmes
-desc "Deploy distribution build to production server"
+desc "Deploy readme files to server."
 task :deploy_readme => :build do
   require 'net/ssh'
   require 'net/scp'
@@ -70,6 +70,22 @@ task :deploy_readme => :build do
   
   Net::SSH.start(server, login, :password => "fred3212") do |ssh|
     ssh.scp.upload!("www/README.md", "/var", { :recursive => true, :verbose => true }) do |ch, name, sent, total|
+      puts "#{name}: #{sent}/#{total}"
+    end
+  end
+end
+
+#Deploy views
+desc "Deploy view files to server."
+task :deploy_views => :build do
+  require 'net/ssh'
+  require 'net/scp'
+  
+  server = 'jonniespratley.me'
+  login = 'root'
+  
+  Net::SSH.start(server, login, :password => "fred3212") do |ssh|
+    ssh.scp.upload!("www/views", "/var", { :recursive => true, :verbose => true }) do |ch, name, sent, total|
       puts "#{name}: #{sent}/#{total}"
     end
   end

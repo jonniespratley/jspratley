@@ -98,7 +98,7 @@ jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile,
 			//	{id: null, href: '#/', title: 'Jonnie Spratley'},
 				{id: null, href: '#/about', title: 'About'},
 				{id: null, href: '#/posts', title: 'Posts'},
-				{id: null, href: '#/projects', title: 'Projects'},
+				{id: null, href: '#/portfolio', title: 'Portfolio'},
 				{id: null, href: '#/code', title: 'Code'},
 			//	{id: null, href: '#/contact', title: 'Contact'}
 			]

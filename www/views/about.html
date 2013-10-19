@@ -10,10 +10,12 @@
 				<!--/photo-->
 				<div class="span5 margin-bottom-5">
 					<div class="name-text">
-						Jonnie Spratley
+						{{App.content.profile.title}}
 					</div>
 					<div class="major-text">
-						<i>Software Engineer &amp; JavaScript Expert</i>
+						<i>
+							{{App.content.profile.subtitle}}
+						</i>
 					</div>
 					<br/>
 					<div class="margin-top-5 margin-bottom-5">
@@ -47,13 +49,12 @@
 				<div class="span5 pull-right">
 					<div class="span">
 						<address class="margin-bottom-5">
-							7824 Spring Valley Ave <br/>
-							Citrus Heights, CA
+							{{App.content.profile.address}}
 						</address>
 						<abbr rel="tooltip" data-original-title="Phone">
 							P:
 						</abbr>
-						&nbsp;&nbsp;916-241-3613
+						&nbsp;&nbsp;{{App.content.profile.phone}}
 						<br>
 						<abbr rel="tooltip" data-original-title="Email">
 							E:
@@ -70,10 +71,10 @@
 						<br/>
 
 					</div>
-					<div class="span img-polaroid">
+				<!-- 	<div class="span img-polaroid">
 						<img src="/assets/jonnie/qrcode.png" style="width:140px;" rel="tooltip" data-original-title="Save my vCard">
 					</div>
-					<a class="pdf" href="cv.pdf" target="_blank" rel="tooltip" data-original-title="Download as PDF"></a>
+					<a class="pdf" href="cv.pdf" target="_blank" rel="tooltip" data-original-title="Download as PDF"></a> -->
 				</div>
 				<!--/contacts-->
 			</div>

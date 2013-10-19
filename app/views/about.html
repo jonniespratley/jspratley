@@ -1,38 +1,25 @@
 	
-<div class="container">
+<div class="container content">
+	<div class="jumbotron">
+	      <div class="container">
+	        <h1>{{App.content.profile.title}}</h1>
+	        <p>
+	        		{{App.content.profile.subtitle}}
+	        </p>
+	        <p><a class="btn btn-primary btn-lg">Learn more »</a></p>
+	      </div>
+	    </div>
+	
+	
 	<div class="span12">
 		<div class="header">
 			<div class="row">
-				<div class="span2">
+				<div class="col-lg-2">
 					<img src="/assets/jonnie/avatar.png" class="img-polaroid"
 					style="width:150px;">
 				</div>
 				<!--/photo-->
-				<div class="span5 margin-bottom-5">
-					<div class="name-text">
-						Jonnie Spratley
-					</div>
-					<div class="major-text">
-						<i>Software Engineer &amp; JavaScript Expert</i>
-					</div>
-					<br/>
-					<div class="margin-top-5 margin-bottom-5">
-						<a href="http://www.linkedin.com/in/jonniespratley" rel="tooltip" data-original-title="LinkedIn" target="_blank">
-							<img src="/assets/jonnie/icons/linkedin.png" alt="LinkedIn" width="20">
-						</a>
-						&nbsp;
-
-						<a href="https://twitter.com/jonniespratley" target="_blank" rel="tooltip" data-original-title="Twitter"><img src="/assets/jonnie/icons/twitter.png" alt="Twitter" width="20"></a>
-						&nbsp;
-						<a href="http://www.facebook.com/jonniespratley" target="_blank" rel="tooltip" data-original-title="Facebook"><img src="/assets/jonnie/icons/facebook.png" alt="Facebook" width="20"></a>
-						&nbsp;
-						<a href="https://plus.google.com/108709037018426718960/posts" target="_blank" rel="tooltip" data-original-title="Google Plus"><img src="/assets/jonnie/icons/google.png" alt="Google Plus" width="20"></a>
-						&nbsp;
-						<a href="skype:jonnie.spratley?call" target="_blank" rel="tooltip" data-original-title="Skype"><img src="/assets/jonnie/icons/skype.png" alt="Skype" width="20"></a>
-						&nbsp;
-						<a href="https://github.com/jonniespratley" target="_blank" rel="tooltip" data-original-title="Github"><img src="/assets/jonnie/icons/github.png" alt="Github" width="20"></a>
-
-					</div>
+				<div class="col-lg-8 margin-bottom-5">
 					<!--div class="featured-skills">
 						<img  src="/assets/jonnie/images/feature-html5.png" style="height:32px" title="HTML5 Expert">
 						<img  src="/assets/jonnie/images/feature-design.png" style="height:32px" title="CSS3 Expert">
@@ -45,15 +32,15 @@
 				</div>
 				<!--/name-->
 				<div class="span5 pull-right">
+					
 					<div class="span">
 						<address class="margin-bottom-5">
-							7824 Spring Valley Ave <br/>
-							Citrus Heights, CA
+							{{App.content.profile.address}}
 						</address>
 						<abbr rel="tooltip" data-original-title="Phone">
 							P:
 						</abbr>
-						&nbsp;&nbsp;916-241-3613
+						&nbsp;&nbsp;{{App.content.profile.phone}}
 						<br>
 						<abbr rel="tooltip" data-original-title="Email">
 							E:
@@ -70,10 +57,10 @@
 						<br/>
 
 					</div>
-					<div class="span img-polaroid">
+				<!-- 	<div class="span img-polaroid">
 						<img src="/assets/jonnie/qrcode.png" style="width:140px;" rel="tooltip" data-original-title="Save my vCard">
 					</div>
-					<a class="pdf" href="cv.pdf" target="_blank" rel="tooltip" data-original-title="Download as PDF"></a>
+					<a class="pdf" href="cv.pdf" target="_blank" rel="tooltip" data-original-title="Download as PDF"></a> -->
 				</div>
 				<!--/contacts-->
 			</div>
@@ -85,9 +72,6 @@
 
 		     <div class="row">
 				<div class="span12">
-					<div class="page-header">
-					  <h1>About <small> my interview and resume.</small></h1>
-					</div>
 					<div id="markdown-content" ng-init="App.loadReadme( 'README.md', '#markdown-content');"></div>
 
 <!--

@@ -90,3 +90,19 @@ task :deploy_views => :build do
     end
   end
 end
+
+#Deploy views
+desc "Deploy scripts files to server."
+task :deploy_scripts => :build do
+  require 'net/ssh'
+  require 'net/scp'
+  
+  server = 'jonniespratley.me'
+  login = 'root'
+  
+  Net::SSH.start(server, login, :password => "fred3212") do |ssh|
+    ssh.scp.upload!("www/scripts", "/var", { :recursive => true, :verbose => true }) do |ch, name, sent, total|
+      puts "#{name}: #{sent}/#{total}"
+    end
+  end
+end

@@ -45,9 +45,13 @@ var jspratleyApp = angular.module('jspratleyApp', ['ngGrid'])
         templateUrl: 'views/projects.html',
         controller: 'ProjectsCtrl'
       })
-      .when('/posts', {
+      .when('/blog', {
         templateUrl: 'views/posts.html',
         controller: 'PostsCtrl'
+      })
+      .when('/blog/post/:index', {
+        templateUrl: 'views/post_detail.html',
+        controller: 'PostDetailCtrl'
       })
       .when('/admin', {
         templateUrl: 'views/admin.html',
@@ -59,7 +63,7 @@ var jspratleyApp = angular.module('jspratleyApp', ['ngGrid'])
   }]);
 
 /* ======================[ @TODO: GLobal app controller ]====================== */
-jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile, Api) {
+jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile, Api, ParseService) {
 	//https://dl.dropbox.com/u/26906414/jonniespratley.me/jonnie/
 	$rootScope.cdn = '/assets/jonnie/';
 	
@@ -67,6 +71,9 @@ jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile,
 	
 	$rootScope.App = {
 		Api: Api,
+		Blog: {
+			posts: $.jStorage.get('App.Blog.posts')
+		},
 		projects:{},
 		syncProjects: function(items){
 		    if(!items){
@@ -106,7 +113,7 @@ jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile,
 		content:{
 			profile: {
 				title: 'Jonnie Spratley',
-				subtitle: 'JavaScript Expert, Application Architect',
+				subtitle: 'JavaScript & UI Developer',
 				image: '/assets/jonnie/avatar.png',
 				data:[
 					{ title: 'AppMatrix, Inc.', icon: 'home' },
@@ -115,8 +122,8 @@ jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile,
 					{ title: 'jonniespratley', icon: 'twitter' },
 					{ title: 'jonniespratley@me.com', icon: 'envelope-alt' }
 				],
-				address: 'PO BOX 340091, Sacramento, CA 95834-0091',
-				phone: '(916) 802-8618',
+				address: '125 Shoreline Circle, San Ramon, CA',
+				phone: '(916) 241-3613',
 				fax: '(916) 515-0347'
 			},
 			/* ======================[ @TODO: Home page of the website ]====================== */
@@ -172,6 +179,9 @@ jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile,
 		},
 		init: function(){
 			this.localProjects();
+			if(!this.Blog.posts){
+				this.getPosts();
+			}
 		},
 		project:null,
 		loadReadme: function(where, el){
@@ -181,9 +191,15 @@ jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile,
 		},
 		selectProject: function(p){
 			this.project = p;
-			
-
 			this.loadReadme('/assets/jonnie/'+p.project+'/README.md', '#project-markdown-content');
+		},
+		getPosts: function(){
+			ParseService.get('Post', null, function(data){
+					$rootScope.$apply(function(){
+						$.jStorage.set('App.Blog.posts', data);
+						$rootScope.App.Blog.posts = data;
+					});
+			});
 		}
 	};
 
@@ -708,14 +724,10 @@ angular.module('jspratleyApp')
 
 'use strict';
 
-angular.module('jspratleyApp')
-  .controller('PostsCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Testacular'
-    ];
-  });
+angular.module('jspratleyApp').controller('PostsCtrl', function($scope, $rootScope) {
+	//$scope.posts = [];
+	
+});
 
 'use strict';
 
@@ -859,3 +871,158 @@ angular.module('jspratleyApp').controller('AdminCtrl', function ($scope, $rootSc
 
 
 });
+
+'use strict';
+
+angular.module('jspratleyApp').factory('ParseService', ['$q',
+function($q) {
+	Parse.initialize("JKqP3t0eQhAdxtglsfSiDRmJs2XMDYOjZi0CI78v", "2p0y80eNezpAv9MXcchVrrYZygnVf9CAGuPCcopt");
+	var ParseService = function() {
+		return {
+			get : function(model, params, successCb, errorCb) {
+				var query = new Parse.Query(model), delay = $q.defer(), data = null;
+				if(params) {
+					//query.greaterThan(params.name, params.value);
+				}
+				// Retrieve the most recent ones
+				query.descending("createdAt");
+				query.find({
+					success : function(results) {
+						data = results.map(function(obj) {
+							return {
+								id : obj.id,
+								objectId : obj.get('objectId'),
+								post_title : obj.get('post_title'),
+								post_content : obj.get('post_content'),
+								post_image : obj.get('post_image'),
+								post_status : obj.get('post_status'),
+								post_name : obj.get('post_name'),
+								post_type : obj.get('post_type'),
+								post_modified : obj.get('post_modified'),
+								guid : obj.get('guid'),
+								created : obj.createdAt,
+								updated : obj.updatedAt
+							}
+						});
+						if(successCb) {
+							successCb(data);
+						} else {
+							delay.resolve(data);
+						}
+					},
+					error : function(error) {
+						if(errorCb) {
+							errorCb(error);
+						}
+						delay.reject(error);
+					}
+				});
+				return delay.promise;
+			},
+			destroy : function(model, data, successCb, errorCb) {
+				var ParseObject = Parse.Object.extend(model);
+				var _parseObject = new ParseObject(data);
+				_parseObject.destroy({
+					success : function(obj) {
+						if(successCb) {
+							successCb(obj);
+						}
+					},
+					error : function(myObject, err) {
+						if(errorCb) {
+							errorCb(err);
+						}
+					}
+				});
+			},
+			add : function(model, data, success, error) {
+				delete data.$$hashKey;
+				//console.log(data);
+				//add user to this data object
+				if(data.date){
+					data.date = new Date(data.date);
+				}
+				var ParseObject = Parse.Object.extend(model);
+				var _parseObject = new ParseObject(data);
+				_parseObject.setACL(new Parse.ACL(Parse.User.current()));
+				_parseObject.save(data, {
+					success : function(object) {
+						if(success) {
+							success(object);
+						}
+					},
+					error : function(err) {
+						if(error) {
+							error(err);
+						}
+					}
+				});
+			},
+			save : function(model, data, success, error) {
+				var ParseObject = Parse.Object.extend(model);
+				var _parseObject = new ParseObject();
+				delete data.$$hashKey;
+				_parseObject.setACL(new Parse.ACL(Parse.User.current()));
+				_parseObject.save(data, {
+					success : function(object) {
+						if(success) {
+							success(object);
+						}
+					},
+					error : function(err) {
+						if(error) {
+							error(err);
+						}
+					}
+				});
+			}
+		}
+	}
+	return ParseService();
+}]);
+
+'use strict';
+
+angular.module('jspratleyApp').filter('markdown', function() {
+	return function(input) {
+		return markdown.toHTML(input);
+	};
+});
+//Truncate filter
+angular.module('jspratleyApp').filter('truncate', function() {
+	return function(text, length, end) {
+		if(isNaN(length))
+			length = 10;
+
+		if(end === undefined)
+			end = "...";
+
+		if(text.length <= length || text.length - end.length <= length) {
+			return text;
+		} else {
+			return String(text).substring(0, length - end.length) + end;
+		}
+
+	};
+});
+
+'use strict';
+
+angular.module('jspratleyApp')
+  .controller('PostDetailCtrl', function ($scope, $rootScope, $routeParams) {
+    $scope.awesomeThings = [
+      'HTML5 Boilerplate',
+      'AngularJS',
+      'Testacular'
+    ];
+		$scope.post = $rootScope.App.Blog.posts[$routeParams.index];
+		
+		$scope.highlight = function(){
+			setTimeout(function(){
+				hljs.initHighlighting();
+			}, 1000);
+		};
+		
+
+		
+  });

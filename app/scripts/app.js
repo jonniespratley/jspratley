@@ -12,7 +12,7 @@ var jspratleyApp = angular.module('jspratleyApp', ['ngGrid'])
     
     $routeProvider
       .when('/', {
-        templateUrl: 'views/about.html',
+        templateUrl: 'views/main.html',
         controller: 'MainCtrl',
         resolve: routeResolver
       })
@@ -45,9 +45,13 @@ var jspratleyApp = angular.module('jspratleyApp', ['ngGrid'])
         templateUrl: 'views/projects.html',
         controller: 'ProjectsCtrl'
       })
-      .when('/posts', {
+      .when('/blog', {
         templateUrl: 'views/posts.html',
         controller: 'PostsCtrl'
+      })
+      .when('/blog/post/:index', {
+        templateUrl: 'views/post_detail.html',
+        controller: 'PostDetailCtrl'
       })
       .when('/admin', {
         templateUrl: 'views/admin.html',
@@ -59,7 +63,7 @@ var jspratleyApp = angular.module('jspratleyApp', ['ngGrid'])
   }]);
 
 /* ======================[ @TODO: GLobal app controller ]====================== */
-jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile, Api) {
+jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile, Api, ParseService) {
 	//https://dl.dropbox.com/u/26906414/jonniespratley.me/jonnie/
 	$rootScope.cdn = '/assets/jonnie/';
 	
@@ -67,6 +71,9 @@ jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile,
 	
 	$rootScope.App = {
 		Api: Api,
+		Blog: {
+			posts: $.jStorage.get('App.Blog.posts')
+		},
 		projects:{},
 		syncProjects: function(items){
 		    if(!items){
@@ -93,20 +100,18 @@ jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile,
 			});
 		},
 		sitetitle: 'JonnieSpratley.me',
-		menu: {
-			nav: [
+		menu: [
 			//	{id: null, href: '#/', title: 'Jonnie Spratley'},
-				{id: null, href: '#/about', title: 'About'},
-				{id: null, href: '#/posts', title: 'Posts'},
-				{id: null, href: '#/portfolio', title: 'Portfolio'},
-				{id: null, href: '#/code', title: 'Code'},
+				{id: null, href: 'about', title: 'About'},
+				{id: null, href: 'blog', title: 'Blog'},
+				{id: null, href: 'portfolio', title: 'Portfolio'},
+				{id: null, href: 'code', title: 'Code'},
 			//	{id: null, href: '#/contact', title: 'Contact'}
-			]
-		},
+			],
 		content:{
 			profile: {
 				title: 'Jonnie Spratley',
-				subtitle: 'JavaScript Expert, Application Architect',
+				subtitle: 'JavaScript & UI Developer',
 				image: '/assets/jonnie/avatar.png',
 				data:[
 					{ title: 'AppMatrix, Inc.', icon: 'home' },
@@ -115,8 +120,8 @@ jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile,
 					{ title: 'jonniespratley', icon: 'twitter' },
 					{ title: 'jonniespratley@me.com', icon: 'envelope-alt' }
 				],
-				address: 'PO BOX 340091, Sacramento, CA 95834-0091',
-				phone: '(916) 802-8618',
+				address: '125 Shoreline Circle, San Ramon, CA',
+				phone: '(916) 241-3613',
 				fax: '(916) 515-0347'
 			},
 			/* ======================[ @TODO: Home page of the website ]====================== */
@@ -172,6 +177,9 @@ jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile,
 		},
 		init: function(){
 			this.localProjects();
+			if(!this.Blog.posts){
+				this.getPosts();
+			}
 		},
 		project:null,
 		loadReadme: function(where, el){
@@ -181,9 +189,16 @@ jspratleyApp.controller('AppCtrl', function($scope, $rootScope, $http, $compile,
 		},
 		selectProject: function(p){
 			this.project = p;
-			
-
+			console.log(p);
 			this.loadReadme('/assets/jonnie/'+p.project+'/README.md', '#project-markdown-content');
+		},
+		getPosts: function(){
+			ParseService.get('Post', null, function(data){
+					$rootScope.$apply(function(){
+						$.jStorage.set('App.Blog.posts', data);
+						$rootScope.App.Blog.posts = data;
+					});
+			});
 		}
 	};
 

@@ -1,128 +1,158 @@
 /* @override http://localhost:5050/styles/main.css */
 
 /* Will be compiled down to a single stylesheet with your sass files */
+/*
 @import url('bootstrap.min.css');
 @import url('bootstrap-responsive.min.css');
+*/
+@import url('//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css');
+@import url('//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css');
+@import url('/components/highlight/styles/monokai.css');    
 @import url('style.css');
 @import url("font-awesome.min.css");
 @import url('ng-grid.css');
 
-body{
-	padding-top: 60px;
+.post-detail img {
+	width: 100%;
 }
-.header{
+body {
+}
+/* Put your css in here */
 
+.img-thumbnail {
+	max-width: 200px;
+	margin-right: 10px;
+}
+a:hover{
+	text-decoration: none;
+}
+.post a p{
+	text-decoration: none;
+	color: #333;
+}
+.post img {
+	width: 145px;
+	height: 80px;
+}
+
+.post-detail pre {
+		background: none;
+	border: none;
+	padding: 0;
+	font-size: 70%;
+	overflow: auto;
+}
+.post-detail .content img {
+	width: 100%;
+}
+.header {
 }
 div.name-text {
 	font-size: 40px;
 	line-height: 1.2em;
 }
-
- div.major-text i {
+div.major-text i {
 	color: #666;
 }
 
-h3.project-heading.ng-binding {
-	font-size: 1.5em;
-	text-align: center;
-}
-
-.projects li{
+.projects li {
 	margin-left: 1% !important;
 	overflow: hidden;
-	
 }
-
 /* My Comment */
-
+.well {
+	padding: 5px;
+}
 .projects li a.thumbnail img {
 	width: 100%;
-	height: 180px;
 }
-
 div.hero-unit {
-	padding: 15px;	
+	padding: 15px;
 }
-
 #content footer p {
 	text-align: center;
 	font-size: 11px;
 	color: #666;
 }
-
-
 #projectCarousel {
 	min-height: 200px;
 }
-
 /* My Comment */
 
-
-.carousel img{
+.carousel img {
 	width: 100%;
 }
-.page{
+.carousel-control:hover{
+	
+	opacity: .2;
+}
+.carousel-control {
+background: #000;
+opacity: .1;
+text-align: center;
+}
+.page {
 	padding-top: 25px;
 }
-.bio h1{
+.bio h1 {
 	text-align: right;
 	white-space: nowrap;
-	font-size: 180%;
+	font-size: 170%;
 	margin-bottom: 0;
 }
-
-div.bio p{
+div.page-header h1 {
+	font-size: 170%;
+	margin: 0;
+}
+div.bio p {
 	font-size: 90%;
 	color: #777;
 }
 
-h1{
-	
-	
+div.contact, .bio {
+	text-align: right;
 }
 
-h2{
-	font-size: 2em;
-	border-bottom: 1px solid #eee;
 
-
-}
-
-div.contact , .bio{
-text-align: right;
-}
-h3{
-	font-size: 1.4em;
-	
-	margin-top: 20px;
-	margin-bottom: 0px;
-}
-h4{
-	
-	margin-top: 20px;
-	margin-bottom: 0px;
-}
-
-h5{
-	font-size: 2em;
-}
-
-h5{
-	font-size: 2em;
-}
-
-em{
+em {
 	font-size: .8em;
-
 	color: #777;
 }
-
 #markdown-content p em {
 }
-
 #markdown-content p {
 }
-
 strong {
+}
+.feature-unit img{
+	height: 100%;
+	width: 100%;
+}
+
+.carousel{
+
+	height: 100%;	
+}
+.carousel-inner{
 	
+	background: #000;
+}
+.carousel-inner .item img {
+
+}
+.feature-unit{
+	position: relative;
+	left: -15px;
+	right: -15px;
+
+	top: 60;
+}
+
+div.carousel-inner {
+border-bottom: 1px solid #555;	
+}
+.content{
+	margin-top: 65px;
+	position: relative;
+	overflow: auto;
 }

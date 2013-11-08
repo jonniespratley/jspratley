@@ -1,6 +1,6 @@
 'use strict';
 
-var jspratleyApp = angular.module('jspratleyApp', ['ngGrid'])
+var jspratleyApp = angular.module('jspratleyApp', ['ngGrid', '$strap.directives'])
   .config(['$routeProvider', function($routeProvider) {
     var routeResolver = {
         delay : function($q, $timeout) {

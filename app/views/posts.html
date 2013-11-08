@@ -2,12 +2,14 @@
 	<div id="posts" class="row-fluid">
 		<div class="span12">
 			<ul class="list-group list-unstyled posts">
-				<li ng-repeat="item in App.Blog.posts" class="list-group-item post">
+				<li ng-repeat="item in App.Blog.posts" class="list-group-item post well">
 					<a href="#/blog/post/{{$index}}" class="clearfix">
 					<img src="http://placehold.it/80"
-					ng-src="{{item.post_image._url}}"
-					class="pull-left img-thumbnail"/>
-					<h4 class="list-group-item-heading">{{item.post_title}}</h4>
+						ng-src="{{item.post_image._url}}"
+						class="img-thumbnail"
+						ng-class-odd="'pull-left'"
+						ng-class-even="'pull-right'"/>
+					<h3 class="list-group-item-heading">{{item.post_title}}</h3>
 					<p class="list-group-item-text">
 						{{item.post_content | truncate:200 }}
 					</p> </a>

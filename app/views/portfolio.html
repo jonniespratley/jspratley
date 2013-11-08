@@ -1,20 +1,26 @@
 <div class="container content">
-	<div id="portfolio-row" class="row-fluid" ng-controller="PortfolioCtrl">
+	<div id="portfolio-row" class="row-fluid">
 		<div class="span12">
 		
 		<ul class="list-group list-unstyled posts projects">
-				<li class="list-group-item well" ng-repeat="item in App.content.portfolio.data | orderBy:predicate:reverse">
-					<a class="pull-left" data-toggle="modal" href="#projectDetailsModal" ng-click="App.selectProject(item);">
+				<li class="list-group-item well" ng-class-odd="'odd'" ng-class-even="'even'" ng-repeat="item in App.content.portfolio.data | orderBy:predicate:reverse">
+					<a 
+						ng-class-odd="'pull-left'" ng-class-even="'pull-right'"
+						data-toggle="modal" href="#projectDetailsModal" ng-click="App.selectProject(item);">
 					   <img alt="image" class="img-thumbnail" src="http://placehold.it/320x250" ng-src="{{cdn}}{{item.project}}/thumb.png">
 		              </a>			  
 					<div class="project-body">
-				    	<h3 class="project-heading">{{item.title}} </h3>
+				    	<h3 class="project-heading">{{item.title}} 
+						<small><span class="label label-primary">{{item.type}}</span></small>
+						</h3>
 						<p>{{item.description}}</p>
-						<span class="label label-primary">{{item.type}}</span>
+						
 				  </div>
+
 				</li>
 		</ul>
-
+		
+		
 
 
 	

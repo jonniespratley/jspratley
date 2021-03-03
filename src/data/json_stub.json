@@ -1,0 +1,274 @@
+{
+    "basics": {
+        "name": "Jonathan Spratley",
+        "label": "Programmer",
+        "picture": "https://mir-s3-cdn-cf.behance.net/user/276/ccd674278240.55e4dbd135d73.jpg",
+        "email": "jonnie.spratley@me.com",
+        "phone": "(916) 241-3613",
+        "website": "http://jonniespratley.me",
+        "summary": "Front-End Software Engineer",
+        "location": {
+            "address": "1234 Somewhere St.",
+            "postalCode": "CA 94115",
+            "city": "Bay Area, US",
+            "countryCode": "US",
+            "region": "California",
+            "name": "Bay Area, US"
+        },
+        "profiles": [{ "network": "Twitter", "username": "john", "url": "https://twitter.com/jonniespratley" }]
+    },
+    "work": [
+        {
+            "name": "GE Digital",
+            "position": "Senior Software Engineer",
+            "website": "http://company.com",
+            "startDate": "2014-03-01",
+            "summary": "- Implemented UI designs using CSS3, HTML5 and JavaScript. (React, CSS-in-JS, Web Components)\n- Designed and developed CLI tools to streamline developers productivity.\n- Led design and development efforts for responsive web components across various browsers.",
+            "location": "San Ramon, CA",
+            "highlights": ["Started the company"],
+            "id": "acf45b0f-dbc3-4ec3-8f6d-65a98bfc36bf",
+            "place": { "name": "San Ramon, CA" },
+            "stillEmployed": true,
+            "index": 0
+        },
+        {
+            "index": 1,
+            "id": "434a0047-57ba-4e3b-a315-fdaad2c95758",
+            "name": "Silicon Villas",
+            "position": "Instructor",
+            "place": { "name": "San Francisco, CA" },
+            "endDate": "2017-09-01",
+            "startDate": "2017-07-16",
+            "summary": "- JavaScript instructor teaching the fundamentals and other topics on JS.\n- Taught junior software developers on JavaScript fundamentals and ES6 modules.",
+            "location": "San Francisco, CA",
+            "stillEmployed": false
+        },
+        {
+            "index": 2,
+            "id": "bc2b51cc-6cd0-4d36-91b0-c612826e5549",
+            "name": "Packt Publishing",
+            "position": "Author",
+            "place": { "name": "Remote" },
+            "endDate": "2014-06-01",
+            "startDate": "2013-11-16",
+            "summary": "- Designed and implemented step by step tutorials process driven chapters.\n- Demonstrated how to use open-source tools that streamline the development process.\n- Worked with QA Engineers to ensure tutorials in book work across multiple platforms.",
+            "location": "Remote"
+        },
+        {
+            "index": 3,
+            "id": "4dbd1417-5371-4089-9e0d-1bd38e110fb8",
+            "name": "AcademyX",
+            "position": "Instructor",
+            "place": { "name": "San Francisco, CA" },
+            "endDate": "2013-08-01",
+            "startDate": "2013-07-16",
+            "summary": "- Instructor for AcademyX's Flash UI/UX Mobile Development training on how to:\n- Create apps for the Android and iOS devices.\n- Design user interfaces optimized for Android and iOS devices.",
+            "location": "San Francisco, CA"
+        }
+    ],
+    "education": [
+        {
+            "institution": "Bella Vista",
+            "area": "General Education",
+            "studyType": "Diploma",
+            "startDate": "2001-08-01",
+            "endDate": "2005-06-01",
+            "gpa": "3.0",
+            "id": "93c8efe3-618d-48e3-a53b-e8011b8fe98b"
+        },
+        {
+            "position": 1,
+            "id": "f945312f-78ee-4039-8e5e-df9a2228bca2",
+            "institution": "Sierra Collage",
+            "endDate": "2006-01-01",
+            "area": "Computer Science",
+            "studyType": "NA"
+        }
+    ],
+    "publications": [
+        {
+            "name": "Learning Yeoman",
+            "publisher": "Packt",
+            "releaseDate": "2014-08-01",
+            "website": "https://www.packtpub.com/product/learning-yeoman/9781783981380",
+            "summary": "We will explore the options and subgenerators available with the four most popular office generators, AngularJS Backbone.js, Ember.js, and webapp."
+        }
+    ],
+    "skills": [
+        {
+            "name": "React",
+            "level": "Master",
+            "value": 80,
+            "keywords": ["HTML", "CSS", "Javascript"],
+            "index": 0,
+            "id": "efbe4762-604c-4104-892d-d567c0ab8380"
+        },
+        {
+            "name": "NodeJS",
+            "level": "Master",
+            "value": 75,
+            "keywords": ["HTML", "CSS", "Javascript"],
+            "index": 1,
+            "id": "bbb78e4f-ef46-4e10-944b-093de387c865"
+        },
+        { "name": "HTML5", "index": 2, "value": 80, "id": "df5b89ad-7152-4249-b2c8-006e6fdad86b" },
+        { "name": "Kubernetes", "index": 3, "value": 50, "id": "fa91fe08-0e28-4783-891c-dedc53f69bec" },
+        { "name": "Docker", "index": 4, "value": 50, "id": "0b1a0bc9-3f97-4b74-9bd1-38b6964ee16b" },
+        { "name": "CSS3", "index": 5, "value": 70, "id": "df0c12e7-ae46-4907-8647-f2d876c2e1d4" }
+    ],
+    "languages": [{ "language": "English", "value": 100, "fluency": "Native speaker" }],
+    "interests": [
+        {
+            "index": 0,
+            "id": "d7439c03-2506-42c2-b33a-0c82ca5eacfd",
+            "gifUrl": "https://media.giphy.com/media/YleL4CuahrDUpy2aud/giphy.gif",
+            "name": "BMX"
+        },
+        {
+            "index": 1,
+            "id": "a0cb1cc9-d55f-4c6b-a1d1-b651f9a904a9",
+            "gifUrl": "https://media.giphy.com/media/l378vc21dsA0tUg6Y/giphy.gif",
+            "name": "XBOX"
+        },
+        {
+            "index": 2,
+            "id": "545b41a0-3599-44e6-9cf4-35deac68b666",
+            "gifUrl": "https://media.giphy.com/media/xUA7b0Klw8Wfor7FWo/giphy.gif",
+            "name": "LEGO"
+        }
+    ],
+    "references": [{ "name": "Jane Doe", "reference": "Reference..." }],
+    "projects": [
+        {
+            "index": 5,
+            "date": { "month": 11, "year": 2019 },
+            "description": "Moteur de recherche via le nom de films réalisée avec ReactJs:\nRequête à l'Api rest avec Fetch, utilisation des hooks.\n",
+            "id": "7f1f4257-e5db-477d-aa5f-ababe0ab0b12",
+            "images": [{ "url": "https://cdn.filestackcontent.com/aBOkTTkCQ66VOHUy0q8L" }],
+            "link": "https://lovely-movie.netlify.app/",
+            "name": "Lovely Movie",
+            "endDate": "2019-12-01"
+        },
+        {
+            "index": 2,
+            "date": { "month": 0, "year": 2020 },
+            "description": "Application de gestion de tâches réalisée avec ReactJs / Redux / Firebase :\nCréation de composants avec Styled Components, gestions de formulaires et validation des entrées, création d'une authentification, récupération / création / modification / suppression de tâches.",
+            "id": "af4181b1-8955-47fb-8dd9-17c6974335d3",
+            "images": [{ "url": "https://cdn.filestackcontent.com/G2CckiqvScC9tsrvHYg4" }],
+            "link": "https://diary-todo.netlify.app/",
+            "name": "Journal d'une Todo",
+            "endDate": "2020-01-01"
+        },
+        {
+            "index": 4,
+            "date": { "month": 5, "year": 2020 },
+            "description": "Blog réalisé en Java JEE et Spring, avec création d'une base de données MySQL et connectée avec JDBC.",
+            "id": "af8c78c3-f7c6-4f3b-9c32-9d37a9032e14",
+            "images": [{ "url": "https://cdn.filestackcontent.com/rPp0wj4S2GhTr0qTcqOI" }],
+            "link": "https://btz-java-2003-pjt1-blog.javarover.wilders.dev/",
+            "name": "Charlie's Angels blog",
+            "endDate": "2020-06-01"
+        },
+
+        {
+            "index": 0,
+            "date": { "month": 6, "year": 2020 },
+            "description": "Application réalisée en 24h (challenge de formation) avec Java JEE et Spring:\nGestion d’un CRUD, création d'une API Rest, ajout d'un environnement de production avec une base de données PostgreSQL hébergée sur Heroku.",
+            "id": "ffb8a4f2-24e6-44ef-bbe7-0593b86d40be",
+            "images": [{ "url": "https://cdn.filestackcontent.com/7XpHKtFTC2VynppurrK5" }],
+            "link": "https://your-todos-list.herokuapp.com/",
+            "name": "Your Todo List",
+            "endDate": "2020-07-01"
+        }
+    ],
+    "specific": {
+        "basics": {
+            "visaSponsorship": false,
+            "personalDescription": "I have spent several years creating user interfaces and projects using HTML/CSS/JS technologies. I have a passion for creating tools to streamline a developer’s productivity. I understand web technology and the development lifecycle; I am a detail oriented individual that always strives to produce the best work; I am self-taught; I enjoy learning and teaching others; I am a problem solver and a leader."
+        },
+        "dreamJob": {
+            "locations": [
+                { "name": "Paris,France", "id": "7c38878c-a8b4-4c64-8281-db119f1d7f70", "index": 0 },
+                { "name": "Bay Area, CA", "id": "599e838f-9981-4b2f-b311-4f4e6ae5fb36", "index": 1 },
+                { "name": "Osaka, Japan", "id": "a7657ab5-5d60-424f-af59-13ab81d90f93", "index": 2 }
+            ],
+            "remoteFrequency": "regularly",
+            "perks": { "challenge": true, "salary": true, "work_hours": true, "perks": true, "responsabilities": true },
+            "salary": ""
+        },
+        "currentJob": {
+            "issues": { "boring_management": true, "boring_team": false, "no_tech": true, "no_challenge": true }
+        },
+        "education": { "studiesLevel": 1 },
+        "work": {
+            "contractTypes": ["freelance"],
+            "codingYears": 10,
+            "codingReason": "To create something from scratch that provides value and the ability to keep learning.",
+            "searchState": "openOpportunities",
+            "experienceYears": 6,
+            "codeExperienceYears": 6,
+            "otherExperienceYears": 2
+        },
+        "sound": { "embedUrl": "https://open.spotify.com/embed/playlist/0B69YJB3lDjrZU1C4L8MzN?si=c4301973659642d2" },
+        "interestedBy": "JavaScript, Blockchain"
+    },
+    "resumeCustomization": {
+        "imageHeader": { "url": "https://cdn.filestackcontent.com/8I2wVnCRTFxypXRYLRsp", "alt": "Default Banner" },
+        "cardsOrder": [
+            { "type": "basics", "variant": 4 },
+            { "type": "projects", "variant": 4 },
+            { "type": "skills", "variant": 0 },
+            { "type": "dreamjob", "variant": 4 },
+            { "type": "experiences", "variant": 4 },
+            { "type": "studies", "variant": 4 },
+            { "type": "gifs", "variant": 0 },
+            { "type": "interestedBy", "variant": 3 },
+            { "type": "language", "variant": 4 },
+            { "type": "soundtrack", "variant": 4 }
+        ],
+        "fields": { "work": { "customDateFormat": "YYYY" } },
+        "theme": {
+            "palette": {
+                "primary": {
+                    "50": "#e6e6e6",
+                    "100": "#cccccc",
+                    "200": "#999999",
+                    "300": "#666666",
+                    "400": "#333333",
+                    "500": "#000000",
+                    "600": "#000000",
+                    "700": "#000000",
+                    "800": "#000000",
+                    "900": "#000000",
+                    "contrastDefaultColor": "light"
+                },
+                "secondary": {
+                    "50": "#f5e7e8",
+                    "100": "#eccfd1",
+                    "200": "#d9a0a4",
+                    "300": "#c57076",
+                    "400": "#b24149",
+                    "500": "#9f111b",
+                    "600": "#7f0e16",
+                    "700": "#5f0a10",
+                    "800": "#40070b",
+                    "900": "#200305",
+                    "contrastDefaultColor": "light"
+                },
+                "tertiary": {
+                    "50": "#f7e8e9",
+                    "100": "#efd0d3",
+                    "200": "#e0a2a7",
+                    "300": "#d0737b",
+                    "400": "#c1454f",
+                    "500": "#b11623",
+                    "600": "#8e121c",
+                    "700": "#6a0d15",
+                    "800": "#47090e",
+                    "900": "#230407",
+                    "contrastDefaultColor": "light"
+                }
+            }
+        }
+    }
+}
